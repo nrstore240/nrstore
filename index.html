@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NR STORE - Roblox & Discord</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #080b12;
+  color: white;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8,11,18,.95);
+  border-bottom: 1px solid #202637;
+  padding: 16px 20px;
+}
+
+.nav {
+  max-width: 1050px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #5865f2;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
+}
+
+.hero {
+  max-width: 1050px;
+  margin: auto;
+  padding: 70px 20px 55px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  background: #171d2c;
+  border: 1px solid #29324a;
+  padding: 8px 14px;
+  border-radius: 30px;
+  color: #9daaff;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 9vw, 72px);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  color: #5865f2;
+}
+
+.hero p {
+  color: #aab1c3;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 28px;
+  background: #5865f2;
+  color: white;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: #6975ff;
+}
+
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin: 35px 0 25px;
+}
+
+.title h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.title p {
+  color: #858da1;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 12px;
+  margin-bottom: 45px;
+}
+
+.category {
+  background: #111622;
+  border: 1px solid #20283b;
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.category .icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.category b {
+  font-size: 14px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+}
+
+.card {
+  background: #111622;
+  border: 1px solid #222b40;
+  border-radius: 18px;
+  padding: 22px;
+  transition: .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #5865f2;
+}
+
+.card-icon {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 9px;
+}
+
+.desc {
+  color: #8d96aa;
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 38px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 18px 0;
+  color: #ffffff;
+}
+
+.buy {
+  display: block;
+  text-align: center;
+  background: #5865f2;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.buy:hover {
+  background: #6975ff;
+}
+
+.info {
+  margin-top: 55px;
+  background: #111622;
+  border: 1px solid #222b40;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+}
+
+.info h2 {
+  margin-bottom: 12px;
+}
+
+.info p {
+  color: #969fb2;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+footer {
+  margin-top: 60px;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid #202637;
+  color: #6f778a;
+  font-size: 13px;
+}
+
+@media(max-width:750px) {
+  .categories {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 50px;
+  }
+
+  .nav a {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">NR <span>STORE</span></div>
+
+    <nav>
+      <a href="#produk">Produk</a>
+      <a href="#cara">Cara Order</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="badge">🎮 ROBLOX • 💬 DISCORD</div>
+
+  <h1>NR <span>STORE</span></h1>
+
+  <p>
+    Tempat kebutuhan Roblox & Discord.
+    Pilih produk, klik beli, lalu lanjutkan order melalui WhatsApp.
+  </p>
+
+  <a class="btn" href="#produk">LIHAT PRODUK</a>
+</section>
+
+<div class="container">
+
+  <div class="title">
+    <h2>Kategori</h2>
+    <p>Pilih kebutuhan kamu</p>
+  </div>
+
+  <div class="categories">
+
+    <div class="category">
+      <div class="icon">🎮</div>
+      <b>Robux</b>
+    </div>
+
+    <div class="category">
+      <div class="icon">👤</div>
+      <b>Roblox USN</b>
+    </div>
+
+    <div class="category">
+      <div class="icon">⭐</div>
+      <b>Roblox Plus</b>
+    </div>
+
+    <div class="category">
+      <div class="icon">🚀</div>
+      <b>Discord Boost</b>
+    </div>
+
+  </div>
+
+  <div class="title" id="produk">
+    <h2>Produk Terlaris</h2>
+    <p>Harga terbaru NR STORE</p>
+  </div>
+
+  <div class="products">
+
+    <!-- ROBUX 500 -->
+    <div class="card">
+      <div class="card-icon">🎮</div>
+      <h3>500 Robux</h3>
+      <div class="desc">
+        Robux Via Send
+      </div>
+
+      <div class="price">Rp77.000</div>
+
+      <a class="buy"
+         href="https://wa.me/6283898005030?text=Halo%20NR%20STORE,%20saya%20mau%20membeli%20500%20Robux%20Via%20Send%20seharga%20Rp77.000."
+         target="_blank">
+        BELI SEKARANG
+      </a>
+    </div>
+
+    <!-- ROBUX 1000 -->
+    <div class="card">
+      <div class="card-icon">🎮</div>
+      <h3>1.000 Robux</h3>
+      <div class="desc">
+        Robux Via Send
+      </div>
+
+      <div class="price">Rp154.000</div>
+
+      <a class="buy"
+         href="https://wa.me/6283898005030?text=Halo%20NR%20STORE,%20saya%20mau%20membeli%201000%20Robux%20Via%20Send%20seharga%20Rp154.000."
+         target="_blank">
+        BELI SEKARANG
+      </a>
+    </div>
+
+    <!-- ROBLOX PLUS -->
+    <div class="card">
+      <div class="card-icon">⭐</div>
+      <h3>Roblox Plus</h3>
+      <div class="desc">
+        Roblox Plus
+      </div>
+
+      <div class="price">Rp120.000</div>
+
+      <a class="buy"
+         href="https://wa.me/628398005030?text=Halo%20NR%20STORE,%20saya%20mau%20membeli%20Roblox%20Plus%20seharga%20Rp120.000."
+         target="_blank">
+        BELI SEKARANG
+      </a>
+    </div>
+
+    <!-- BOOST 1 BULAN -->
+    <div class="card">
+      <div class="card-icon">🚀</div>
+      <h3>14× Discord Boost</h3>
+      <div class="desc">
+        Booster Server Discord • 1 Bulan
+      </div>
+
+      <div class="price">Rp95.000</div>
+
+      <a class="buy"
+         href="https://wa.me/6283898005030?text=Halo%20NR%20STORE,%20saya%20mau%20membeli%2014x%20Discord%20Boost%201%20Bulan%20seharga%20Rp95.000."
+         target="_blank">
+        BELI SEKARANG
+      </a>
+    </div>
+
+    <!-- BOOST 3 BULAN -->
+    <div class="card">
+      <div class="card-icon">🚀</div>
+      <h3>14× Discord Boost</h3>
+      <div class="desc">
+        Booster Server Discord • 3 Bulan
+      </div>
+
+      <div class="price">Rp195.000</div>
+
+      <a class="buy"
+         href="https://wa.me/6283898005030?text=Halo%20NR%20STORE,%20saya%20mau%20membeli%2014x%20Discord%20Boost%203%20Bulan%20seharga%20Rp195.000."
+         target="_blank">
+        BELI SEKARANG
+      </a>
+    </div>
+
+    <!-- PRODUK TAMBAHAN -->
+    <div class="card">
+      <div class="card-icon">🛒</div>
+      <h3>Produk Lainnya</h3>
+      <div class="desc">
+        Hubungi NR STORE untuk produk Roblox & Discord lainnya.
+      </div>
+
+      <div class="price">Chat Admin</div>
+
+      <a class="buy"
+         href="https://wa.me/6283898005030?text=Halo%20NR%20STORE,%20saya%20ingin%20menanyakan%20produk%20lainnya."
+         target="_blank">
+        CHAT ADMIN
+      </a>
+    </div>
+
+  </div>
+
+  <div class="info" id="cara">
+    <h2>🛒 Cara Order</h2>
+
+    <p>
+      1. Pilih produk yang ingin dibeli.<br>
+      2. Klik tombol BELI SEKARANG.<br>
+      3. WhatsApp akan terbuka otomatis.<br>
+      4. Kirim detail order kepada admin.<br>
+      5. Lakukan pembayaran sesuai instruksi admin.
+    </p>
+  </div>
+
+  <div class="info" id="kontak">
+    <h2>💬 Butuh Bantuan?</h2>
+
+    <p>
+      Hubungi admin NR STORE melalui WhatsApp
+      untuk menanyakan stok, produk, atau order.
+    </p>
+
+    <a class="btn"
+       href="https://wa.me/628398005030"
+       target="_blank">
+      CHAT WHATSAPP
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 NR STORE • Roblox & Discord Store
+</footer>
+
+</body>
+      </html>
