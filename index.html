@@ -352,13 +352,14 @@ footer {
   </div>
 </header>
 
+
 <section class="hero">
   <div class="badge">🎮 ROBLOX • 💬 DISCORD</div>
 
   <div class="banner">
-  <img src="banner.gif" alt="NR STORE Banner">
-</div>
-  
+    <img src="banner.gif" alt="NR STORE Banner">
+  </div>
+
   <h1>NR <span>STORE</span></h1>
 
   <p>
@@ -369,8 +370,10 @@ footer {
   <a class="btn" href="#produk">LIHAT PRODUK</a>
 </section>
 
+
 <div class="container">
 
+  <!-- KATEGORI -->
   <div class="title">
     <h2>Kategori</h2>
     <p>Pilih kebutuhan kamu</p>
@@ -400,110 +403,142 @@ footer {
 
   </div>
 
+
+  <!-- PRODUK -->
   <div class="title" id="produk">
     <h2>Produk Terlaris</h2>
     <p>Harga terbaru NR STORE</p>
   </div>
+
 
   <div class="products">
 
     <!-- ROBUX 500 -->
     <div class="card">
       <div class="card-icon">🎮</div>
+
       <h3>500 Robux</h3>
+
       <div class="desc">
         Robux Via Send
       </div>
 
-      <div class="price">Rp77.000</div>
+      <div class="price">
+        Rp77.000
+      </div>
 
       <a class="buy"
-         href="https://wa.me/6283898005030?text=Halo%20NR%20STORE,%20saya%20mau%20membeli%20500%20Robux%20Via%20Send%20seharga%20Rp77.000."
-         target="_blank">
+         href="#"
+         onclick="beliRobux('500 Robux Via Send', 'Rp77.000'); return false;">
         BELI SEKARANG
       </a>
     </div>
+
 
     <!-- ROBUX 1000 -->
     <div class="card">
       <div class="card-icon">🎮</div>
+
       <h3>1.000 Robux</h3>
+
       <div class="desc">
         Robux Via Send
       </div>
 
-      <div class="price">Rp154.000</div>
+      <div class="price">
+        Rp154.000
+      </div>
 
       <a class="buy"
-         href="https://wa.me/6283898005030?text=Halo%20NR%20STORE,%20saya%20mau%20membeli%201000%20Robux%20Via%20Send%20seharga%20Rp154.000."
-         target="_blank">
+         href="#"
+         onclick="beliRobux('1.000 Robux Via Send', 'Rp154.000'); return false;">
         BELI SEKARANG
       </a>
     </div>
+
 
     <!-- ROBLOX PLUS -->
     <div class="card">
       <div class="card-icon">⭐</div>
+
       <h3>Roblox Plus</h3>
+
       <div class="desc">
         Roblox Plus
       </div>
 
-      <div class="price">Rp120.000</div>
+      <div class="price">
+        Rp120.000
+      </div>
 
       <a class="buy"
-         href="https://wa.me/628398005030?text=Halo%20NR%20STORE,%20saya%20mau%20membeli%20Roblox%20Plus%20seharga%20Rp120.000."
-         target="_blank">
+         href="#"
+         onclick="beliRobloxPlus(); return false;">
         BELI SEKARANG
       </a>
     </div>
+
 
     <!-- BOOST 1 BULAN -->
     <div class="card">
       <div class="card-icon">🚀</div>
+
       <h3>14× Discord Boost</h3>
+
       <div class="desc">
         Booster Server Discord • 1 Bulan
       </div>
 
-      <div class="price">Rp95.000</div>
+      <div class="price">
+        Rp95.000
+      </div>
 
       <a class="buy"
-         href="https://wa.me/6283898005030?text=Halo%20NR%20STORE,%20saya%20mau%20membeli%2014x%20Discord%20Boost%201%20Bulan%20seharga%20Rp95.000."
-         target="_blank">
+         href="#"
+         onclick="beliDiscordBoost('14× Discord Boost 1 Bulan', 'Rp95.000'); return false;">
         BELI SEKARANG
       </a>
     </div>
+
 
     <!-- BOOST 3 BULAN -->
     <div class="card">
       <div class="card-icon">🚀</div>
+
       <h3>14× Discord Boost</h3>
+
       <div class="desc">
         Booster Server Discord • 3 Bulan
       </div>
 
-      <div class="price">Rp195.000</div>
+      <div class="price">
+        Rp195.000
+      </div>
 
       <a class="buy"
-         href="https://wa.me/6283898005030?text=Halo%20NR%20STORE,%20saya%20mau%20membeli%2014x%20Discord%20Boost%203%20Bulan%20seharga%20Rp195.000."
-         target="_blank">
+         href="#"
+         onclick="beliDiscordBoost('14× Discord Boost 3 Bulan', 'Rp195.000'); return false;">
         BELI SEKARANG
       </a>
     </div>
 
+
     <!-- PRODUK TAMBAHAN -->
     <div class="card">
       <div class="card-icon">🛒</div>
+
       <h3>Produk Lainnya</h3>
+
       <div class="desc">
         Hubungi NR STORE untuk produk Roblox & Discord lainnya.
       </div>
 
-      <div class="price">Chat Admin</div>
+      <div class="price">
+        Chat Admin
+      </div>
 
       <a class="buy"
-         href="https://wa.me/6283898005030?text=Halo%20NR%20STORE,%20saya%20ingin%20menanyakan%20produk%20lainnya."
+         href="https://wa.me/6283898005030?text=Halo%20NR%20STORE%20%F0%9F%91%8B%0A%0ASaya%20ingin%20menanyakan%20produk%20lainnya."
          target="_blank">
         CHAT ADMIN
       </a>
@@ -511,19 +546,27 @@ footer {
 
   </div>
 
+
+  <!-- CARA ORDER -->
   <div class="info" id="cara">
+
     <h2>🛒 Cara Order</h2>
 
     <p>
       1. Pilih produk yang ingin dibeli.<br>
       2. Klik tombol BELI SEKARANG.<br>
-      3. WhatsApp akan terbuka otomatis.<br>
-      4. Kirim detail order kepada admin.<br>
-      5. Lakukan pembayaran sesuai instruksi admin.
+      3. WhatsApp akan terbuka otomatis dengan pesan order.<br>
+      4. Lengkapi username atau detail yang diminta.<br>
+      5. Admin mengirimkan instruksi pembayaran/QRIS.<br>
+      6. Setelah pembayaran dikonfirmasi, order diproses.
     </p>
+
   </div>
 
+
+  <!-- KONTAK -->
   <div class="info" id="kontak">
+
     <h2>💬 Butuh Bantuan?</h2>
 
     <p>
@@ -536,13 +579,92 @@ footer {
        target="_blank">
       CHAT WHATSAPP
     </a>
+
   </div>
 
 </div>
+
 
 <footer>
   © 2026 NR STORE • Roblox & Discord Store
 </footer>
 
+
+<script>
+
+  /* NOMOR WHATSAPP NR STORE */
+  const nomorWhatsApp = "6283898005030";
+
+
+  /* ROBUX */
+  function beliRobux(namaProduk, harga) {
+
+    const pesan =
+`Halo NR STORE 👋
+
+Saya mau membeli ${namaProduk} seharga ${harga}.
+
+🎮 Username Roblox:
+[isi username kamu]
+
+Mohon dikirimkan QRIS untuk pembayarannya ya kak. Terima kasih 🙏`;
+
+    bukaWhatsApp(pesan);
+  }
+
+
+  /* ROBLOX PLUS */
+  function beliRobloxPlus() {
+
+    const pesan =
+`Halo NR STORE 👋
+
+Saya mau membeli Roblox Plus seharga Rp120.000.
+
+👤 Username Roblox:
+[isi username kamu]
+
+🔐 Untuk proses aktivasi, saya akan mengikuti instruksi yang diberikan admin.
+
+🔒 Data akun yang diberikan untuk proses aktivasi hanya digunakan untuk keperluan order dan tidak disebarluaskan.
+
+Mohon dikirimkan QRIS untuk pembayarannya ya kak. Terima kasih 🙏`;
+
+    bukaWhatsApp(pesan);
+  }
+
+
+  /* DISCORD BOOST */
+  function beliDiscordBoost(namaProduk, harga) {
+
+    const pesan =
+`Halo NR STORE 👋
+
+Saya mau membeli ${namaProduk} seharga ${harga}.
+
+🚀 Link/ID Server Discord:
+[isi link atau ID server]
+
+Mohon dikirimkan QRIS untuk pembayarannya ya kak. Terima kasih 🙏`;
+
+    bukaWhatsApp(pesan);
+  }
+
+
+  /* BUKA WHATSAPP */
+  function bukaWhatsApp(pesan) {
+
+    const url =
+      "https://wa.me/" +
+      nomorWhatsApp +
+      "?text=" +
+      encodeURIComponent(pesan);
+
+    window.open(url, "_blank");
+  }
+
+</script>
+
+
 </body>
-      </html>
+</html>
