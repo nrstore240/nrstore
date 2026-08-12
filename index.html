@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>NR STORE - Jual Robux Murah & Discord Boost</title>
+    <title>NR STORE - Jual Robux Murah & Discord Boost #1 Terpercaya</title>
     <meta name="description" content="NR STORE - Jual Robux Via Send Murah, Roblox Plus, Discord Nitro Boost. Proses Cepat 5 Menit, Bayar QRIS. 1000+ Testimoni. Terpercaya 2026">
     <link rel="icon" href="https://nrstore240.github.io/nrstore/logo.png">
 
@@ -15,12 +15,28 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: 
                 radial-gradient(circle at 50% 0%, rgba(155,92,255,0.18), transparent 35%),
                 linear-gradient(180deg, #12051f 0%, #080812 100%);
             color: white;
+            overflow-x: hidden;
+        }
+
+        /* ANIMASI FADE IN PAS SCROLL */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         header {
@@ -30,6 +46,7 @@
             background: rgba(8,11,18,.95);
             border-bottom: 1px solid #202637;
             padding: 16px 20px;
+            backdrop-filter: blur(10px);
         }
 
         .nav {
@@ -54,6 +71,10 @@
             text-decoration: none;
             margin-left: 18px;
             font-size: 14px;
+            transition: .2s;
+        }
+        .nav a:hover {
+            color: #9b5cff;
         }
 
         .hero {
@@ -69,6 +90,7 @@
             margin: 25px auto;
             border-radius: 18px;
             overflow: hidden;
+            box-shadow: 0 0 30px rgba(155,92,255,0.3);
         }
         .banner img {
             display: block;
@@ -123,11 +145,11 @@
             padding: 14px 24px;
             border-radius: 12px;
             font-weight: bold;
-            transition: .2s;
+            transition: .3s;
         }
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 20px #9b5cff;
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px #9b5cff;
         }
 
         .btn-discord {
@@ -136,7 +158,7 @@
         }
         .btn-discord:hover {
             background: #4752C4;
-            box-shadow: none;
+            box-shadow: 0 0 25px #5865F2;
         }
 
         .container {
@@ -168,12 +190,13 @@
             border: 1px solid #222b40;
             border-radius: 18px;
             padding: 22px;
-            transition: .2s;
+            transition: .3s;
             position: relative;
         }
         .card:hover {
-            transform: translateY(-4px);
-            border-color: #5865f2;
+            transform: translateY(-6px);
+            border-color: #9b5cff;
+            box-shadow: 0 0 20px rgba(155,92,255,0.3);
         }
 
         .bestseller {
@@ -185,6 +208,12 @@
             border-radius: 20px;
             font-size: 11px;
             font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255,59,59, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255,59,59, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,59,59, 0); }
         }
 
         .card-icon {
@@ -225,9 +254,10 @@
             border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
+            transition: .2s;
         }
         .buy:hover {
-            background: #b875ff;
+            background: linear-gradient(90deg, #ff5cff, #9b5cff);
         }
 
         .info {
@@ -249,6 +279,7 @@
             padding: 15px;
             border-radius: 12px;
             font-size: 13px;
+            border-left: 3px solid #9b5cff;
         }
         .testi b {
             color: #9b5cff;
@@ -256,6 +287,9 @@
 
         .faq-item {
             margin-bottom: 15px;
+            padding: 12px;
+            background: #0a0e1a;
+            border-radius: 8px;
         }
         .faq-item b {
             color: #9b5cff;
@@ -285,6 +319,12 @@
             font-size: 30px;
             text-decoration: none;
             z-index: 99;
+            animation: bounce 2s infinite;
+            box-shadow: 0 0 20px rgba(37,211,102,0.5);
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         footer {
@@ -297,7 +337,8 @@
         }
 
         @media(max-width: 750px) {
-            .products, .testi-grid {
+            .products, 
+            .testi-grid {
                 grid-template-columns: 1fr;
             }
             .nav a {
@@ -324,7 +365,7 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero fade-in">
         <div>
             <span class="badge">🔒 100% AMAN & GARANSI</span>
             <span class="badge">⚡ PROSES 5 MENIT</span>
@@ -348,13 +389,13 @@
 
     <div class="container">
 
-        <div class="title" id="produk">
+        <div class="title fade-in" id="produk">
             <h2>Produk Terlaris</h2>
             <p>Harga terbaru NR STORE</p>
         </div>
 
         <div class="products">
-            <div class="card">
+            <div class="card fade-in">
                 <div class="bestseller">🔥 TERLARIS</div>
                 <div class="card-icon">🎮</div>
                 <h3>500 Robux</h3>
@@ -363,7 +404,7 @@
                 <a class="buy" href="javascript:void(0)" onclick="beliRobux('500 Robux Via Send', 'Rp77.000')">BELI SEKARANG</a>
             </div>
 
-            <div class="card">
+            <div class="card fade-in">
                 <div class="card-icon">🎮</div>
                 <h3>1.000 Robux</h3>
                 <div class="desc">Robux Via Send - Proses 5 Menit</div>
@@ -371,7 +412,7 @@
                 <a class="buy" href="javascript:void(0)" onclick="beliRobux('1.000 Robux Via Send', 'Rp154.000')">BELI SEKARANG</a>
             </div>
 
-            <div class="card">
+            <div class="card fade-in">
                 <div class="card-icon">⭐</div>
                 <h3>Roblox Plus</h3>
                 <div class="desc">Roblox Plus 1 Bulan</div>
@@ -379,7 +420,7 @@
                 <a class="buy" href="javascript:void(0)" onclick="beliRobloxPlus()">BELI SEKARANG</a>
             </div>
 
-            <div class="card">
+            <div class="card fade-in">
                 <div class="card-icon">🚀</div>
                 <h3>14× Discord Boost</h3>
                 <div class="desc">Booster Server Discord • 1 Bulan</div>
@@ -387,7 +428,7 @@
                 <a class="buy" href="javascript:void(0)" onclick="beliDiscordBoost('14× Discord Boost 1 Bulan', 'Rp95.000')">BELI SEKARANG</a>
             </div>
 
-            <div class="card">
+            <div class="card fade-in">
                 <div class="card-icon">🚀</div>
                 <h3>14× Discord Boost</h3>
                 <div class="desc">Booster Server Discord • 3 Bulan</div>
@@ -396,28 +437,28 @@
             </div>
         </div>
 
-        <div class="info" id="testimoni">
+        <div class="info fade-in" id="testimoni">
             <div class="title">
                 <h2>⭐ Testimoni Pelanggan</h2>
             </div>
             <div class="testi-grid">
                 <div class="testi">
-                    <b>@andi***</b><br>
-                    "Cepet banget masuknya. 3 menit langsung 500 robux. Trusted!"
+                    <b>@Magaaa</b><br>
+                    "Cepat banget 😍"
                 </div>
                 <div class="testi">
-                    <b>@siti***</b><br>
-                    "Admin ramah, proses jelas. Udah langganan di NR STORE"
+                    <b>@Melodyy</b><br>
+                    "Gercep bangetttt ⭐⭐⭐⭐⭐"
                 </div>
                 <div class="testi">
-                    <b>@rizal***</b><br>
-                    "Harga paling murah. Gagal langsung refund. Mantap"
+                    <b>@babyvan02</b><br>
+                    "gercep bintang ⭐⭐⭐⭐⭐"
                 </div>
             </div>
-            <a class="btn btn-discord" href="https://discord.gg/join-nrstore" target="_blank" style="margin-top:20px">LIHAT 1000+ BUKTI LAINNYA</a>
+            <a class="btn btn-discord" href="https://discord.gg/join-nrstore" target="_blank" style="margin-top:20px">LIHAT 1000+ BUKTI DI DISCORD</a>
         </div>
 
-        <div class="info" id="faq">
+        <div class="info fade-in" id="faq">
             <div class="title">
                 <h2>❓ FAQ - Pertanyaan Umum</h2>
             </div>
@@ -435,7 +476,7 @@
             </div>
         </div>
 
-        <div class="info" id="kontak">
+        <div class="info fade-in" id="kontak">
             <div class="title">
                 <h2>💬 Butuh Bantuan?</h2>
             </div>
@@ -469,8 +510,18 @@
             const pesan = `Halo NR STORE 👋\n\nSaya mau membeli ${namaProduk} seharga ${harga}.\n\n🚀 Link/ID Server Discord:\n[isi link atau ID server]\n\nMohon dikirimkan QRIS untuk pembayarannya ya kak. Terima kasih 🙏`;
             window.open("https://wa.me/6283898005030?text=" + encodeURIComponent(pesan), "_blank");
         }
+
+        // ANIMASI PAS SCROLL
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 
 </body>
-              </html>
-               
+</html>
