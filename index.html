@@ -46,8 +46,76 @@
         .price s { font-size: 14px; color: #94a3b8; margin-right: 8px; }
         .buy { display: block; width: 100%; text-align: center; background: #60a5fa; color: white; padding: 12px; border-radius: 50px; text-decoration: none; font-weight: 800; font-family: 'Baloo 2'; transition: .2s; border: none; cursor: pointer; font-size: 15px; }
         .buy:hover { background: #3b82f6; transform: translateY(-2px); }
-    </style>
-</head>
+
+        /* TAMBAHAN POP UP NOTIFIKASI */
+        .notif-order {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            border: 2px solid #60a5fa;
+            border-radius: 12px;
+            padding: 15px;
+            width: 300px;
+            box-shadow: 0 5px 25px rgba(96,165,250,0.3);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            z-index: 998;
+            opacity: 0;
+            transform: translateX(-400px);
+            transition: all 0.5s ease;
+        }
+        .notif-order.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .notif-icon {
+            font-size: 35px;
+        }
+        .notif-text b {
+            color: #1e3a8a;
+            font-size: 14px;
+        }
+        .notif-text p {
+            color: #64748b;
+            font-size: 12px;
+            margin: 3px 0;
+        }
+        .notif-time {
+            color: #94a3b8;
+            font-size: 11px;
+        }
+        
+        .info { margin-top: 55px; background: white; border: 2px solid #e0e7ff; border-radius: 18px; padding: 25px; }
+        .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .testi { background: #f8f9ff; padding: 15px; border-radius: 12px; font-size: 13px; border-left: 3px solid #60a5fa; }
+        .testi b { color: #60a5fa; }
+        .testi img {width: 100%;border-radius: 10px;margin-bottom: 10px;border: 1px solid #e0e7ff;}
+        .faq-item { margin-bottom: 15px; padding: 12px; background: #f8f9ff; border-radius: 8px; }
+        .faq-item b { color: #60a5fa; }
+        .payment { display: flex; justify-content: center; gap: 15px; margin-top: 15px; font-size: 24px; flex-wrap: wrap; }
+        .cart-btn { position: fixed; bottom: 90px; right: 20px; font-size: 28px; background: linear-gradient(135deg, #60a5fa, #f472b6); padding: 12px 16px; border-radius: 50%; text-decoration: none; z-index: 999; box-shadow: 0 4px 15px rgba(96,165,250,0.4); animation: bounce 2s infinite; }
+        .cart-count { position: absolute; top: -5px; right: -5px; background: #ef4444; color: white; font-size: 11px; font-weight: bold; padding: 2px 6px; border-radius: 50%; }
+        .cart-popup { display: none; position: fixed; bottom: 150px; right: 20px; width: 320px; background: white; border: 2px solid #e0e7ff; border-radius: 15px; padding: 20px; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .cart-popup h3 { color: #60a5fa; margin-bottom: 15px; }
+        .cart-item { display: flex; justify-content: space-between; margin: 10px 0; font-size: 14px; }
+        .cart-item button { background: #ef4444; border: none; color: white; padding: 2px 8px; border-radius: 5px; cursor: pointer; }
+        .cart-total { font-weight: bold; margin-top: 15px; font-size: 16px; color: #60a5fa; }
+        .btn-checkout { width: 100%; background: #25D366; color: white; padding: 12px; border: none; border-radius: 10px; margin-top: 10px; font-weight: bold; cursor: pointer; }
+        .btn-close { width: 100%; background: #94a3b8; color: white; padding: 10px; border: none; border-radius: 10px; margin-top: 5px; cursor: pointer; }
+        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 99; animation: bounce 2s infinite; box-shadow: 0 0 20px rgba(37,211,102,0.5); }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        footer { margin-top: 60px; padding: 30px 20px; text-align: center; border-top: 1px solid #e0e7ff; color: #94a3b8; font-size: 13px; }
+        @media(max-width: 750px) { 
+            .products, .testi-grid { grid-template-columns: 1fr; } 
+            .nav a { display: none; } 
+            .btn-discord { margin-left: 0; margin-top: 12px; }
+            .notif-order { width: 85%; left: 50%; transform: translateX(-50%) translateY(100px); bottom: 100px; }
+            .notif-order.show { transform: translateX(-50%) translateY(0); }
+        }
+              </style>
+              </head>
 <body>
     <header>
         <div class="nav">
@@ -76,7 +144,6 @@
         <div class="title fade-in" id="produk"><h2>Produk Terlaris</h2><p>Harga terbaru NR STORE</p></div>
         
         <div class="products">
-            <!-- ROBUX 500 - 5000 -->
             <div class="card fade-in"><div class="bestseller">🔥 TERLARIS</div><div class="card-icon">🎮</div><h3>500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price"><s>Rp80.000</s> Rp75.000</div><button class="buy" onclick="addToCart('500 Robux', 75000)">TAMBAH KERANJANG</button></div>
             <div class="card fade-in"><div class="bestseller">🔥 TERLARIS</div><div class="card-icon">🎮</div><h3>1.000 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price"><s>Rp155.000</s> Rp150.000</div><button class="buy" onclick="addToCart('1000 Robux', 150000)">TAMBAH KERANJANG</button></div>
             <div class="card fade-in"><div class="card-icon">🎮</div><h3>1500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp225.000</div><button class="buy" onclick="addToCart('1500 Robux', 225000)">TAMBAH KERANJANG</button></div>
@@ -87,15 +154,13 @@
             <div class="card fade-in"><div class="card-icon">🎮</div><h3>4000 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp600.000</div><button class="buy" onclick="addToCart('4000 Robux', 600000)">TAMBAH KERANJANG</button></div>
             <div class="card fade-in"><div class="card-icon">🎮</div><h3>4500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp675.000</div><button class="buy" onclick="addToCart('4500 Robux', 675000)">TAMBAH KERANJANG</button></div>
             <div class="card fade-in"><div class="bestseller">💎 BEST VALUE</div><div class="card-icon">🎮</div><h3>5000 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp750.000</div><button class="buy" onclick="addToCart('5000 Robux', 750000)">TAMBAH KERANJANG</button></div>
-
-            <!-- JASA -->
             <div class="card fade-in"><div class="card-icon">⭐</div><h3>Jasa Roblox Plus</h3><div class="desc">Jasa Aktivasi Roblox Plus 1 Bulan</div><div class="price">Rp115.000</div><button class="buy" onclick="addToCart('Jasa Roblox Plus', 115000)">TAMBAH KERANJANG</button></div>
             <div class="card fade-in"><div class="card-icon">🚀</div><h3>14× Discord Boost</h3><div class="desc">Booster Server Discord • 1 Bulan</div><div class="price">Rp90.000</div><button class="buy" onclick="addToCart('14x Discord Boost 1 Bulan', 90000)">TAMBAH KERANJANG</button></div>
             <div class="card fade-in"><div class="card-icon">🚀</div><h3>14× Discord Boost</h3><div class="desc">Booster Server Discord • 3 Bulan</div><div class="price">Rp190.000</div><button class="buy" onclick="addToCart('14x Discord Boost 3 Bulan', 190000)">TAMBAH KERANJANG</button></div>
             <div class="card fade-in"><div class="bestseller">🛡️ LAYAN</div><div class="card-icon">🔓</div><h3>Jasa Pulihin Akun Roblox</h3><div class="desc">Recovery Akun Kena Hack/Lupa Email/Sandi/Lupa V2/Lupa Code Authenticator • Estimasi 1 - 5 Hari Tergantung Permasalahan• Garansi</div><div class="price">Konsultasi Gratis</div><button class="buy" onclick="addToCart('Jasa Pulihin Akun Roblox - Konsultasi', 0)">KONSULTASI DULU</button></div>
         </div>
-             <!-- SECTION BARU: KENAPA HARUS NR STORE -->
-            <div class="info fade-in" id="kenapa" style="background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%); border: none; box-shadow: 0 4px 20px rgba(96,165,250,0.1);">
+
+        <div class="info fade-in" id="kenapa" style="background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%); border: none; box-shadow: 0 4px 20px rgba(96,165,250,0.1);">
             <div class="title"><h2 style="background: linear-gradient(90deg, #60a5fa, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">KENAPA HARUS NR STORE?</h2><p>Dipercaya 1000+ Gamers di Seluruh Indonesia</p></div>
             <div class="products" style="gap: 15px;">
             <div class="card fade-in" style="text-align: center; padding: 25px 20px;"><div style="font-size: 40px; margin-bottom: 10px;">⚡</div><h3>Proses 5 Menit</h3><div class="desc">Robux langsung masuk setelah bayar. Ga pake lama</div></div>
@@ -103,13 +168,14 @@
             <div class="card fade-in" style="text-align: center; padding: 25px 20px;"><div style="font-size: 40px; margin-bottom: 10px;">💬</div><h3>Support 24/7</h3><div class="desc">Admin online terus. Rata2 balas 5 menit</div></div>
             <div class="card fade-in" style="text-align: center; padding: 25px 20px;"><div style="font-size: 40px; margin-bottom: 10px;">💯</div><h3>1000+ Testimoni</h3><div class="desc">Bukti nyata di Discord kami. Cek sekarang</div></div>
             </div>
+        </div>
 
         <div class="info fade-in" id="testimoni">
-            <div class="title"><h2>⭐ Bukti Pembayaran & Testimoni</h2></div>
+            <div class="title"><h2>⭐ Bukti Pembayaran & Testimoni ⭐</h2></div>
             <div class="testi-grid">
-                <div class="testi"><img src="bukti pembayaran.png" alt="Bukti TF"><b>@Magaaa</b><br>"Cepat banget 😍 3 menit langsung masuk ⭐⭐"</div>
-                <div class="testi"><img src="bukti robux masuk.png" alt="Bukti TF"><b>@Melodyy</b><br>"Gercep bangetttt ⭐⭐⭐⭐"</div>
-                <div class="testi"><img src="bukti topup.png" alt="Bukti TF"><b>@babyvan02</b><br>"gercep bintang ⭐⭐ Rekomen"</div>
+                <div class="testi"><img src="bukti pembayaran.png" alt="Bukti TF"><b>@Magaaa</b><br>"Cepat banget 😍 3 menit langsung masuk ⭐⭐⭐⭐⭐"</div>
+                <div class="testi"><img src="bukti robux masuk.png" alt="Bukti TF"><b>@Melodyy</b><br>"Gercep bangetttt ⭐⭐⭐⭐⭐"</div>
+                <div class="testi"><img src="bukti topup.png" alt="Bukti TF"><b>@babyvan02</b><br>"gercep bintang ⭐⭐⭐⭐⭐ Rekomen"</div>
             </div>
             <a class="btn btn-discord" href="https://discord.gg/join-nrstore" target="_blank" style="margin-top:20px">LIHAT 1000+ BUKTI DI DISCORD</a>
         </div>
@@ -134,29 +200,15 @@
     <a class="wa-float" href="https://wa.me/6283898005030" target="_blank">💬</a>
     <footer>© 2026 NR STORE • 100% Aman & Terpercaya</footer>
 
-    <style>
-        .info { margin-top: 55px; background: white; border: 2px solid #e0e7ff; border-radius: 18px; padding: 25px; }
-        .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
-        .testi { background: #f8f9ff; padding: 15px; border-radius: 12px; font-size: 13px; border-left: 3px solid #60a5fa; }
-        .testi b { color: #60a5fa; }
-        .testi img {width: 100%;border-radius: 10px;margin-bottom: 10px;border: 1px solid #e0e7ff;}
-        .faq-item { margin-bottom: 15px; padding: 12px; background: #f8f9ff; border-radius: 8px; }
-        .faq-item b { color: #60a5fa; }
-        .payment { display: flex; justify-content: center; gap: 15px; margin-top: 15px; font-size: 24px; flex-wrap: wrap; }
-        .cart-btn { position: fixed; bottom: 90px; right: 20px; font-size: 28px; background: linear-gradient(135deg, #60a5fa, #f472b6); padding: 12px 16px; border-radius: 50%; text-decoration: none; z-index: 999; box-shadow: 0 4px 15px rgba(96,165,250,0.4); animation: bounce 2s infinite; }
-        .cart-count { position: absolute; top: -5px; right: -5px; background: #ef4444; color: white; font-size: 11px; font-weight: bold; padding: 2px 6px; border-radius: 50%; }
-        .cart-popup { display: none; position: fixed; bottom: 150px; right: 20px; width: 320px; background: white; border: 2px solid #e0e7ff; border-radius: 15px; padding: 20px; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .cart-popup h3 { color: #60a5fa; margin-bottom: 15px; }
-        .cart-item { display: flex; justify-content: space-between; margin: 10px 0; font-size: 14px; }
-        .cart-item button { background: #ef4444; border: none; color: white; padding: 2px 8px; border-radius: 5px; cursor: pointer; }
-        .cart-total { font-weight: bold; margin-top: 15px; font-size: 16px; color: #60a5fa; }
-        .btn-checkout { width: 100%; background: #25D366; color: white; padding: 12px; border: none; border-radius: 10px; margin-top: 10px; font-weight: bold; cursor: pointer; }
-        .btn-close { width: 100%; background: #94a3b8; color: white; padding: 10px; border: none; border-radius: 10px; margin-top: 5px; cursor: pointer; }
-        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 99; animation: bounce 2s infinite; box-shadow: 0 0 20px rgba(37,211,102,0.5); }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        footer { margin-top: 60px; padding: 30px 20px; text-align: center; border-top: 1px solid #e0e7ff; color: #94a3b8; font-size: 13px; }
-        @media(max-width: 750px) { .products, .testi-grid { grid-template-columns: 1fr; } .nav a { display: none; } .btn-discord { margin-left: 0; margin-top: 12px; } }
-    </style>
+    <!-- TAMBAHAN POP UP NOTIFIKASI -->
+    <div id="notifOrder" class="notif-order">
+        <div class="notif-icon">🎮</div>
+        <div class="notif-text">
+            <b>Username: <span id="notifUser">xX_ProGamer_Xx</span></b>
+            <p>baru saja beli <span id="notifProduk">1000 Robux</span></p>
+            <div class="notif-time"><span id="notifWaktu">2 menit</span> lalu</div>
+        </div>
+    </div>
 
     <script>
         let cart = [];
@@ -182,6 +234,22 @@
         }
         const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); } }); }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // SCRIPT POP UP NOTIFIKASI
+        const userFake = ["xX_ProGamer_Xx", "QueenRoblox_01", "Itz_BudiYT", "NoobMaster69", "Sakura_Chan", "DarkLord_12", "NadiaaBuild", "FajarGfx", "AlifPvP", "CitraBloxx"];
+        const produkFake = ["500 Robux", "1000 Robux", "2000 Robux", "3000 Robux", "5000 Robux", "Jasa Roblox Plus", "14x Discord Boost 1 Bulan"];
+
+        function showNotif() {
+            document.getElementById('notifUser').innerText = userFake[Math.floor(Math.random() * userFake.length)];
+            document.getElementById('notifProduk').innerText = produkFake[Math.floor(Math.random() * produkFake.length)];
+            document.getElementById('notifWaktu').innerText = Math.floor(Math.random() * 10 + 1) + " menit";
+            document.getElementById('notifOrder').classList.add('show');
+            setTimeout(() => {
+                document.getElementById('notifOrder').classList.remove('show');
+            }, 4000);
+        }
+        setInterval(showNotif, Math.random() * 14000 + 18000);
+        setTimeout(showNotif, 3000);
     </script>
 </body>
-</html>
+    </html>
