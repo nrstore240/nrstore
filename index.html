@@ -50,7 +50,7 @@
         .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
         .testi { background: #0a0e1a; padding: 15px; border-radius: 12px; font-size: 13px; border-left: 3px solid #9b5cff; }
         .testi b { color: #9b5cff; }
-        .testi img {width: 100%;border-radius: 10px;margin-bottom: 10px;border: 1px solid #29324a;}
+        .testi img {width: 100%;border-radius: 10px;margin-bottom: 10px;border: 1px solid #29324a;} /* INI BUAT GAMBAR */
         .faq-item { margin-bottom: 15px; padding: 12px; background: #0a0e1a; border-radius: 8px; }
         .faq-item b { color: #9b5cff; }
         .payment { display: flex; justify-content: center; gap: 15px; margin-top: 15px; font-size: 24px; flex-wrap: wrap; }
@@ -98,7 +98,7 @@
         <div class="title fade-in" id="produk"><h2>Produk Terlaris</h2><p>Harga terbaru NR STORE</p></div>
         
         <div class="products">
-            <!-- ROBUX -->
+            <!-- ROBUX 500 - 5000 -->
             <div class="card fade-in"><div class="bestseller">🔥 TERLARIS</div><div class="card-icon">🎮</div><h3>500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price"><s>Rp75.000</s> Rp70.000</div><button class="buy" onclick="addToCart('500 Robux', 77000)">TAMBAH KERANJANG</button></div>
             <div class="card fade-in"><div class="bestseller">🔥 TERLARIS</div><div class="card-icon">🎮</div><h3>1.000 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price"><s>Rp150.000</s> Rp140.000</div><button class="buy" onclick="addToCart('1000 Robux', 154000)">TAMBAH KERANJANG</button></div>
             <div class="card fade-in"><div class="card-icon">🎮</div><h3>1500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp210.000</div><button class="buy" onclick="addToCart('1500 Robux', 210000)">TAMBAH KERANJANG</button></div>
@@ -110,20 +110,31 @@
             <div class="card fade-in"><div class="card-icon">🎮</div><h3>4500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp630.000</div><button class="buy" onclick="addToCart('4500 Robux', 630000)">TAMBAH KERANJANG</button></div>
             <div class="card fade-in"><div class="bestseller">💎 BEST VALUE</div><div class="card-icon">🎮</div><h3>5000 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp700.000</div><button class="buy" onclick="addToCart('5000 Robux', 700000)">TAMBAH KERANJANG</button></div>
 
-            <!-- UDAH DIUBAH JADI CUMA JASA -->
+            <!-- JASA -->
             <div class="card fade-in"><div class="card-icon">⭐</div><h3>Jasa Roblox Plus</h3><div class="desc">Jasa Aktivasi Roblox Plus 1 Bulan</div><div class="price">Rp115.000</div><button class="buy" onclick="addToCart('Jasa Roblox Plus', 115000)">TAMBAH KERANJANG</button></div>
-
             <div class="card fade-in"><div class="card-icon">🚀</div><h3>14× Discord Boost</h3><div class="desc">Booster Server Discord • 1 Bulan</div><div class="price">Rp90.000</div><button class="buy" onclick="addToCart('14x Discord Boost 1 Bulan', 90000)">TAMBAH KERANJANG</button></div>
-
             <div class="card fade-in"><div class="card-icon">🚀</div><h3>14× Discord Boost</h3><div class="desc">Booster Server Discord • 3 Bulan</div><div class="price">Rp190.000</div><button class="buy" onclick="addToCart('14x Discord Boost 3 Bulan', 190000)">TAMBAH KERANJANG</button></div>
         </div>
 
+        <!-- INI SECTION TESTIMONI UDAH BALIK -->
         <div class="info fade-in" id="testimoni">
             <div class="title"><h2>⭐ Bukti Pembayaran & Testimoni</h2></div>
             <div class="testi-grid">
-                <div class="testi"><img src="bukti1.jpg" alt="Bukti"><b>@Magaaa</b><br>"Cepat banget 😍 3 menit langsung masuk"</div>
-                <div class="testi"><img src="bukti2.jpg" alt="Bukti"><b>@Melodyy</b><br>"Gercep bangetttt ⭐⭐⭐⭐⭐"</div>
-                <div class="testi"><img src="bukti3.jpg" alt="Bukti"><b>@babyvan02</b><br>"gercep bintang ⭐⭐ Rekomen"</div>
+                <div class="testi">
+                    <img src="bukti1.jpg" alt="Bukti TF">
+                    <b>@Magaaa</b><br>
+                    "Cepat banget 😍 3 menit langsung masuk"
+                </div>
+                <div class="testi">
+                    <img src="bukti2.jpg" alt="Bukti TF">
+                    <b>@Melodyy</b><br>
+                    "Gercep bangetttt ⭐⭐⭐⭐"
+                </div>
+                <div class="testi">
+                    <img src="bukti3.jpg" alt="Bukti TF">
+                    <b>@babyvan02</b><br>
+                    "gercep bintang ⭐⭐ Rekomen"
+                </div>
             </div>
             <a class="btn btn-discord" href="https://discord.gg/join-nrstore" target="_blank" style="margin-top:20px">LIHAT 1000+ BUKTI DI DISCORD</a>
         </div>
@@ -178,4 +189,4 @@
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
-</html>
+    </html>
