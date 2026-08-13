@@ -6,7 +6,6 @@
     <title>NR STORE - Jual Robux Murah & Discord Boost</title>
     <meta name="description" content="NR STORE - Jual Robux Via Send Murah, Roblox Plus, Discord Nitro Boost. Proses Cepat 5 Menit, Bayar QRIS. 1000+ Testimoni. Terpercaya 2026">
     <link rel="icon" href="https://nrstore240.github.io/nrstore/logo.png">
-    <!-- FONT LUCU -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -47,27 +46,6 @@
         .price s { font-size: 14px; color: #94a3b8; margin-right: 8px; }
         .buy { display: block; width: 100%; text-align: center; background: #60a5fa; color: white; padding: 12px; border-radius: 50px; text-decoration: none; font-weight: 800; font-family: 'Baloo 2'; transition: .2s; border: none; cursor: pointer; font-size: 15px; }
         .buy:hover { background: #3b82f6; transform: translateY(-2px); }
-        .info { margin-top: 55px; background: white; border: 2px solid #e0e7ff; border-radius: 18px; padding: 25px; }
-        .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
-        .testi { background: #f8f9ff; padding: 15px; border-radius: 12px; font-size: 13px; border-left: 3px solid #60a5fa; }
-        .testi b { color: #60a5fa; }
-        .testi img {width: 100%;border-radius: 10px;margin-bottom: 10px;border: 1px solid #e0e7ff;}
-        .faq-item { margin-bottom: 15px; padding: 12px; background: #f8f9ff; border-radius: 8px; }
-        .faq-item b { color: #60a5fa; }
-        .payment { display: flex; justify-content: center; gap: 15px; margin-top: 15px; font-size: 24px; flex-wrap: wrap; }
-        .cart-btn { position: fixed; bottom: 90px; right: 20px; font-size: 28px; background: linear-gradient(135deg, #60a5fa, #f472b6); padding: 12px 16px; border-radius: 50%; text-decoration: none; z-index: 999; box-shadow: 0 4px 15px rgba(96,165,250,0.4); animation: bounce 2s infinite; }
-        .cart-count { position: absolute; top: -5px; right: -5px; background: #ef4444; color: white; font-size: 11px; font-weight: bold; padding: 2px 6px; border-radius: 50%; }
-        .cart-popup { display: none; position: fixed; bottom: 150px; right: 20px; width: 320px; background: white; border: 2px solid #e0e7ff; border-radius: 15px; padding: 20px; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .cart-popup h3 { color: #60a5fa; margin-bottom: 15px; }
-        .cart-item { display: flex; justify-content: space-between; margin: 10px 0; font-size: 14px; }
-        .cart-item button { background: #ef4444; border: none; color: white; padding: 2px 8px; border-radius: 5px; cursor: pointer; }
-        .cart-total { font-weight: bold; margin-top: 15px; font-size: 16px; color: #60a5fa; }
-        .btn-checkout { width: 100%; background: #25D366; color: white; padding: 12px; border: none; border-radius: 10px; margin-top: 10px; font-weight: bold; cursor: pointer; }
-        .btn-close { width: 100%; background: #94a3b8; color: white; padding: 10px; border: none; border-radius: 10px; margin-top: 5px; cursor: pointer; }
-        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 99; animation: bounce 2s infinite; box-shadow: 0 0 20px rgba(37,211,102,0.5); }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        footer { margin-top: 60px; padding: 30px 20px; text-align: center; border-top: 1px solid #e0e7ff; color: #94a3b8; font-size: 13px; }
-        @media(max-width: 750px) { .products, .testi-grid { grid-template-columns: 1fr; } .nav a { display: none; } .btn-discord { margin-left: 0; margin-top: 12px; } }
     </style>
 </head>
 <body>
@@ -76,6 +54,7 @@
             <div class="logo">NR <span>STORE</span></div>
             <nav>
                 <a href="#produk">Produk</a>
+                <a href="#kenapa">Keunggulan</a>
                 <a href="#testimoni">Testimoni</a>
                 <a href="#faq">FAQ</a>
                 <a href="#kontak">Kontak</a>
@@ -115,25 +94,22 @@
             <div class="card fade-in"><div class="card-icon">🚀</div><h3>14× Discord Boost</h3><div class="desc">Booster Server Discord • 3 Bulan</div><div class="price">Rp190.000</div><button class="buy" onclick="addToCart('14x Discord Boost 3 Bulan', 190000)">TAMBAH KERANJANG</button></div>
             <div class="card fade-in"><div class="bestseller">🛡️ LAYAN</div><div class="card-icon">🔓</div><h3>Jasa Pulihin Akun Roblox</h3><div class="desc">Recovery Akun Kena Hack/Lupa Email/Sandi/Lupa V2/Lupa Code Authenticator • Estimasi 1 - 5 Hari Tergantung Permasalahan• Garansi</div><div class="price">Konsultasi Gratis</div><button class="buy" onclick="addToCart('Jasa Pulihin Akun Roblox - Konsultasi', 0)">KONSULTASI DULU</button></div>
         </div>
+             <!-- SECTION BARU: KENAPA HARUS NR STORE -->
+            <div class="info fade-in" id="kenapa" style="background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%); border: none; box-shadow: 0 4px 20px rgba(96,165,250,0.1);">
+            <div class="title"><h2 style="background: linear-gradient(90deg, #60a5fa, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">KENAPA HARUS NR STORE?</h2><p>Dipercaya 1000+ Gamers di Seluruh Indonesia</p></div>
+            <div class="products" style="gap: 15px;">
+            <div class="card fade-in" style="text-align: center; padding: 25px 20px;"><div style="font-size: 40px; margin-bottom: 10px;">⚡</div><h3>Proses 5 Menit</h3><div class="desc">Robux langsung masuk setelah bayar. Ga pake lama</div></div>
+            <div class="card fade-in" style="text-align: center; padding: 25px 20px;"><div style="font-size: 40px; margin-bottom: 10px;">🔒</div><h3>100% Amanah</h3><div class="desc">Garansi uang kembali jika tidak masuk</div></div>
+            <div class="card fade-in" style="text-align: center; padding: 25px 20px;"><div style="font-size: 40px; margin-bottom: 10px;">💬</div><h3>Support 24/7</h3><div class="desc">Admin online terus. Rata2 balas 5 menit</div></div>
+            <div class="card fade-in" style="text-align: center; padding: 25px 20px;"><div style="font-size: 40px; margin-bottom: 10px;">💯</div><h3>1000+ Testimoni</h3><div class="desc">Bukti nyata di Discord kami. Cek sekarang</div></div>
+            </div>
 
         <div class="info fade-in" id="testimoni">
             <div class="title"><h2>⭐ Bukti Pembayaran & Testimoni</h2></div>
             <div class="testi-grid">
-                <div class="testi">
-                    <img src="bukti pembayaran.png" alt="Bukti TF">
-                    <b>@Magaaa</b><br>
-                    "Cepat banget 😍 3 menit langsung masuk ⭐⭐"
-                </div>
-                <div class="testi">
-                    <img src="bukti robux masuk.png" alt="Bukti TF">
-                    <b>@Melodyy</b><br>
-                    "Gercep bangetttt ⭐⭐⭐⭐⭐"
-                </div>
-                <div class="testi">
-                    <img src="bukti topup.png" alt="Bukti TF">
-                    <b>@babyvan02</b><br>
-                    "gercep bintang ⭐⭐ Rekomen"
-                </div>
+                <div class="testi"><img src="bukti pembayaran.png" alt="Bukti TF"><b>@Magaaa</b><br>"Cepat banget 😍 3 menit langsung masuk ⭐⭐"</div>
+                <div class="testi"><img src="bukti robux masuk.png" alt="Bukti TF"><b>@Melodyy</b><br>"Gercep bangetttt ⭐⭐⭐⭐"</div>
+                <div class="testi"><img src="bukti topup.png" alt="Bukti TF"><b>@babyvan02</b><br>"gercep bintang ⭐⭐ Rekomen"</div>
             </div>
             <a class="btn btn-discord" href="https://discord.gg/join-nrstore" target="_blank" style="margin-top:20px">LIHAT 1000+ BUKTI DI DISCORD</a>
         </div>
@@ -158,6 +134,30 @@
     <a class="wa-float" href="https://wa.me/6283898005030" target="_blank">💬</a>
     <footer>© 2026 NR STORE • 100% Aman & Terpercaya</footer>
 
+    <style>
+        .info { margin-top: 55px; background: white; border: 2px solid #e0e7ff; border-radius: 18px; padding: 25px; }
+        .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .testi { background: #f8f9ff; padding: 15px; border-radius: 12px; font-size: 13px; border-left: 3px solid #60a5fa; }
+        .testi b { color: #60a5fa; }
+        .testi img {width: 100%;border-radius: 10px;margin-bottom: 10px;border: 1px solid #e0e7ff;}
+        .faq-item { margin-bottom: 15px; padding: 12px; background: #f8f9ff; border-radius: 8px; }
+        .faq-item b { color: #60a5fa; }
+        .payment { display: flex; justify-content: center; gap: 15px; margin-top: 15px; font-size: 24px; flex-wrap: wrap; }
+        .cart-btn { position: fixed; bottom: 90px; right: 20px; font-size: 28px; background: linear-gradient(135deg, #60a5fa, #f472b6); padding: 12px 16px; border-radius: 50%; text-decoration: none; z-index: 999; box-shadow: 0 4px 15px rgba(96,165,250,0.4); animation: bounce 2s infinite; }
+        .cart-count { position: absolute; top: -5px; right: -5px; background: #ef4444; color: white; font-size: 11px; font-weight: bold; padding: 2px 6px; border-radius: 50%; }
+        .cart-popup { display: none; position: fixed; bottom: 150px; right: 20px; width: 320px; background: white; border: 2px solid #e0e7ff; border-radius: 15px; padding: 20px; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .cart-popup h3 { color: #60a5fa; margin-bottom: 15px; }
+        .cart-item { display: flex; justify-content: space-between; margin: 10px 0; font-size: 14px; }
+        .cart-item button { background: #ef4444; border: none; color: white; padding: 2px 8px; border-radius: 5px; cursor: pointer; }
+        .cart-total { font-weight: bold; margin-top: 15px; font-size: 16px; color: #60a5fa; }
+        .btn-checkout { width: 100%; background: #25D366; color: white; padding: 12px; border: none; border-radius: 10px; margin-top: 10px; font-weight: bold; cursor: pointer; }
+        .btn-close { width: 100%; background: #94a3b8; color: white; padding: 10px; border: none; border-radius: 10px; margin-top: 5px; cursor: pointer; }
+        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 99; animation: bounce 2s infinite; box-shadow: 0 0 20px rgba(37,211,102,0.5); }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        footer { margin-top: 60px; padding: 30px 20px; text-align: center; border-top: 1px solid #e0e7ff; color: #94a3b8; font-size: 13px; }
+        @media(max-width: 750px) { .products, .testi-grid { grid-template-columns: 1fr; } .nav a { display: none; } .btn-discord { margin-left: 0; margin-top: 12px; } }
+    </style>
+
     <script>
         let cart = [];
         function toggleCart(){ document.getElementById('cartPopup').style.display = document.getElementById('cartPopup').style.display === 'block' ? 'none' : 'block'; }
@@ -174,16 +174,9 @@
         function checkoutWA(){
             if(cart.length === 0){ alert("Keranjang masih kosong!"); return; }
             let pesan = "Halo NR STORE 👋\nSaya mau order:\n" + cart.map(i => `- ${i.nama}: Rp${i.harga.toLocaleString('id-ID')}`).join('\n') + `\n\nTotal: Rp${cart.reduce((a,b) => a+b.harga, 0).toLocaleString('id-ID')}\n\n`;
-            
-            if(cart.some(i => i.nama.includes('Jasa Roblox Plus'))){
-                pesan += `👤 Username Roblox:\n[isi username kamu]\n\n🔐 Untuk proses aktivasi, saya akan mengikuti instruksi yang diberikan admin.\n\n🔒 Data akun yang diberikan untuk proses aktivasi hanya digunakan untuk keperluan order dan tidak disebarluaskan.\n\n`;
-            }
-            if(cart.some(i => i.nama.includes('Discord Boost'))){
-                pesan += `🚀 Link/ID Server Discord:\n[isi link atau ID server]\n\n`;
-            }
-            if(cart.some(i => i.nama.includes('Jasa Pulihin Akun Roblox'))){
-                pesan += `🔓 DATA UNTUK KONSULTASI RECOVERY:\n👤 Username Roblox: [isi]\n📧 Email Lama: [isi jika masih ingat]\n🔑 Password Lama: [isi jika masih ingat]\n📝 Kronologi Masalah: [kena hack / lupa sandi / dll]\n\nMohon dicek dulu ya kak. Terima kasih 🙏\n\n`;
-            }
+            if(cart.some(i => i.nama.includes('Jasa Roblox Plus'))){ pesan += `👤 Username Roblox:\n[isi username kamu]\n\n🔐 Untuk proses aktivasi, saya akan mengikuti instruksi yang diberikan admin.\n\n🔒 Data akun yang diberikan untuk proses aktivasi hanya digunakan untuk keperluan order dan tidak disebarluaskan.\n\n`; }
+            if(cart.some(i => i.nama.includes('Discord Boost'))){ pesan += `🚀 Link/ID Server Discord:\n[isi link atau ID server]\n\n`; }
+            if(cart.some(i => i.nama.includes('Jasa Pulihin Akun Roblox'))){ pesan += `🔓 DATA UNTUK KONSULTASI RECOVERY:\n👤 Username Roblox: [isi]\n📧 Email Lama: [isi jika masih ingat]\n🔑 Password Lama: [isi jika masih ingat]\n📝 Kronologi Masalah: [kena hack / lupa sandi / dll]\n\nMohon dicek dulu ya kak. Terima kasih 🙏\n\n`; }
             pesan += `Mohon dikirimkan QRIS untuk pembayarannya ya kak. Terima kasih 🙏`;
             window.open(`https://wa.me/6283898005030?text=${encodeURIComponent(pesan)}`);
         }
