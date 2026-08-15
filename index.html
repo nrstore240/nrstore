@@ -24,97 +24,96 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {background: #f8faff; color: #333; font-family: 'Poppins', sans-serif; overflow-x: hidden;}
-       .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-       .fade-in.show { opacity: 1; transform: translateY(0); }
+      .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+      .fade-in.show { opacity: 1; transform: translateY(0); }
 
-        /* HEADER BARU V1 */
-        header { position: sticky; top: 0; z-index: 999; background: rgba(255, 255, 255, 0.9); border-bottom: 1px solid #e0e7ff; padding: 12px 20px; backdrop-filter: blur(12px); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-       .nav { max-width: 1150px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
-       .logo { font-family: 'Baloo 2', cursive; font-size: 28px; font-weight: 800; letter-spacing: 1px; color: #1e3a8a; }
-       .logo span { color: #60a5fa; }
-       .search-bar { display: flex; flex: 1; max-width: 400px; }
-       .search-bar input { flex: 1; padding: 10px 15px; border: 2px solid #e0e7ff; border-radius: 50px 0 0 50px; outline: none; font-family: 'Poppins'; }
-       .search-bar button { padding: 10px 18px; background: #60a5fa; border: none; border-radius: 0 50px 50px 0; cursor: pointer; color: white; font-size: 16px; }
-       .nav nav { display: flex; gap: 18px; }
-       .nav a { color: #333; text-decoration: none; font-size: 14px; font-weight: 600; transition:.2s; }
-       .nav a:hover { color: #60a5fa; }
-       .nav-icons { display: flex; gap: 15px; align-items: center; }
-       .cart-icon { font-size: 24px; position: relative; text-decoration: none; }
-       .cart-count { position: absolute; top: -5px; right: -8px; background: #f472b6; color: white; font-size: 10px; padding: 2px 6px; border-radius: 50%; font-weight: 700; }
+        header { position: sticky; top: 0; z-index: 9999; background: rgba(255, 255, 255, 0.9); border-bottom: 1px solid #e0e7ff; padding: 12px 20px; backdrop-filter: blur(12px); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+      .nav { max-width: 1150px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+      .logo { font-family: 'Baloo 2', cursive; font-size: 28px; font-weight: 800; letter-spacing: 1px; color: #1e3a8a; }
+      .logo span { color: #60a5fa; }
+      .search-bar { display: flex; flex: 1; max-width: 400px; position: relative; }
+      .search-bar input { flex: 1; padding: 10px 15px; border: 2px solid #e0e7ff; border-radius: 50px 0 0 50px; outline: none; font-family: 'Poppins'; }
+      .search-bar button { padding: 10px 18px; background: #60a5fa; border: none; border-radius: 0 50px 50px 0; cursor: pointer; color: white; font-size: 16px; }
+      .nav nav { display: flex; gap: 18px; }
+      .nav a { color: #333; text-decoration: none; font-size: 14px; font-weight: 600; transition:.2s; }
+      .nav a:hover { color: #60a5fa; }
+      .nav-icons { display: flex; gap: 15px; align-items: center; }
+      .cart-icon { font-size: 24px; position: relative; text-decoration: none; cursor: pointer; }
 
-        /* HERO BARU V1 */
        .hero { max-width: 1150px; margin: auto; padding: 70px 20px 55px; text-align: center; background: linear-gradient(135deg, #60a5fa 0%, #f472b6 100%); color: white; border-radius: 0 0 30px 30px; }
-       .banner { width: 100%; max-width: 900px; margin: 25px auto; border-radius: 18px; overflow: hidden; box-shadow: 0 0 30px rgba(0,0,0,0.2); }
-       .banner img { width: 100%; height: auto; }
-       .badge { display: inline-block; background: white; border: 2px solid #e0e7ff; padding: 8px 14px; border-radius: 30px; color: #1e3a8a; font-size: 13px; font-weight: 600; margin: 5px; }
-       .trust { display: flex; justify-content: center; gap: 20px; margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.9); flex-wrap: wrap; }
-       .hero h1 { font-family: 'Baloo 2', cursive; font-size: clamp(38px, 9vw, 72px); line-height: 1; margin-bottom: 18px; color: white; }
-       .hero h1 span { color: #fef08a; }
-       .hero p { color: rgba(255,255,255,0.95); font-size: 16px; line-height: 1.6; max-width: 600px; margin: auto; }
-       .btn { display: inline-block; margin-top: 28px; background: white; color: #1e3a8a; text-decoration: none; padding: 14px 24px; border-radius: 50px; font-weight: 800; font-family: 'Baloo 2'; transition:.3s; border: none; cursor: pointer; }
-       .btn:hover { transform: translateY(-3px); box-shadow: 0 0 25px rgba(0,0,0,0.2); }
-       .btn-discord { background: transparent; color: white; border: 2px solid white; margin-left: 12px; }
-       .btn-discord:hover { background: white; color: #1e3a8a; }
+      .banner { width: 100%; max-width: 900px; margin: 25px auto; border-radius: 18px; overflow: hidden; box-shadow: 0 0 30px rgba(0,0,0,0.2); }
+      .banner img { width: 100%; height: auto; }
+      .badge { display: inline-block; background: white; border: 2px solid #e0e7ff; padding: 8px 14px; border-radius: 30px; color: #1e3a8a; font-size: 13px; font-weight: 600; margin: 5px; }
+      .trust { display: flex; justify-content: center; gap: 20px; margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.9); flex-wrap: wrap; }
+      .hero h1 { font-family: 'Baloo 2', cursive; font-size: clamp(38px, 9vw, 72px); line-height: 1; margin-bottom: 18px; color: white; }
+      .hero h1 span { color: #fef08a; }
+      .hero p { color: rgba(255,255,255,0.95); font-size: 16px; line-height: 1.6; max-width: 600px; margin: auto; }
+      .btn { display: inline-block; margin-top: 28px; background: white; color: #1e3a8a; text-decoration: none; padding: 14px 24px; border-radius: 50px; font-weight: 800; font-family: 'Baloo 2'; transition:.3s; border: none; cursor: pointer; }
+      .btn:hover { transform: translateY(-3px); box-shadow: 0 0 25px rgba(0,0,0,0.2); }
+      .btn-discord { background: transparent; color: white; border: 2px solid white; margin-left: 12px; }
+      .btn-discord:hover { background: white; color: #1e3a8a; }
 
-       .container { max-width: 1150px; margin: auto; padding: 20px; }
-       .title { text-align: center; margin: 35px 0 25px; }
-       .title h2 { font-family: 'Baloo 2'; font-size: 32px; margin-bottom: 8px; color: #1e3a8a; }
-       .title p { color: #64748b; }
+      .container { max-width: 1150px; margin: auto; padding: 20px; }
+      .title { text-align: center; margin: 35px 0 25px; }
+      .title h2 { font-family: 'Baloo 2'; font-size: 32px; margin-bottom: 8px; color: #1e3a8a; }
+      .title p { color: #64748b; }
 
-        /* CARD BARU V1 ADA EFEK SHINE */
-       .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-       .card { background: white; border: 2px solid #e0e7ff; border-radius: 20px; padding: 22px; transition:.3s; position: relative; box-shadow: 0 4px 15px rgba(96, 165, 250, 0.1); overflow: hidden; }
-       .card:hover { transform: translateY(-5px); border-color: #60a5fa; box-shadow: 0 10px 25px rgba(96, 165, 250, 0.2); }
-       .card::before { content: ''; position: absolute; top: -50%; left: -100%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(96,165,250,0.2), transparent); transform: rotate(45deg); opacity: 0; transition: 0.5s; }
-       .card:hover::before { opacity: 1; animation: shine 0.8s; }
+      .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+      .card { background: white; border: 2px solid #e0e7ff; border-radius: 20px; padding: 22px; transition:.3s; position: relative; box-shadow: 0 4px 15px rgba(96, 165, 250, 0.1); overflow: hidden; }
+      .card:hover { transform: translateY(-5px); border-color: #60a5fa; box-shadow: 0 10px 25px rgba(96, 165, 250, 0.2); }
+      .card::before { content: ''; position: absolute; top: -50%; left: -100%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(96,165,250,0.2), transparent); transform: rotate(45deg); opacity: 0; transition: 0.5s; pointer-events: none; z-index: 0; } /* FIX: pointer-events none */
+      .card:hover::before { opacity: 1; animation: shine 0.8s; }
         @keyframes shine { 0% { left: -100%; } 100% { left: 100%; } }
 
-       .bestseller { position: absolute; top: -10px; right: -10px; background: #facc15; color: #000; padding: 5px 10px; border-radius: 20px; font-size: 11px; font-weight: 800; font-family: 'Baloo 2'; }
-       .card-icon { font-size: 35px; margin-bottom: 15px; }
-       .card h3 { font-family: 'Baloo 2'; font-size: 18px; margin-bottom: 9px; color: #1e3a8a; }
-       .desc { color: #64748b; font-size: 13px; line-height: 1.5; min-height: 38px; }
-       .price { font-size: 22px; font-weight: bold; margin: 18px 0; color: #60a5fa; }
-       .price s { font-size: 14px; color: #94a3b8; margin-right: 8px; }
-       .btn-group{display:flex; gap:8px; margin-top:10px;}
-       .buy-now{flex:1; padding:12px; background:linear-gradient(90deg, #60a5fa, #f472b6); color:white; border:none; border-radius:50px; font-weight:800; font-family: 'Baloo 2'; cursor:pointer; font-size:15px;}
-       .buy-now:hover{transform: translateY(-2px); box-shadow: 0 0 15px rgba(244,114,182,0.4);}
-       .buy-outline{flex:1; padding:12px; background:transparent; color:#60a5fa; border:2px solid #60a5fa; border-radius:50px; font-weight:800; font-family: 'Baloo 2'; cursor:pointer; font-size:15px;}
+       .card * { position: relative; z-index: 2; } /* FIX: isi card diatas efek shine */
 
-       .cart-btn { position: fixed; bottom: 160px; right: 20px; font-size: 28px; background: linear-gradient(135deg, #60a5fa, #f472b6); width: 55px; height: 55px; display:flex; align-items:center; justify-content:center; border-radius: 50%; text-decoration: none; z-index: 9999; box-shadow: 0 4px 15px rgba(96,165,250,0.4); animation: bounce 2s infinite; }
-       .cart-popup { display: none; position: fixed; bottom: 220px; right: 20px; width: 320px; background: white; border: 2px solid #e0e7ff; border-radius: 15px; padding: 20px; z-index: 10000; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-       .cart-popup h3 { color: #60a5fa; margin-bottom: 15px; font-family: 'Baloo 2'; }
-       .cart-item { display: flex; justify-content: space-between; margin: 10px 0; font-size: 14px; }
-       .cart-item button { background: #ef4444; border: none; color: white; padding: 2px 8px; border-radius: 5px; cursor: pointer; }
-       .cart-total { font-weight: bold; margin-top: 15px; font-size: 16px; color: #60a5fa; }
-       .btn-checkout { width: 100%; background: #25D366; color: white; padding: 12px; border: none; border-radius: 10px; margin-top: 10px; font-weight: bold; cursor: pointer; font-family: 'Baloo 2'; }
-       .btn-close { width: 100%; background: #94a3b8; color: white; padding: 10px; border: none; border-radius: 10px; margin-top: 5px; cursor: pointer; font-family: 'Baloo 2'; }
-       .notif-order { position: fixed; bottom: 20px; left: 20px; background: white; border: 2px solid #60a5fa; border-radius: 12px; padding: 15px; width: 300px; box-shadow: 0 5px 25px rgba(96,165,250,0.3); display: flex; gap: 12px; align-items: center; z-index: 9998; opacity: 0; transform: translateX(-400px); transition: all 0.5s ease; }
-       .notif-order.show { opacity: 1; transform: translateX(0); }
-       .notif-icon { font-size: 35px; }
-       .notif-text b { color: #1e3a8a; font-size: 14px; }
-       .notif-text p { color: #64748b; font-size: 12px; margin: 3px 0; }
-       .notif-time { color: #94a3b8; font-size: 11px; }
-       .wa-float { position: fixed; bottom: 90px; right: 20px; background: #25D366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 9999; animation: bounce 2s infinite; box-shadow: 0 0 20px rgba(37,211,102,0.5); }
+      .bestseller { position: absolute; top: -10px; right: -10px; background: #facc15; color: #000; padding: 5px 10px; border-radius: 20px; font-size: 11px; font-weight: 800; font-family: 'Baloo 2'; z-index: 3; }
+      .card-icon { font-size: 35px; margin-bottom: 15px; }
+      .card h3 { font-family: 'Baloo 2'; font-size: 18px; margin-bottom: 9px; color: #1e3a8a; }
+      .desc { color: #64748b; font-size: 13px; line-height: 1.5; min-height: 38px; }
+      .price { font-size: 22px; font-weight: bold; margin: 18px 0; color: #60a5fa; }
+      .price s { font-size: 14px; color: #94a3b8; margin-right: 8px; }
+      .btn-group{display:flex; gap:8px; margin-top:10px;}
+      .buy-now{flex:1; padding:12px; background:linear-gradient(90deg, #60a5fa, #f472b6); color:white; border:none; border-radius:50px; font-weight:800; font-family: 'Baloo 2'; cursor:pointer; font-size:15px; z-index: 3;}
+      .buy-now:hover{transform: translateY(-2px); box-shadow: 0 0 15px rgba(244,114,182,0.4);}
+      .buy-outline{flex:1; padding:12px; background:transparent; color:#60a5fa; border:2px solid #60a5fa; border-radius:50px; font-weight:800; font-family: 'Baloo 2'; cursor:pointer; font-size:15px; z-index: 3;}
+
+      .cart-btn { position: fixed; bottom: 160px; right: 20px; font-size: 28px; background: linear-gradient(135deg, #60a5fa, #f472b6); width: 55px; height: 55px; display:flex; align-items:center; justify-content:center; border-radius: 50%; text-decoration: none; z-index: 9999; box-shadow: 0 4px 15px rgba(96,165,250,0.4); animation: bounce 2s infinite; cursor: pointer; }
+      .cart-count { position: absolute; top: -5px; right: -5px; background: #ef4444; color: white; font-size: 11px; font-weight: bold; padding: 2px 6px; border-radius: 50%; }
+      .cart-popup { display: none; position: fixed; bottom: 220px; right: 20px; width: 320px; background: white; border: 2px solid #e0e7ff; border-radius: 15px; padding: 20px; z-index: 10000; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+      .cart-popup h3 { color: #60a5fa; margin-bottom: 15px; font-family: 'Baloo 2'; }
+      .cart-item { display: flex; justify-content: space-between; margin: 10px 0; font-size: 14px; }
+      .cart-item button { background: #ef4444; border: none; color: white; padding: 2px 8px; border-radius: 5px; cursor: pointer; }
+      .cart-total { font-weight: bold; margin-top: 15px; font-size: 16px; color: #60a5fa; }
+      .btn-checkout { width: 100%; background: #25D366; color: white; padding: 12px; border: none; border-radius: 10px; margin-top: 10px; font-weight: bold; cursor: pointer; font-family: 'Baloo 2'; }
+      .btn-close { width: 100%; background: #94a3b8; color: white; padding: 10px; border: none; border-radius: 10px; margin-top: 5px; cursor: pointer; font-family: 'Baloo 2'; }
+      .notif-order { position: fixed; bottom: 20px; left: 20px; background: white; border: 2px solid #60a5fa; border-radius: 12px; padding: 15px; width: 300px; box-shadow: 0 5px 25px rgba(96,165,250,0.3); display: flex; gap: 12px; align-items: center; z-index: 9998; opacity: 0; transform: translateX(-400px); transition: all 0.5s ease; }
+      .notif-order.show { opacity: 1; transform: translateX(0); }
+      .notif-icon { font-size: 35px; }
+      .notif-text b { color: #1e3a8a; font-size: 14px; }
+      .notif-text p { color: #64748b; font-size: 12px; margin: 3px 0; }
+      .notif-time { color: #94a3b8; font-size: 11px; }
+      .wa-float { position: fixed; bottom: 90px; right: 20px; background: #25D366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 9999; animation: bounce 2s infinite; box-shadow: 0 0 20px rgba(37,211,102,0.5); }
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-       .info { margin-top: 55px; background: white; border: 2px solid #e0e7ff; border-radius: 18px; padding: 25px; }
-       .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
-       .testi { background: #f8f9ff; padding: 15px; border-radius: 12px; font-size: 13px; border-left: 3px solid #60a5fa; }
-       .testi b { color: #60a5fa; }
-       .testi img {width: 100%;border-radius: 10px;margin-bottom: 10px;border: 1px solid #e0e7ff;}
-       .faq-item { margin-bottom: 15px; padding: 12px; background: #f8f9ff; border-radius: 8px; }
-       .faq-item b { color: #60a5fa; }
-       .payment { display: flex; justify-content: center; gap: 15px; margin-top: 15px; font-size: 24px; flex-wrap: wrap; }
+      .info { margin-top: 55px; background: white; border: 2px solid #e0e7ff; border-radius: 18px; padding: 25px; }
+      .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+      .testi { background: #f8f9ff; padding: 15px; border-radius: 12px; font-size: 13px; border-left: 3px solid #60a5fa; }
+      .testi b { color: #60a5fa; }
+      .testi img {width: 100%;border-radius: 10px;margin-bottom: 10px;border: 1px solid #e0e7ff;}
+      .faq-item { margin-bottom: 15px; padding: 12px; background: #f8f9ff; border-radius: 8px; }
+      .faq-item b { color: #60a5fa; }
+      .payment { display: flex; justify-content: center; gap: 15px; margin-top: 15px; font-size: 24px; flex-wrap: wrap; }
         footer { background: white; margin-top: 60px; padding: 40px 20px; text-align: center; border-top: 1px solid #e0e7ff; color: #94a3b8; font-size: 13px; }
 
         @media(max-width: 750px) {
-           .search-bar,.nav nav { display: none; }
-           .products,.testi-grid { grid-template-columns: 1fr; }
-           .btn-discord { margin-left: 0; margin-top: 12px; }
-           .cart-popup { width: 90%; right: 5%; bottom: 120px; }
-           .cart-btn { bottom: 160px; }
-           .wa-float { bottom: 90px; }
-           .notif-order { width: 85%; left: 50%; transform: translateX(-50%) translateY(100px); bottom: 100px; }
-           .notif-order.show { transform: translateX(-50%) translateY(0); }
+          .search-bar,.nav nav { display: none; }
+          .products,.testi-grid { grid-template-columns: 1fr; }
+          .btn-discord { margin-left: 0; margin-top: 12px; }
+          .cart-popup { width: 90%; right: 5%; bottom: 120px; }
+          .cart-btn { bottom: 160px; }
+          .wa-float { bottom: 90px; }
+          .notif-order { width: 85%; left: 50%; transform: translateX(-50%) translateY(100px); bottom: 100px; }
+          .notif-order.show { transform: translateX(-50%) translateY(0); }
         }
     </style>
 </head>
@@ -127,8 +126,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="nav">
             <div class="logo">NR <span>STORE</span></div>
             <div class="search-bar">
-                <input type="text" placeholder="Cari Robux, Discord Boost...">
-                <button>🔍</button>
+                <input type="text" id="searchInput" placeholder="Cari Robux, Discord Boost...">
+                <button onclick="searchProduk()">🔍</button>
             </div>
             <nav>
                 <a href="#produk">Produk</a>
@@ -138,7 +137,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a href="#kontak">Kontak</a>
             </nav>
             <div class="nav-icons">
-                <a href="#" class="cart-icon" onclick="toggleCart()">🛒 <span class="cart-count">0</span></a>
+                <div class="cart-icon" onclick="toggleCart()">🛒 <span class="cart-count">0</span></div>
             </div>
         </div>
     </header>
@@ -156,7 +155,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
         <div class="title fade-in" id="produk"><h2>Produk Terlaris</h2><p>Harga terbaru NR STORE</p></div>
         <!-- PRODUK DIMULAI DISINI - 100% ASLI PUNYAMU -->
-        <div class="products">
+        <div class="products" id="produkList">
             <div class="card fade-in"><div class="bestseller">🔥 TERLARIS</div><div class="card-icon">⏣</div><h3>500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price"><s>Rp80.000</s> Rp75.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('500 Robux', 75000)">⚡ BELI SEKARANG</button><button class="buy-outline" onclick="addToCart('500 Robux', 75000)">🛒 KERANJANG</button></div></div>
             <div class="card fade-in"><div class="bestseller">🔥 TERLARIS</div><div class="card-icon">⏣</div><h3>1.000 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price"><s>Rp155.000</s> Rp150.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1000 Robux', 150000)">⚡ BELI SEKARANG</button><button class="buy-outline" onclick="addToCart('1000 Robux', 150000)">🛒 KERANJANG</button></div></div>
             <div class="card fade-in"><div class="card-icon">⏣</div><h3>1500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp225.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1500 Robux', 225000)">⚡ BELI SEKARANG</button><button class="buy-outline" onclick="addToCart('1500 Robux', 225000)">🛒 KERANJANG</button></div></div>
@@ -171,7 +170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="card fade-in"><div class="card-icon">🚀</div><h3>14× Discord Boost</h3><div class="desc">Booster Server Discord • 1 Bulan</div><div class="price">Rp90.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('14x Discord Boost 1 Bulan', 90000)">⚡ BELI SEKARANG</button><button class="buy-outline" onclick="addToCart('14x Discord Boost 1 Bulan', 90000)">🛒 KERANJANG</button></div></div>
             <div class="card fade-in"><div class="card-icon">🚀</div><h3>14× Discord Boost</h3><div class="desc">Booster Server Discord • 3 Bulan</div><div class="price">Rp190.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('14x Discord Boost 3 Bulan', 190000)">⚡ BELI SEKARANG</button><button class="buy-outline" onclick="addToCart('14x Discord Boost 3 Bulan', 190000)">🛒 KERANJANG</button></div></div>
             <div class="card fade-in"><div class="bestseller">🛡️ LAYANAN</div><div class="card-icon">🔓</div><h3>Jasa Pulihin Akun Roblox</h3><div class="desc">Recovery Akun Kena Hack/Lupa Email/Sandi/Lupa V2L/Lupa Code Authenticator • Estimasi 1 - 5 Hari Tergantung Permasalahan• Garansi</div><div class="price">Konsultasi Gratis</div><button class="buy-now" onclick="konsultasiWA()" style="width:100%">💬 KONSULTASI GRATIS</button></div>
-            </div>
+      </div>
 
         <div class="info fade-in" id="kenapa" style="background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%); border: none; box-shadow: 0 4px 20px rgba(96,165,250,0.1);">
             <div class="title"><h2 style="background: linear-gradient(90deg, #60a5fa, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">KENAPA HARUS NR STORE?</h2><p>Dipercaya 1000+ Gamers di Seluruh Indonesia</p></div>
@@ -208,7 +207,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
     
-    <a href="#" class="cart-btn" onclick="toggleCart()">🛒 <span class="cart-count">0</span></a>
+    <div class="cart-btn" onclick="toggleCart()">🛒 <span class="cart-count">0</span></div>
     <div id="cartPopup" class="cart-popup"><h3>🛒 Keranjang Kamu</h3><div id="cartItems">Keranjang kosong</div><p class="cart-total">Total: <span id="cartTotal">Rp0</span></p><button onclick="checkoutWA()" class="btn-checkout">Checkout via WA</button><button onclick="toggleCart()" class="btn-close">Tutup</button></div>
     <a class="wa-float" href="https://wa.me/6283898005030" target="_blank">💬</a>
     <footer>© 2026 NR STORE • 100% Aman & Terpercaya</footer>
@@ -228,7 +227,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         function addToCart(nama, harga){ cart.push({nama, harga}); updateCart(); alert(nama + " ditambahkan ke keranjang!") }
         function removeFromCart(index){ cart.splice(index, 1); updateCart(); }
         function updateCart(){
-            document.querySelector('.cart-count').innerText = cart.length;
+            document.querySelectorAll('.cart-count').forEach(el => el.innerText = cart.length);
             let total = cart.reduce((a,b) => a+b.harga, 0);
             document.getElementById('cartTotal').innerText = 'Rp' + total.toLocaleString('id-ID');
             let itemsDiv = document.getElementById('cartItems');
@@ -253,6 +252,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             pesan += `Mohon dikirimkan QRIS untuk pembayarannya ya kak. Terima kasih 🙏`;
             window.open(`https://wa.me/6283898005030?text=${encodeURIComponent(pesan)}`);
         }
+        function searchProduk(){
+            let keyword = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.querySelectorAll('#produkList .card');
+            let found = false;
+            cards.forEach(card => {
+                let text = card.innerText.toLowerCase();
+                if(text.includes(keyword) && keyword !== ''){
+                    card.style.border = '3px solid #f472b6';
+                    if(!found) card.scrollIntoView({behavior: 'smooth', block: 'center'});
+                    found = true;
+                } else {
+                    card.style.border = '2px solid #e0e7ff';
+                }
+            });
+            if(!found && keyword !== '') alert('Produk "'+keyword+'" tidak ditemukan');
+        }
+        document.getElementById('searchInput').addEventListener('keypress', function(e){
+            if(e.key === 'Enter') searchProduk();
+        });
         const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); } }); }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         const userFake = ["xX_ProGamer_Xx", "QueenRoblox_01", "Itz_BudiYT", "NoobMaster69", "Sakura_Chan", "DarkLord_12", "NadiaaBuild", "FajarGfx", "AlifPvP", "CitraBloxx"];
@@ -268,4 +286,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         setTimeout(showNotif, 3000);
     </script>
 </body>
-</html>
+</html>      
