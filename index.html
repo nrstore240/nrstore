@@ -32,16 +32,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .fitur-card img{width:80px;margin-bottom:12px}
 .produk h2{text-align:center;margin:40px 0 20px;font-size:28px;background:linear-gradient(90deg,#60a5fa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .products{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.card{background:#111;border-radius:15px;padding:15px;border:1px solid #222;transition:0.3s;position:relative}
+.card{background:#111;border-radius:15px;padding:15px;border:1px solid #222;transition:0.3s;position:relative;display:flex;flex-direction:column;min-height:310px}
 .card:hover{transform:translateY(-5px);border-color:#ff0044;box-shadow:0 0 25px #ff0044}
 .bestseller{position:absolute;top:10px;right:10px;background:linear-gradient(90deg,#ff0044,#ec4899);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700}
 .card-icon{font-size:40px;text-align:center;margin:10px 0}
 .card-icon img{width:70px;height:70px;object-fit:contain}
 .card h3{font-size:16px;margin-bottom:5px;text-align:center}
 .desc{color:#aaa;font-size:12px;margin-bottom:10px;text-align:center;min-height:35px}
-.price{font-size:18px;font-weight:700;color:#60a5fa;margin-bottom:10px;text-align:center}
+.price{font-size:18px;font-weight:700;color:#60a5fa;margin-bottom:10px;text-align:center;min-height:40px}
 .price s{color:#555;font-size:12px;display:block;text-decoration:line-through}
-.btn-group{display:flex;gap:8px}
+.btn-group{display:flex;gap:8px;margin-top:auto;width:100%}
 .buy-now{flex:2;background:linear-gradient(90deg,#60a5fa,#ec4899);border:none;color:#fff;padding:10px;border-radius:8px;font-weight:700;cursor:pointer;font-size:12px}
 .buy-outline{flex:1;background:transparent;border:1px solid #60a5fa;color:#60a5fa;padding:10px;border-radius:8px;cursor:pointer;font-size:12px}
 @media(max-width:768px){.fitur{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,1fr)}}
@@ -86,7 +86,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="card fade-in"><div class="card-icon"><img src="02_jasa_roblox_premium.png"></div><h3>Jasa Roblox Plus</h3><div class="desc">Jasa Aktivasi Roblox Plus 1 Bulan</div><div class="price">Rp115.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('Jasa Roblox Plus', 115000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('Jasa Roblox Plus', 115000)">🛒</button></div></div>
     <div class="card fade-in"><div class="card-icon"><img src="03_discord_boost_14x_1_bulan.png"></div><h3>14× Discord Boost</h3><div class="desc">Booster Server Discord • 1 Bulan</div><div class="price">Rp90.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('14x Discord Boost 1 Bulan', 90000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('14x Discord Boost 1 Bulan', 90000)">🛒</button></div></div>
     <div class="card fade-in"><div class="card-icon"><img src="03_discord_boost_14x_1_bulan.png"></div><h3>14× Discord Boost</h3><div class="desc">Booster Server Discord • 3 Bulan</div><div class="price">Rp190.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('14x Discord Boost 3 Bulan', 190000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('14x Discord Boost 3 Bulan', 190000)">🛒</button></div></div>
-    <div class="card fade-in"><div class="bestseller">🛡️ LAYANAN</div><div class="card-icon"><img src="05_pulihkan_akun_roblox.png"></div><h3>Jasa Pulihin Akun Roblox</h3><div class="desc">Recovery Akun Kena Hack/Lupa Email/Sandi/V2L • Estimasi 1-5 Hari • Garansi</div><div class="price">Konsultasi Gratis</div><button class="buy-now" onclick="konsultasiWA()" style="width:100%">💬 KONSULTASI GRATIS</button></div>
+    <div class="card fade-in"><div class="bestseller">🛡️ LAYAN</div><div class="card-icon"><img src="05_pulihkan_akun_roblox.png"></div><h3>Jasa Pulihin Akun Roblox</h3><div class="desc">Recovery Akun Kena Hack/Lupa Email/Sandi/V2L • Estimasi 1-5 Hari • Garansi</div><div class="price">Konsultasi Gratis</div><button class="buy-now" onclick="konsultasiWA()" style="width:100%">💬 KONSULTASI GRATIS</button></div>
   </div>
   </section>
   <style>
@@ -102,12 +102,28 @@ footer a{color:#aaa;text-decoration:none;font-size:11px;font-weight:600;text-ali
 footer a img{width:28px;height:28px}
 footer a:hover{color:#ff0044}
 footer a.active{color:#ff0044}
-.cs-float{position:fixed;bottom:95px;right:20px;z-index:998;animation:shake 2s infinite}
+.cs-float{position:fixed;bottom:95px;right:15px;z-index:998;animation:shake 2s infinite}
 .cs-float img{width:55px;height:55px;border-radius:50%;box-shadow:0 0 20px #ff0044;border:2px solid #ff0044;cursor:pointer;transition:0.3s}
 .cs-float img:hover{transform:scale(1.1)}
 @keyframes shake {0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:1000;display:none;justify-content:center;align-items:center;animation:fadeIn 0.3s}
+.popup-box{position:relative;max-width:90%;max-height:80%;border-radius:15px;overflow:hidden;box-shadow:0 0 40px #ff0044}
+.popup-box img{width:100%;height:auto;display:block;cursor:pointer}
+.popup-close{position:absolute;top:10px;right:15px;font-size:35px;color:#fff;background:#000;border-radius:50%;width:35px;height:35px;line-height:30px;text-align:center;cursor:pointer;font-weight:700;z-index:1001}
+.popup-close:hover{background:#ff0044}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @media(max-width:768px){.bukti-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
+
+<!-- POPUP PROMO DISCORD -->
+<div id="popupDiscord" class="popup-overlay">
+  <div class="popup-box">
+    <span class="popup-close" onclick="closePopup()">&times;</span>
+    <a href="https://discord.gg/join-nrstore" target="_blank">
+      <img src="update.promo.discord.png" alt="Promo Discord NR STORE">
+    </a>
+  </div>
+</div>
 
 <section class="container cara-bayar fade-in">
   <img src="10_pembayaran_mudah_cepat.png">
@@ -118,10 +134,10 @@ footer a.active{color:#ff0044}
 <section class="container info fade-in" id="kenapa">
   <div class="title"><h2 style="background: linear-gradient(90deg, #60a5fa, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;font-size:26px">KENAPA HARUS NR STORE?</h2><p style="color:#aaa">Dipercaya 1000+ Gamers di Seluruh Indonesia</p></div>
   <div class="products" style="gap: 15px;">
-    <div class="card" style="text-align: center; padding: 25px 20px;"><div style="font-size: 40px; margin-bottom: 10px;">⚡</div><h3>Proses 5 Menit</h3><div class="desc">Robux langsung masuk setelah bayar. Ga pake lama</div></div>
-    <div class="card" style="text-align: center; padding: 25px 20px;"><div style="font-size: 40px; margin-bottom: 10px;">🔒</div><h3>100% Amanah</h3><div class="desc">Garansi uang kembali jika tidak masuk</div></div>
-    <div class="card" style="text-align: center; padding: 25px 20px;"><div style="font-size: 40px; margin-bottom: 10px;">💬</div><h3>Support 24/7</h3><div class="desc">Admin online terus. Rata2 balas 5 menit</div></div>
-    <div class="card" style="text-align: center; padding: 25px 20px;"><a href="https://discord.gg/join-nrstore" target="_blank" style="text-decoration:none;color:inherit"><div style="font-size: 40px; margin-bottom: 10px;">💯</div><h3>1000+ Testimoni</h3><div class="desc">Bukti nyata di Discord kami. Klik untuk join</div></a></div>
+    <div class="card" style="text-align: center; padding: 25px 20px;min-height:auto"><div style="font-size: 40px; margin-bottom: 10px;">⚡</div><h3>Proses 5 Menit</h3><div class="desc">Robux langsung masuk setelah bayar. Ga pake lama</div></div>
+    <div class="card" style="text-align: center; padding: 25px 20px;min-height:auto"><div style="font-size: 40px; margin-bottom: 10px;">🔒</div><h3>100% Amanah</h3><div class="desc">Garansi uang kembali jika tidak masuk</div></div>
+    <div class="card" style="text-align: center; padding: 25px 20px;min-height:auto"><div style="font-size: 40px; margin-bottom: 10px;">💬</div><h3>Support 24/7</h3><div class="desc">Admin online terus. Rata2 balas 5 menit</div></div>
+    <div class="card" style="text-align: center; padding: 25px 20px;min-height:auto"><a href="https://discord.gg/join-nrstore" target="_blank" style="text-decoration:none;color:inherit"><div style="font-size: 40px; margin-bottom: 10px;">💯</div><h3>1000+ Testimoni</h3><div class="desc">Bukti nyata di Discord kami. Klik untuk join</div></a></div>
   </div>
 </section>
 
@@ -158,6 +174,15 @@ const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
+
+window.onload = function(){
+  setTimeout(function(){
+    document.getElementById('popupDiscord').style.display = 'flex';
+  }, 2000);
+};
+function closePopup(){
+  document.getElementById('popupDiscord').style.display = 'none';
+}
 
 function beliSekarang(produk, harga){
   let pesan = `Halo NR STORE, saya mau beli ${produk} seharga Rp${harga.toLocaleString('id-ID')}`;
