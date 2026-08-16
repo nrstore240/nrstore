@@ -15,8 +15,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
 body{background:#0A0A0A;color:#FFFFFF}
 .header{display:flex;justify-content:space-between;align-items:center;background:#0A0A0A;padding:14px 18px;position:sticky;top:0;z-index:99;border-bottom:2px solid #C41E3A}
-.logo{font-size:26px;font-weight:900;background:linear-gradient(90deg,#E91E63,#4FC3F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent} 
-.login-btn{background:linear-gradient(90deg,#C41E3A,#E91E63);color:#FFFFFF;padding:10px 22px;border-radius:12px;font-weight:800;border:none;text-decoration:none;box-shadow:0 0 15px #C41E3A66}
+.logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:900;background:linear-gradient(90deg,#E91E63,#4FC3F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:1px}
+.logo img{width:35px;height:35px;border-radius:8px}
+.cs-btn{background:linear-gradient(135deg,#C41E3A,#E91E63);color:#FFFFFF;padding:9px 20px;border-radius:25px;font-weight:800;font-size:14px;text-decoration:none;box-shadow:0 4px 12px #C41E3A55}
 .hero{text-align:center;padding:40px 20px}
 .hero h1{font-size:32px} .hero h1 span{color:#FFD700}
 .hero p{color:#AAAAAA;margin:10px 0 20px}
@@ -61,11 +62,13 @@ h2{text-align:center;margin-bottom:20px;font-size:26px} h2 span{color:#FFD700}
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<div class="header">
-  <div>☰</div>
-  <div class="logo">NR<span>STORE</span></div>
-  <a href="https://wa.me/6283898005030" class="login-btn">CS</a>
-</div>
+<header class="header">
+  <div class="logo">
+    <img src="06_welcome_nr_store.png" alt="NR">
+    <span>NR STORE</span>
+  </div>
+  <a href="#" onclick="konsultasiWA()" class="cs-btn">CS</a>
+</header>
 
 <section class="hero">
   <img src="06_welcome_nr_store.png" style="width:120px;margin-bottom:15px">
