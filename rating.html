@@ -1,1 +1,81 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><title>Rating - NR STORE</title><style>body{background:#0a0a0a;color:#fff;font-family:Poppins;padding:20px;text-align:center}.box{background:#111;padding:25px;border-radius:12px;border:1px solid #ff0044;max-width:600px;margin:auto}h1{color:#ff0044}.bintang{color:#FFD700;font-size:40px}a{color:#60a5fa}</style></head><body><div class="box"><h1>Rating Pelanggan</h1><h2>5.0</h2><div class="bintang">★★★★★</div><p>128+ Ulasan</p><br><a href="index.html">← Kembali</a></div></body></html>
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rating - NR STORE</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0a0a0a;color:#fff;padding:20px 15px}
+.header{display:flex;justify-content:space-between;align-items:center;background:#111;padding:12px 18px;border-radius:50px;margin-bottom:25px}
+.logo{font-size:24px;font-weight:800;color:#ff0044} .logo span{color:#FFD700}
+.login-btn{background:#FFD700;color:#000;padding:10px 22px;border-radius:30px;font-weight:700;border:none;text-decoration:none}
+h1{font-size:32px;text-align:center;margin-bottom:8px}
+h1 span{color:#FFD700}
+.subtitle{color:#aaa;text-align:center;margin-bottom:25px}
+.card{background:linear-gradient(180deg,#1a0f0f 0%,#0f0a0a 100%);padding:30px 20px;border-radius:25px;text-align:center;border:1px solid #2a1a1a}
+.score{font-size:70px;font-weight:800;color:#e0e0e0;margin-bottom:10px}
+.stars{display:inline-flex;gap:6px;background:#000;padding:10px 18px;border-radius:30px;margin-bottom:10px}
+.stars span{color:#FFD700;font-size:22px}
+.total{color:#aaa;font-size:14px;margin-bottom:25px}
+.bar-row{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:14px}
+.bar-row .num{width:15px;color:#ccc}
+.bar{flex:1;height:8px;background:#1a1a1a;border-radius:10px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,#ff0044,#FFD700);border-radius:10px}
+.bar-row .count{width:35px;text-align:right;color:#aaa}
+.btn{margin-top:25px;background:#ff0044;color:#fff;padding:15px 30px;border-radius:15px;font-weight:700;font-size:16px;border:none;width:100%;cursor:pointer}
+.btn:hover{background:#e0003a}
+.footer-nav{position:fixed;bottom:0;left:0;right:0;background:#111;display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid #222}
+.footer-nav a{color:#aaa;text-decoration:none;font-size:11px;text-align:center}
+.footer-nav a:hover{color:#FFD700}
+</style></head>
+<body>
+
+<div class="header">
+  <div>☰</div>
+  <div class="logo">NR<span>STORE</span></div>
+  <a href="https://wa.me/6283898005030" class="login-btn">CS</a>
+</div>
+
+<h1>Rating <span>Pelanggan</span></h1>
+<p class="subtitle">Lihat apa kata pelanggan kami tentang layanan NR STORE</p>
+
+<div class="card">
+  <div class="score">5.0</div>
+  <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+  <p class="total">Berdasarkan <b style="color:#fff">248</b> rating</p>
+
+  <div class="bar-row">
+    <div class="num">5 ⭐</div>
+    <div class="bar"><div class="fill" style="width:98%"></div></div>
+    <div class="count">243</div>
+  </div>
+  <div class="bar-row">
+    <div class="num">4 ⭐</div>
+    <div class="bar"><div class="fill" style="width:2%"></div></div>
+    <div class="count">3</div>
+  </div>
+  <div class="bar-row">
+    <div class="num">3 ⭐</div>
+    <div class="bar"><div class="fill" style="width:1%"></div></div>
+    <div class="count">2</div>
+  </div>
+  <div class="bar-row">
+    <div class="num">2 ⭐</div>
+    <div class="bar"><div class="fill" style="width:0%"></div></div>
+    <div class="count">0</div>
+  </div>
+  <div class="bar-row">
+    <div class="num">1 ⭐</div>
+    <div class="bar"><div class="fill" style="width:0%"></div></div>
+    <div class="count">0</div>
+  </div>
+
+  <button class="btn">+ Tulis Rating</button>
+</div>
+
+<div style="height:80px"></div>
+<div class="footer-nav">
+  <a href="index.html">🏠<br>Beranda</a>
+  <a href="index.html#produk">⚡<br>Beli Robux</a>
+  <a href="rating.html">⭐<br>Rating</a>
+  <a href="https://wa.me/6283898005030">💬<br>Transaksi</a>
+</div>
+
+</body></html>
