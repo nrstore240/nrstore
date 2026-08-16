@@ -37,28 +37,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .bestseller{position:absolute;top:8px;right:8px;background:linear-gradient(90deg,#ff0044,#ec4899);padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700}
 .card-icon{font-size:40px;text-align:center;margin:8px 0}
 .card-icon img{width:60px;height:60px;object-fit:contain}
-/* FOOTER BARU 4 KOLOM RAPI */
+/* FOOTER 1 KOLOM RAPI - TANPA GARIS */
 footer-main{
   background:#0a0a0a;
-  border-top:2px solid #ff0044;
   padding:40px 20px !important;
   margin-top:50px;
+  border-top:none !important; /* HAPUS GARIS ATAS */
 }
 .footer-container{
-  display:grid;
-  grid-template-columns:repeat(4,1fr); /* 4 KOLOM SEJAJAR */
+  display:flex;
+  flex-direction:column; /* DIBUAT KE BAWAH */
   gap:30px;
-  max-width:1200px;
-  margin:0 auto;
-  text-align:left; /* RATA KIRI */
+  max-width:600px;
+  margin:0; /* RATA KIRI */
 }
-.footer-section h3{color:#ff0044;margin-bottom:15px;font-size:18px;text-align:left}
-.footer-section p{color:#aaa;font-size:14px;text-align:left;line-height:1.6}
-.footer-section a{display:block;color:#aaa;text-decoration:none;margin:8px 0;font-size:14px;text-align:left}
+.footer-section{
+  text-align:left;
+}
+.footer-section h3{
+  color:#ff0044;
+  margin-bottom:12px;
+  font-size:20px;
+  font-weight:700;
+}
+.footer-section p{
+  color:#aaa;
+  font-size:14px;
+  line-height:1.7;
+  margin:0;
+}
+.footer-section a{
+  display:block;
+  color:#aaa;
+  text-decoration:none;
+  margin:8px 0;
+  font-size:14px;
+}
 .footer-section a:hover{color:#60a5fa}
-.payment-logos{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start}
-.payment-logos span{background:#111;border:1px solid #222;color:#60a5fa;padding:6px 10px;border-radius:8px;font-size:11px;font-weight:700}
-.copyright{grid-column:1/-1;text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid #222;color:#555;font-size:13px}
+.payment-logos{
+  display:flex;
+  flex-wrap:wrap; /* BIAR SEJAJAR KE KANAN */
+  gap:10px;
+  justify-content:flex-start;
+}
+.payment-logos span{
+  background:#1a1a1a;
+  border:1px solid #333;
+  color:#60a5fa;
+  padding:8px 14px;
+  border-radius:10px;
+  font-size:12px;
+  font-weight:700;
+}
+.copyright{
+  text-align:center;
+  margin-top:30px;
+  padding-top:20px;
+  color:#555;
+  font-size:13px;
+  border-top:none !important; /* HAPUS GARIS COPYRIGHT */
+}
 .card h3{font-size:15px;margin-bottom:4px;text-align:center;color:#ffd700}
 .desc{color:#aaa;font-size:11px;margin-bottom:8px;text-align:center;min-height:30px}
 .price{font-size:16px;font-weight:700;color:#60a5fa;margin-bottom:8px;text-align:center;min-height:30px}
