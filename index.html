@@ -44,6 +44,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .btn-group{display:flex;gap:8px;margin-top:auto;width:100%}
 .buy-now{flex:2;background:linear-gradient(90deg,#60a5fa,#ec4899);border:none;color:#fff;padding:10px;border-radius:8px;font-weight:700;cursor:pointer;font-size:12px}
 .buy-outline{flex:1;background:transparent;border:1px solid #60a5fa;color:#60a5fa;padding:10px;border-radius:8px;cursor:pointer;font-size:12px}
+
+/* FAQ STYLE */
+.faq{margin:50px 0}
+.faq-item{background:#111;border:1px solid #222;border-radius:12px;margin-bottom:12px;overflow:hidden;transition:0.3s}
+.faq-item:hover{border-color:#ff0044}
+.faq-question{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;font-weight:700;font-size:15px;cursor:pointer;color:#fff}
+.faq-question:hover{color:#60a5fa}
+.faq-icon{font-size:24px;color:#ff0044;transition:0.3s}
+.faq-answer{padding:0 20px 20px;color:#aaa;font-size:14px;line-height:1.6;display:none}
+.faq-answer.show{display:block;animation:slideDown 0.3s ease}
+.faq-item.active{border-color:#ff0044;box-shadow:0 0 15px rgba(255,0,68,0.3)}
+.faq-item.active.faq-question{color:#ff0044}
+@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+
 @media(max-width:768px){.fitur{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
@@ -88,6 +102,73 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="card fade-in"><div class="card-icon"><img src="03_discord_boost_14x_1_bulan.png"></div><h3>14× Discord Boost</h3><div class="desc">Booster Server Discord • 3 Bulan</div><div class="price">Rp190.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('14x Discord Boost 3 Bulan', 190000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('14x Discord Boost 3 Bulan', 190000)">🛒</button></div></div>
     <div class="card fade-in"><div class="bestseller">🛡️ LAYAN</div><div class="card-icon"><img src="05_pulihkan_akun_roblox.png"></div><h3>Jasa Pulihin Akun Roblox</h3><div class="desc">Recovery Akun Kena Hack/Lupa Email/Sandi/V2L • Estimasi 1-5 Hari • Garansi</div><div class="price">Konsultasi Gratis</div><button class="buy-now" onclick="konsultasiWA()" style="width:100%">💬 KONSULTASI GRATIS</button></div>
   </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="container faq fade-in">
+  <h2 style="text-align:center;margin-bottom:30px;background: linear-gradient(90deg, #60a5fa, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;font-size:28px">
+    PERTANYAAN YANG SERING DIAJUKAN
+  </h2>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Berapa Lama Proses Pengiriman Robux?</span>
+      <span class="faq-icon">-</span>
+    </div>
+    <div class="faq-answer show">
+      Untuk pembelian Via Username (USN), prosesnya instan kurang dari 5 menit!
+      Pembelian Via Login juga diproses dalam waktu kurang dari 5 menit,
+      dengan catatan semua data yang Anda berikan aktif dan dapat dihubungi oleh tim kami.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Bagaimana Cara Membeli Robux Via Username?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      1. Pilih paket Robux yang kamu mau <br>
+      2. Klik "BELI" dan isi Username Roblox kamu <br>
+      3. Lakukan pembayaran <br>
+      4. Robux akan masuk otomatis ke akun kamu
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Bagaimana Cara Membeli Robux Via Login?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      1. Pilih paket Robux Via Login <br>
+      2. Klik "BELI" dan isi Username + Password sementara <br>
+      3. Admin kami akan kirim Robux dan langsung logout <br>
+      4. Password bisa kamu ganti lagi setelahnya
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Apakah Transaksi di NR STORE Aman?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      100% Aman dan Terpercaya. Kami sudah melayani 1000+ customer.
+      Ada garansi uang kembali jika Robux tidak masuk.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Mengapa Robux Saya Belum Masuk Setelah 10 Menit?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Bisa jadi karena server Roblox lag atau data yang diisi kurang lengkap.
+      Langsung chat CS kami di pojok kanan bawah ya, pasti langsung dibantu.
+    </div>
+  </div>
   </section>
   <style>
 .cara-bayar{text-align:center;margin:50px 0}
@@ -106,10 +187,12 @@ footer a.active{color:#ff0044}
 .cs-float img{width:55px;height:55px;border-radius:50%;box-shadow:0 0 20px #ff0044;border:2px solid #ff0044;cursor:pointer;transition:0.3s}
 .cs-float img:hover{transform:scale(1.1)}
 @keyframes shake {0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-/* REDUPIN GLOW */
+
+/* POPUP GLOW LEMBUT */
+.popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:1000;display:none;justify-content:center;align-items:center;animation:fadeIn 0.3s}
 .popup-box{position:relative;width:90%;max-width:400px;border-radius:15px;overflow:hidden;box-shadow:0 0 15px #ff0044, 0 0 25px rgba(236,72,153,0.4);background:#000;border:1px solid #ff0044}
 .popup-box img{width:100%;height:auto;display:block;cursor:pointer;transition:0.3s}
-.popup-box img:hover{transform:scale(1.02);box-shadow:0 0 20px #ec4899}
+.popup-box img:hover{transform:scale(1.02)}
 .popup-close{position:absolute;top:8px;right:12px;font-size:30px;color:#fff;background:rgba(0,0,0,0.6);border-radius:50%;width:30px;height:30px;line-height:26px;text-align:center;cursor:pointer;font-weight:700;z-index:1001;transition:0.3s}
 .popup-close:hover{background:#ff0044;box-shadow:0 0 10px #ff0044}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -163,6 +246,7 @@ footer a.active{color:#ff0044}
 </footer>
 
 <script>
+// ANIMASI SCROLL
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = {threshold: 0.2};
 const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
@@ -176,6 +260,7 @@ faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
 
+// POPUP
 window.onload = function(){
   setTimeout(function(){
     document.getElementById('popupDiscord').style.display = 'flex';
@@ -183,6 +268,25 @@ window.onload = function(){
 };
 function closePopup(){
   document.getElementById('popupDiscord').style.display = 'none';
+}
+
+// FAQ ACCORDION
+function toggleFAQ(element){
+  const faqItem = element.parentElement;
+  const answer = faqItem.querySelector('.faq-answer');
+  const icon = faqItem.querySelector('.faq-icon');
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.classList.remove('active');
+    item.querySelector('.faq-answer').classList.remove('show');
+    item.querySelector('.faq-icon').textContent = '+';
+  });
+
+  if(!answer.classList.contains('show')){
+    faqItem.classList.add('active');
+    answer.classList.add('show');
+    icon.textContent = '-';
+  }
 }
 
 function beliSekarang(produk, harga){
