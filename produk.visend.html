@@ -6,8 +6,8 @@
 <title>Top Up Robux Via Username - NR STORE</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0a0a0a;color:#e5e5e5}
-.header{background:#0f0f0f;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+body{background:#0a0a0a;color:#e5e5e5;padding-bottom:90px}
+.header{background:#0f0f0f;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;border-bottom:2px solid #ff0044}
 .logo{color:#ff0044;font-size:24px;font-weight:800}
 .login-btn{background:#FFD700;color:#000;padding:8px 20px;border-radius:20px;font-weight:700;text-decoration:none}
 .container{max-width:800px;margin:0 auto;padding:20px}
@@ -21,7 +21,7 @@ body{background:#0a0a0a;color:#e5e5e5}
 .badge.gold{background:#FFD700;color:#000}
 
 .banner-kategori{margin-bottom:20px}
-.banner-kategori img{width:100%;border-radius:15px;max-height:180px;object-fit:cover} /* STANDAR GA GEDE */
+.banner-kategori img{width:100%;border-radius:15px;max-height:180px;object-fit:cover}
 
 .alert{background:#1a1a1a;border-radius:15px;padding:18px;margin-bottom:20px;border-left:4px solid #FFD700}
 .alert h2{color:#FFD700;margin-bottom:10px;font-size:16px}
@@ -38,6 +38,7 @@ input{width:100%;padding:12px;background:#1a1a1a;border:1px solid #333;border-ra
 
 .produk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .produk{border:2px solid #333;border-radius:12px;padding:12px;text-align:center;cursor:pointer;transition:0.2s}
+.produk:hover{border-color:#ff0044}
 .produk.active{border-color:#ff0044;background:#1a0000}
 .produk .r{color:#FFD700;font-weight:800;font-size:16px}
 
@@ -47,7 +48,18 @@ input{width:100%;padding:12px;background:#1a1a1a;border:1px solid #333;border-ra
 .total{font-size:20px;color:#00ff88;font-weight:800}
 .btn-lanjut{width:100%;background:linear-gradient(90deg,#2563eb,#3b82f6);color:white;padding:14px;border:none;border-radius:12px;font-weight:800;font-size:15px;margin-top:15px;cursor:pointer}
 
-.footer{padding:25px 20px;background:#0f0f0f;margin-top:40px;text-align:center;color:#555;font-size:12px}
+/* QRIS GEDE */
+.qris-box{background:#0a0a0a;border:2px solid #ff0044;border-radius:15px;padding:18px;margin:15px 0;text-align:center}
+.qris-img{background:white;padding:15px;border-radius:12px;display:inline-block;width:100%;max-width:320px}
+.qris-img img{width:100%;height:auto;display:block}
+
+/* NAVBAR */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#0f0f0f;display:flex;justify-content:space-around;padding:10px 0;border-top:2px solid #ff0044;z-index:99}
+.nav-item{text-align:center;color:#666;font-size:11px;text-decoration:none}
+.nav-item.active{color:#ff0044;font-weight:800}
+.nav-item div{margin-top:3px}
+
+.footer{padding:25px 20px;background:#0f0f0f;margin-top:40px;text-align:center;color:#555;font-size:12px;margin-bottom:80px}
 </style>
 </head>
 <body>
@@ -68,7 +80,6 @@ input{width:100%;padding:12px;background:#1a1a1a;border:1px solid #333;border-ra
     </div>
   </div>
 
-  <!-- BANNER KATEGORI STANDAR -->
   <div class="banner-kategori">
     <img src="01_VIA_SEND_NR_STORE_4x_HD.png" alt="Via Send NR STORE">
   </div>
@@ -77,12 +88,7 @@ input{width:100%;padding:12px;background:#1a1a1a;border:1px solid #333;border-ra
     <h2>⚠️ PERHATIAN SEBELUM MEMBELI</h2>
     <ul>
       <li>• Pastikan <b>Username Roblox</b> yang dimasukkan sudah benar.</li>
-      <li>
-        <div class="alert-red">
-          <h3>⚠️ WAJIB MENGAKTIFKAN 2FA VERIFICATION</h3>
-          <p>Akun wajib 18+ (Bukan akun Roblox Kids)</p>
-        </div>
-      </li>
+      <li><div class="alert-red"><h3>⚠️ WAJIB MENGAKTIFKAN 2FA VERIFICATION</h3><p>Akun wajib 18+ (Bukan akun Roblox Kids)</p></div></li>
       <li>• <b style="color:#FFD700">Direct Transfer:</b> Transfer Robux resmi dari Roblox.</li>
     </ul>
   </div>
@@ -90,7 +96,7 @@ input{width:100%;padding:12px;background:#1a1a1a;border:1px solid #333;border-ra
   <div class="box">
     <h2><div class="nomor">1</div>Masukkan Data Akun</h2>
     <label>Username Roblox *</label>
-    <input type="text" id="usn" placeholder="@namarobloxkamu" onkeyup="updateRingkasan()">
+    <input type="text" id="usn" placeholder="usn.roblox.mu" onkeyup="updateRingkasan()">
     <label>WhatsApp *</label>
     <input type="number" id="wa" placeholder="0812-xxxx-xxxx" onkeyup="updateRingkasan()">
     <div class="warning">⚠️ NOMOR WHATSAPP WAJIB AKTIF!</div>
@@ -101,7 +107,7 @@ input{width:100%;padding:12px;background:#1a1a1a;border:1px solid #333;border-ra
   <div class="box">
     <h2><div class="nomor">2</div>Pilih Nominal</h2>
     <div class="produk-grid" id="produkGrid">
-          <!-- PRODUK NR STORE 50 - 5000 ROBUX -->
+      <!-- 31 PRODUK LENGKAP -->
       <div class="produk" onclick="pilihProduk(this, '50 Robux', 8000)"><div class="r">50 Robux</div><div>Rp 8.000</div></div>
       <div class="produk" onclick="pilihProduk(this, '100 Robux', 16000)"><div class="r">100 Robux</div><div>Rp 16.000</div></div>
       <div class="produk" onclick="pilihProduk(this, '150 Robux', 24000)"><div class="r">150 Robux</div><div>Rp 24.000</div></div>
@@ -133,7 +139,6 @@ input{width:100%;padding:12px;background:#1a1a1a;border:1px solid #333;border-ra
       <div class="produk" onclick="pilihProduk(this, '4000 Robux', 600000)"><div class="r">4000 Robux</div><div>Rp 600.000</div></div>
       <div class="produk" onclick="pilihProduk(this, '4500 Robux', 670000)"><div class="r">4500 Robux</div><div>Rp 670.000</div></div>
       <div class="produk" style="border-color:#00ff88" onclick="pilihProduk(this, '5000 Robux', 750000)"><div class="r">5000 Robux 💎</div><div>Rp 750.000</div></div>
-
     </div>
   </div>
 
@@ -143,11 +148,10 @@ input{width:100%;padding:12px;background:#1a1a1a;border:1px solid #333;border-ra
     <div class="ring-row"><span>Jumlah</span><b id="ringJumlah" style="color:#FFD700">-</b></div>
     <div class="ring-row"><span>Metode</span><b>Via Username</b></div>
     
-    <!-- BOX QRIS -->
-    <div style="background:#0a0a0a;border:2px solid #ff0044;border-radius:15px;padding:18px;margin:15px 0;text-align:center">
-      <h3 style="color:#FFD700;margin-bottom:10px;font-size:15px">💳 BAYAR DULU VIA QRIS</h3>
-      <img src="qris.jpg" alt="QRIS NR STORE" style="width:200px;height:200px;background:white;padding:10px;border-radius:12px">
-      <p style="font-size:12px;color:#00ff88;margin-top:8px;font-weight:700">Scan & Bayar sesuai Total Bayar</p>
+    <div class="qris-box">
+      <h3 style="color:#FFD700;margin-bottom:12px;font-size:15px">💳 BAYAR DULU VIA QRIS</h3>
+      <div class="qris-img"><img src="qris.jpg" alt="QRIS NR STORE"></div>
+      <p style="font-size:12px;color:#00ff88;margin-top:10px;font-weight:700">Scan & Bayar sesuai Total Bayar</p>
     </div>
 
     <div class="alert" style="margin:15px 0;padding:12px">
@@ -158,64 +162,44 @@ input{width:100%;padding:12px;background:#1a1a1a;border:1px solid #333;border-ra
     <div class="ring-row"><span>Total Bayar</span><b class="total" id="ringTotal">Rp 0</b></div>
     <button class="btn-lanjut" onclick="lanjutkan()">✅ SUDAH BAYAR, KIRIM ORDER →</button>
   </div>
-
-  <div class="bottom-nav">
-<a href="index.html" class="nav-item active">🏠<div>Beranda</div></a>
-<a href="produk.visend.html" class="nav-item">⚡<div>Beli Robux</div></a>
-<a href="rating.html" class="nav-item">⭐<div>Rating</div></a>
-<a href="#" class="nav-item">💬<div>Transaksi</div></a>
-  </div>
   
 </div>
 
-<div class="footer">
-  © 2026 NR STORE. Platform Top Up Robux Cepat, Aman & Terpercaya.
+<div class="bottom-nav">
+  <a href="index.html" class="nav-item">🏠<div>Beranda</div></a>
+  <a href="produk.visend.html" class="nav-item active">⚡<div>Beli Robux</div></a>
+  <a href="rating.html" class="nav-item">⭐<div>Rating</div></a>
+  <a href="#" class="nav-item">💬<div>Transaksi</div></a>
 </div>
+
+<div class="footer">© 2026 NR STORE. Platform Top Up Robux Cepat, Aman & Terpercaya.</div>
 
 <script>
 let produk = ""; let harga = 0;
-
 function pilihProduk(el, nama, hrg){
   document.querySelectorAll('.produk').forEach(p=>p.classList.remove('active'));
   el.classList.add('active');
   produk = nama; harga = hrg;
   updateRingkasan();
 }
-
 function updateRingkasan(){
   document.getElementById('ringUsn').innerText = document.getElementById('usn').value || '-';
   document.getElementById('ringJumlah').innerText = produk || '-';
   document.getElementById('ringTotal').innerText = harga ? 'Rp ' + harga.toLocaleString('id-ID') : 'Rp 0';
 }
-
 function lanjutkan(){
   let usn = document.getElementById('usn').value;
   let wa = document.getElementById('wa').value;
   let email = document.getElementById('email').value;
-  if(!usn || !wa || !email || !produk){
-    alert("⚠️ LENGKAPI SEMUA DATA DULU BANG!");
-    return;
-  }
-  
+  if(!usn || !wa || !email || !produk){ alert("⚠️ LENGKAPI SEMUA DATA DULU BANG!"); return; }
   let form = document.createElement('form');
   form.action = "https://formsubmit.co/order@nrstore.id";
   form.method = "POST";
   form.style.display = "none";
-  form.innerHTML = `
-    <input name="Produk" value="${produk}">
-    <input name="Harga" value="Rp ${harga.toLocaleString('id-ID')}">
-    <input name="Username Roblox" value="${usn}">
-    <input name="No WA" value="${wa}">
-    <input name="Email Pembeli" value="${email}">
-    <input name="_subject" value="ORDER BARU NR STORE - ${produk}">
-    <input name="_captcha" value="false">
-  `;
-  document.body.appendChild(form);
-  form.submit();
-
+  form.innerHTML = `<input name="Produk" value="${produk}"><input name="Harga" value="Rp ${harga.toLocaleString('id-ID')}"><input name="Username Roblox" value="${usn}"><input name="No WA" value="${wa}"><input name="Email Pembeli" value="${email}"><input name="_subject" value="ORDER BARU NR STORE - ${produk}"><input name="_captcha" value="false">`;
+  document.body.appendChild(form); form.submit();
   let pesan = `ORDER BARU NR STORE%0A%0AProduk: ${produk}%0AHarga: Rp ${harga.toLocaleString('id-ID')}%0AUSN: ${usn}%0ANO WA: ${wa}%0AEMAIL: ${email}`;
   window.open(`https://wa.me/6283898005030?text=${pesan}`, '_blank');
-  
   alert("✅ Order berhasil dikirim!");
 }
 </script>
