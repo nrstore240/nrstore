@@ -3,123 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Top Up Robux Via Send - NR STORE</title>
+<title>Top Up Robux Via Username - NR STORE</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{background:#0a0a0a;color:#e5e5e5}
-.banner{width:100%;max-height:220px;overflow:hidden;border-bottom:3px solid #ff0044}
-.banner img{width:100%;height:100%;object-fit:cover;display:block}
-.container{max-width:1200px;margin:0 auto;padding:20px}
-h1{text-align:center;color:#ff0044;margin:20px 0}
-.produk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:15px}
-.card{background:#111;border:2px solid #222;border-radius:15px;padding:15px;text-align:center;position:relative;transition:0.3s}
-.card:hover{border-color:#ff0044;transform:translateY(-5px)}
-.card-icon img{width:60px;height:60px;margin-bottom:10px}
-.card h3{color:#FFD700;margin-bottom:5px}
-.desc{color:#aaa;font-size:13px;margin-bottom:8px}
-.price{font-size:20px;font-weight:800;color:#ff0044;margin:10px 0}
-.btn-group{display:flex;gap:8px}
-.buy-now{flex:2;background:linear-gradient(90deg,#ff0044,#ff0066);color:white;padding:10px;border:none;border-radius:10px;font-weight:700;cursor:pointer}
-.buy-outline{flex:1;background:transparent;border:2px solid #25D366;color:#25D366;padding:10px;border-radius:10px;font-weight:700;cursor:pointer}
-.bestseller{position:absolute;top:10px;right:10px;background:#FFD700;color:#000;font-size:10px;font-weight:800;padding:4px 8px;border-radius:20px}
+.header{background:#0f0f0f;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{color:#ff0044;font-size:24px;font-weight:800}
+.login-btn{background:#FFD700;color:#000;padding:8px 20px;border-radius:20px;font-weight:700;border:none;cursor:pointer}
+.container{max-width:800px;margin:0 auto;padding:20px}
 
-/* POPUP */
-.popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:none;justify-content:center;align-items:center;z-index:999}
-.popup-content{background:#111;border:2px solid #ff0044;border-radius:20px;padding:25px;width:90%;max-width:400px}
-.popup-content h2{color:#ff0044;margin-bottom:15px;text-align:center}
-.popup-content input{width:100%;padding:12px;margin:8px 0;background:#222;border:1px solid #333;border-radius:10px;color:white}
-.popup-btn{background:#25D366;color:white;width:100%;padding:14px;border:none;border-radius:12px;font-weight:800;font-size:16px;margin-top:10px;cursor:pointer}
-.close-btn{background:#333;margin-top:8px}
+.banner{background:linear-gradient(135deg,#ff0044,#1a0000);border-radius:20px;padding:30px;display:flex;align-items:center;gap:20px;margin-bottom:20px}
+.banner-logo{background:#000;border-radius:50%;padding:15px}
+.banner-logo img{width:60px;height:60px}
+.banner-text h1{font-size:28px;line-height:1.2}
+.banner-text h1 span{color:#FFD700}
+.badge{display:inline-block;background:#ff0044;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700;margin-right:8px}
+.badge.gold{background:#FFD700;color:#000}
+
+.alert{background:#1a1a1a;border-radius:15px;padding:20px;margin-bottom:20px;border-left:4px solid #FFD700}
+.alert h2{color:#FFD700;margin-bottom:10px;font-size:18px}
+.alert ul{list-style:none;padding-left:0}
+.alert li{margin:8px 0;color:#aaa}
+.alert-red{background:#1a0000;border-left:4px solid #ff0044;padding:15px;border-radius:10px;margin-top:10px}
+.alert-red h3{color:#ff0044}
+
+.box{background:#111;border:1px solid #222;border-radius:15px;padding:20px;margin-bottom:20px}
+.box h2{display:flex;align-items:center;gap:10px;margin-bottom:15px}
+.nomor{width:30px;height:30px;background:#ff0044;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800}
+input{width:100%;padding:14px;background:#1a1a1a;border:1px solid #333;border-radius:10px;color:white;margin:8px 0;font-size:16px}
+.warning{background:#332200;border:1px solid #FFD700;color:#FFD700;padding:12px;border-radius:10px;font-size:13px;margin-top:10px}
+
+.produk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.produk{border:2px solid #333;border-radius:12px;padding:15px;text-align:center;cursor:pointer;transition:0.2s}
+.produk.active{border-color:#ff0044;background:#1a0000}
+.produk .r{color:#FFD700;font-weight:800;font-size:18px}
+
+.ringkasan{background:#111;border:1px solid #333;border-radius:15px;padding:20px}
+.ring-row{display:flex;justify-content:space-between;margin:10px 0;color:#aaa}
+.ring-row b{color:white}
+.total{font-size:22px;color:#00ff88;font-weight:800}
+.btn-lanjut{width:100%;background:linear-gradient(90deg,#2563eb,#3b82f6);color:white;padding:16px;border:none;border-radius:12px;font-weight:800;font-size:16px;margin-top:15px;cursor:pointer}
+
+.footer{padding:30px 20px;background:#0f0f0f;margin-top:40px;text-align:center;color:#555;font-size:12px}
 </style>
 </head>
 <body>
 
-<div class="banner">
-  <img src="01_VIA_SEND_NR_STORE_4x_HD.png" alt="Via Send">
+<div class="header">
+  <div class="logo">NR STORE</div>
+  <a href="https://wa.me/6283898005030" class="login-btn">CS</a>
 </div>
 
 <div class="container">
-<h1>⚡ TOP UP ROBUX VIA SEND</h1>
 
-<div class="produk-grid">
-
-<!-- TINGGAL PASTE SEMUA PRODUK KAMU DI SINI -->
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>50 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 8.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('50 Robux', 8000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('50 Robux', 8000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>100 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 16.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('100 Robux', 16000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('100 Robux', 16000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>150 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 24.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('150 Robux', 24000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('150 Robux', 24000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>200 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 32.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('200 Robux', 32000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('200 Robux', 32000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>250 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 40.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('250 Robux', 40000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('250 Robux', 40000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>300 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 48.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('300 Robux', 48000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('300 Robux', 48000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>350 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 56.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('350 Robux', 56000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('350 Robux', 56000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>400 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 64.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('400 Robux', 64000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('400 Robux', 64000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>450 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 72.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('450 Robux', 72000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('450 Robux', 72000)">🛒</button></div></div>
-<div class="card fade-in"><div class="bestseller">🔥 TERLARIS</div><div class="card-icon"><img src="01_robux_visend.png"></div><h3>500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 80.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('500 Robux', 80000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('500 Robux', 80000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>600 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 96.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('600 Robux', 96000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('600 Robux', 96000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>700 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 112.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('700 Robux', 112000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('700 Robux', 112000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>800 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 128.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('800 Robux', 128000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('800 Robux', 128000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>900 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 144.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('900 Robux', 144000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('900 Robux', 144000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>1000 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 160.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1000 Robux', 160000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('1000 Robux', 160000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>1100 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 176.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1100 Robux', 176000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('1100 Robux', 176000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>1200 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 192.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1200 Robux', 192000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('1200 Robux', 192000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>1300 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 208.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1300 Robux', 208000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('1300 Robux', 208000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>1400 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 224.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1400 Robux', 224000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('1400 Robux', 224000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>1500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 240.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1500 Robux', 240000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('1500 Robux', 240000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>1600 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 256.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1600 Robux', 256000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('1600 Robux', 256000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>1700 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 272.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1700 Robux', 272000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('1700 Robux', 272000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>1800 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 288.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1800 Robux', 288000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('1800 Robux', 288000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>1900 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 304.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('1900 Robux', 304000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('1900 Robux', 304000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>2000 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 320.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('2000 Robux', 320000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('2000 Robux', 320000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>2500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 390.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('2500 Robux', 390000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('2500 Robux', 390000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>3000 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 460.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('3000 Robux', 460000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('3000 Robux', 460000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>3500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 530.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('3500 Robux', 530000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('3500 Robux', 530000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>4000 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 600.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('4000 Robux', 600000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('4000 Robux', 600000)">🛒</button></div></div>
-<div class="card fade-in"><div class="card-icon"><img src="01_robux_visend.png"></div><h3>4500 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 670.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('4500 Robux', 670000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('4500 Robux', 670000)">🛒</button></div></div>
-<div class="card fade-in"><div class="bestseller">💎 BEST VALUE</div><div class="card-icon"><img src="01_robux_visend.png"></div><h3>5000 Robux</h3><div class="desc">Robux Via Send - Proses 5 Menit</div><div class="price">Rp 750.000</div><div class="btn-group"><button class="buy-now" onclick="beliSekarang('5000 Robux', 750000)">⚡ BELI</button><button class="buy-outline" onclick="addToCart('5000 Robux', 750000)">🛒</button></div></div>
-
-</div>
-<br><a href="index.html" style="color:#60a5fa">← Kembali ke Beranda</a>
-</div>
-
-<!-- POPUP ORDER -->
-<div id="popupOrder" class="popup">
-  <div class="popup-content">
-    <h2>Konfirmasi Order</h2>
-    <p>Produk: <b id="produkDipilih"></b></p>
-    <p>Harga: <b id="hargaDipilih"></b></p>
-    <input type="text" id="usnOrder" placeholder="Username Roblox @namamu">
-    <input type="number" id="waOrder" placeholder="No WA Aktif 08xxx">
-    <button class="popup-btn" onclick="kirimKeWA()">💬 Kirim ke WhatsApp</button>
-    <button class="popup-btn close-btn" onclick="tutupPopup()">Batal</button>
+  <div class="banner">
+    <div class="banner-logo"><img src="01_robux_visend.png"></div>
+    <div class="banner-text">
+      <span class="badge">VIA USERNAME</span><span class="badge gold">INSTAN</span>
+      <h1>Robux <span>Via Username</span></h1>
+      <p>Top up aman hanya dengan Username tanpa ribet!</p>
+    </div>
   </div>
+
+  <div class="alert">
+    <h2>⚠️ PERHATIAN SEBELUM MEMBELI</h2>
+    <ul>
+      <li>• Pastikan <b>Username Roblox</b> yang dimasukkan sudah benar (bukan Display Name).</li>
+      <li>
+        <div class="alert-red">
+          <h3>⚠️ WAJIB MENGAKTIFKAN 2FA VERIFICATION</h3>
+          <p>Akun wajib berusia 18+ (Bukan akun Roblox Kids). Kami tidak bertanggung jawab jika akun masih di bawah umur.</p>
+        </div>
+      </li>
+      <li>• <b style="color:#FFD700">Fitur Direct Transfer:</b> Pengiriman diproses menggunakan sistem transfer Robux antar player resmi dari Roblox.</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2><div class="nomor">1</div>Masukkan Data Akun</h2>
+    <label>Username Roblox *</label>
+    <input type="text" id="usn" placeholder="@namarobloxkamu" onkeyup="updateRingkasan()">
+    <label>WhatsApp *</label>
+    <input type="number" id="wa" placeholder="0812-xxxx-xxxx" onkeyup="updateRingkasan()">
+    <div class="warning">⚠️ NOMOR WHATSAPP WAJIB AKTIF DAN BISA DIHUBUNGI!</div>
+    <label>Email *</label>
+    <input type="email" id="email" placeholder="email@contoh.com" onkeyup="updateRingkasan()">
+  </div>
+
+  <div class="box">
+    <h2><div class="nomor">2</div>Pilih Nominal</h2>
+    <div class="produk-grid" id="produkGrid">
+
+            <!-- PRODUK NR STORE SEMUA -->
+      <div class="produk" onclick="pilihProduk(this, '50 Robux', 8000)"><div class="r">R$ 50</div><div>Rp 8.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '100 Robux', 16000)"><div class="r">R$ 100</div><div>Rp 16.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '150 Robux', 24000)"><div class="r">R$ 150</div><div>Rp 24.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '200 Robux', 32000)"><div class="r">R$ 200</div><div>Rp 32.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '250 Robux', 40000)"><div class="r">R$ 250</div><div>Rp 40.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '300 Robux', 48000)"><div class="r">R$ 300</div><div>Rp 48.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '350 Robux', 56000)"><div class="r">R$ 350</div><div>Rp 56.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '400 Robux', 64000)"><div class="r">R$ 400</div><div>Rp 64.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '450 Robux', 72000)"><div class="r">R$ 450</div><div>Rp 72.000</div></div>
+      <div class="produk" style="border-color:#FFD700" onclick="pilihProduk(this, '500 Robux', 80000)"><div class="r">R$ 500 🔥</div><div>Rp 80.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '600 Robux', 96000)"><div class="r">R$ 600</div><div>Rp 96.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '700 Robux', 112000)"><div class="r">R$ 700</div><div>Rp 112.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '800 Robux', 128000)"><div class="r">R$ 800</div><div>Rp 128.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '900 Robux', 144000)"><div class="r">R$ 900</div><div>Rp 144.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '1000 Robux', 160000)"><div class="r">R$ 1000</div><div>Rp 160.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '1100 Robux', 176000)"><div class="r">R$ 1100</div><div>Rp 176.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '1200 Robux', 192000)"><div class="r">R$ 1200</div><div>Rp 192.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '1300 Robux', 208000)"><div class="r">R$ 1300</div><div>Rp 208.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '1400 Robux', 224000)"><div class="r">R$ 1400</div><div>Rp 224.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '1500 Robux', 240000)"><div class="r">R$ 1500</div><div>Rp 240.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '1600 Robux', 256000)"><div class="r">R$ 1600</div><div>Rp 256.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '1700 Robux', 272000)"><div class="r">R$ 1700</div><div>Rp 272.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '1800 Robux', 288000)"><div class="r">R$ 1800</div><div>Rp 288.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '1900 Robux', 304000)"><div class="r">R$ 1900</div><div>Rp 304.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '2000 Robux', 320000)"><div class="r">R$ 2000</div><div>Rp 320.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '2500 Robux', 390000)"><div class="r">R$ 2500</div><div>Rp 390.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '3000 Robux', 460000)"><div class="r">R$ 3000</div><div>Rp 460.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '3500 Robux', 530000)"><div class="r">R$ 3500</div><div>Rp 530.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '4000 Robux', 600000)"><div class="r">R$ 4000</div><div>Rp 600.000</div></div>
+      <div class="produk" onclick="pilihProduk(this, '4500 Robux', 670000)"><div class="r">R$ 4500</div><div>Rp 670.000</div></div>
+      <div class="produk" style="border-color:#00ff88" onclick="pilihProduk(this, '5000 Robux', 750000)"><div class="r">R$ 5000 💎</div><div>Rp 750.000</div></div>
+
+    </div>
+  </div>
+
+  <div class="ringkasan">
+    <h2>Ringkasan Pesanan</h2>
+    <div class="ring-row"><span>Username</span><b id="ringUsn">-</b></div>
+    <div class="ring-row"><span>Jumlah</span><b id="ringJumlah" style="color:#FFD700">-</b></div>
+    <div class="ring-row"><span>Metode</span><b>Via Username</b></div>
+    
+    <div class="alert" style="margin:15px 0">
+      <h3 style="color:#FFD700">ℹ️ INFORMASI PENTING</h3>
+      <p>• Pastikan akun Roblox biasa, bukan akun Kids</p>
+      <p>• Proses <b style="color:#00ff88">Instant order</b> 5-10 Menit</p>
+      <p>• No WhatsApp <b>wajib aktif</b></p>
+    </div>
+
+    <div class="ring-row"><span>Total Bayar</span><b class="total" id="ringTotal">Rp 0</b></div>
+    <button class="btn-lanjut" onclick="lanjutkan()">Lanjutkan →</button>
+  </div>
+
+</div>
+
+<div class="footer">
+  © 2026 NR STORE. Platform Top Up Robux Cepat, Aman & Terpercaya.
 </div>
 
 <script>
-// POPUP ORDER
-let produkGlobal = ""; let hargaGlobal = 0;
-function beliSekarang(nama, harga){
-  produkGlobal = nama; hargaGlobal = harga;
-  document.getElementById('produkDipilih').innerText = nama;
-  document.getElementById('hargaDipilih').innerText = 'Rp ' + harga.toLocaleString('id-ID');
-  document.getElementById('popupOrder').style.display = 'flex';
+let produk = ""; let harga = 0;
+
+function pilihProduk(el, nama, hrg){
+  document.querySelectorAll('.produk').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  produk = nama; harga = hrg;
+  updateRingkasan();
 }
-function tutupPopup(){ document.getElementById('popupOrder').style.display = 'none'; }
-function kirimKeWA(){
-  let usn = document.getElementById('usnOrder').value;
-  let wa = document.getElementById('waOrder').value;
-  if(usn == "" || wa == ""){ 
-    alert("⚠️ ISI DULU BANG! Username dan No WA wajib diisi"); 
-    return; 
-  }
-  if(!usn.toLowerCase().includes('@')){
-    alert("⚠️ USN HARUS PAKE @ CONTOH: @NAMAUSER");
+
+function updateRingkasan(){
+  document.getElementById('ringUsn').innerText = document.getElementById('usn').value || '-';
+  document.getElementById('ringJumlah').innerText = produk || '-';
+  document.getElementById('ringTotal').innerText = harga ? 'Rp ' + harga.toLocaleString('id-ID') : 'Rp 0';
+}
+
+function lanjutkan(){
+  let usn = document.getElementById('usn').value;
+  let wa = document.getElementById('wa').value;
+  let email = document.getElementById('email').value;
+  if(!usn || !wa || !email || !produk){
+    alert("⚠️ LENGKAPI SEMUA DATA DULU BANG!");
     return;
   }
-  let pesan = `ORDER BARU NR STORE%0A%0AProduk: ${produkGlobal}%0AHarga: Rp ${hargaGlobal.toLocaleString('id-ID')}%0AUSN: ${usn}%0ANO WA: ${wa}%0A%0AStatus: SUDAH BAYAR VIA QRIS`;
+  
+  // KIRIM KE EMAIL
+  let form = document.createElement('form');
+  form.action = "https://formsubmit.co/order@nrstore.id";
+  form.method = "POST";
+  form.style.display = "none";
+  form.innerHTML = `
+    <input name="Produk" value="${produk}">
+    <input name="Harga" value="Rp ${harga.toLocaleString('id-ID')}">
+    <input name="Username Roblox" value="${usn}">
+    <input name="No WA" value="${wa}">
+    <input name="Email Pembeli" value="${email}">
+    <input name="_subject" value="ORDER BARU NR STORE - ${produk}">
+    <input name="_captcha" value="false">
+  `;
+  document.body.appendChild(form);
+  form.submit();
+
+  // KIRIM KE WA
+  let pesan = `ORDER BARU NR STORE%0A%0AProduk: ${produk}%0AHarga: Rp ${harga.toLocaleString('id-ID')}%0AUSN: ${usn}%0ANO WA: ${wa}%0AEMAIL: ${email}`;
   window.open(`https://wa.me/6283898005030?text=${pesan}`, '_blank');
-  tutupPopup();
+  
+  alert("✅ Order berhasil dikirim! Cek WA & Email NR STORE");
 }
-function konsultasiWA(){ window.open(`https://wa.me/6283898005030?text=Halo%20mau%20konsultasi%20Jasa%20Pulihin%20Akun%20Roblox`, '_blank') }
-function addToCart(){ alert("Fitur keranjang coming soon 😎") }
 </script>
 
 </body>
