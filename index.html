@@ -1,65 +1,137 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KCF9BB6G');</script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KCF9BB6G');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NR STORE - Top Up Robux Termurah</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0a0a0a;color:white;padding-bottom:90px}
-.header{padding:15px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #ff0066}
-.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;background:linear-gradient(90deg,#ff0066,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+html,body{height:100%;overflow-x:hidden}
+body{background:#0a0a0a;color:#e5e5e5;padding-bottom:90px}
+.header{background:#0f0f0f;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #ff0066;position:sticky;top:0;z-index:100;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;background:linear-gradient(90deg,#ff0066,#ff3388);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .logo img{width:35px}
-.btn-cs{background:#ff0066;color:white;border:none;padding:8px 18px;border-radius:25px;font-weight:700}
+.btn-cs{background:#ff0066;color:white;border:none;padding:8px 18px;border-radius:25px;font-weight:700;text-decoration:none}
 .banner img{width:100%;display:block}
 .hero{text-align:center;padding:25px 20px}
 .hero img{width:100%;max-width:400px;border-radius:15px}
 .hero h2{margin:15px 0;font-size:20px}
-.btn-beli{background:#ff0066;color:white;border:none;padding:12px 30px;border-radius:25px;font-weight:800;font-size:16px;margin-top:10px}
+.btn-beli{background:#ff0066;color:white;border:none;padding:12px 30px;border-radius:25px;font-weight:800;font-size:16px;cursor:pointer}
+
 .section{padding:25px 20px}
-.judul{font-size:18px;font-weight:800;margin-bottom:15px}
+.judul{font-size:18px;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:8px}
+.judul span{color:#FFD700}
 .grid-4{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .card{background:#111;border:1px solid #222;padding:15px;border-radius:12px;text-align:center}
-.card img{width:45px;margin-bottom:8px}
+.card img{width:45px;margin-bottom:5px}
+
 .produk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.produk{background:#111;border:1px solid #222;border-radius:15px;padding:10px;text-align:center;text-decoration:none;color:white}
+.produk{background:#111;border:1px solid #222;border-radius:15px;padding:10px;text-align:center;text-decoration:none;color:white;transition:0.2s}
+.produk:hover{border-color:#ff0066;transform:translateY(-3px)}
 .produk img{width:100%;border-radius:10px}
+
+/* FAQ BARU */
+.faq-section{background:#0f0f0f;border-radius:20px;padding:20px;margin:25px 20px}
+.faq-badge{display:inline-block;background:#ff0066;color:white;padding:4px 12px;border-radius:20px;font-size:10px;font-weight:800;margin-bottom:12px}
+.faq-title{font-size:16px;font-weight:800;margin-bottom:15px}
+.faq-item{background:#1a1a1a;border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:14px 15px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:13px;font-weight:600}
+.faq-a{padding:0 15px 14px 15px;color:#aaa;font-size:12px;line-height:1.6;display:none}
+.faq-img{text-align:center;margin-top:15px}
+.faq-img img{width:200px;max-width:80%}
+
+/* FOOTER */
 .footer{padding:25px 20px;background:#0f0f0f}
-.footer h3{color:#FFD700;margin:15px 0 10px 0}
-.footer a{color:#aaa;text-decoration:none;display:block;margin:6px 0}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#0f0f0f;display:flex;justify-content:space-around;padding:10px 0;border-top:2px solid #ff0066}
-.nav-item{text-align:center;color:#666;font-size:11px;text-decoration:none}
-.nav-item.active{color:#ff0066}
-.popup-cs{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:999}
-.popup-box{background:#111;margin:20% auto;padding:20px;border-radius:15px;width:85%;text-align:center}
+.footer h3{color:#FFD700;margin:15px 0 10px 0;font-size:15px}
+.footer a{color:#aaa;text-decoration:none;display:block;margin:5px 0;font-size:13px}
+.footer p{text-align:center;margin-top:20px;color:#555;font-size:12px}
+
+/* NAVBAR FIX GA GOYANG */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#0f0f0f;display:flex;justify-content:space-around;padding:10px 0;border-top:2px solid #ff0066;z-index:99;height:60px}
+.nav-item{text-align:center;color:#666;font-size:11px;text-decoration:none;flex:1}
+.nav-item.active{color:#ff0066;font-weight:800}
+.nav-item div{margin-top:3px}
+
+
+  /* FLOATING CUSTOMER SERVICE */
+.cs-float{position:fixed;bottom:80px;right:15px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25D366;box-shadow:0 4px 15px rgba(37,211,102,0.4);display:flex;align-items:center;justify-content:center;transition:0.3s;animation:float 2s ease-in-out infinite}
+.cs-float:hover{transform:scale(1.1)}
+.cs-float img{width:35px;height:35px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 </style>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCF9BB6G" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCF9BB6G"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-<div class="header"><div class="logo"><img src="06_welcome_nr_store.png"> NR STORE</div><button class="btn-cs" onclick="document.getElementById('popup').style.display='block'">CS</button></div>
+<div class="header"><div class="logo"><img src="06_welcome_nr_store.png"> NR STORE</div><a href="https://wa.me/6283898005030" class="btn-cs">CS</a></div>
 <div class="banner"><img src="NR_STORE_BLUE_PINK_1920x800_SMOOTH.gif"></div>
-<div class="hero"><img src="06_welcome_nr_store.png"><h2>Selamat Datang di NR STORE</h2><button class="btn-beli">Beli Sekarang</button></div>
+<div class="hero"><img src="06_welcome_nr_store.png"><h2>Selamat Datang di NR STORE</h2><button class="btn-beli" onclick="document.querySelector('.produk-grid').scrollIntoView({behavior:'smooth'})">Beli Sekarang</button></div>
 
-<div class="section"><div class="judul">⚡ Kenapa Harus NR STORE?</div><div class="grid-4">
+<div class="section"><div class="judul">✨ Kenapa Harus NR STORE?</div><div class="grid-4">
 <div class="card"><img src="07_best_deal.png"><div>Harga Terbaik</div></div>
 <div class="card"><img src="08_fast_process.png"><div>Proses Cepat</div></div>
 <div class="card"><img src="09_aman_dan_terpercaya.png"><div>Aman Terpercaya</div></div>
 <div class="card"><img src="11_support_24_7.png"><div>Support 24/7</div></div>
 </div></div>
 
-<div class="section"><div class="judul">🛒 Kategori Produk</div><div class="produk-grid">
-<a href="produk.visend.html" class="produk"><img src="01_VIA_SEND_NR_STORE_4x_HD.png"><div style="font-weight:700;margin-top:8px">Robux Via Send</div><div style="font-size:12px;color:#aaa">Masuk 1-5 Menit</div></a>
-<a href="produk.jasa.html" class="produk"><img src="02_JASA_NR_STORE_4x_HD.png"><div style="font-weight:700;margin-top:8px">Jasa Roblox</div><div style="font-size:12px;color:#aaa">Gamepass, Shirt</div></a>
-<a href="produk.discord.html" class="produk"><img src="03_DISCORD_NR_STORE_4x_HD.png"><div style="font-weight:700;margin-top:8px">Discord Boost</div><div style="font-size:12px;color:#aaa">Server & Nitro</div></a>
-</div></div>
+<div class="section"><div class="judul">🛒 <span>Kategori Produk</span></div><div class="produk-grid">
+<a href="produk.visend.html" class="produk"><img src="01_VIA_SEND_NR_STORE_4x_HD.png"><div style="font-weight:700;margin-top:8px">Robux Via Send</div><div style="font-size:11px;color:#888">Masuk 1-5 Menit</div></a>
+<a href="produk.jasa.html" class="produk"><img src="02_JASA_NR_STORE_4x_HD.png"><div style="font-weight:700;margin-top:8px">Jasa Roblox</div><div style="font-size:11px;color:#888">Gamepass, Shirt</div></a>
+<a href="produk.discord.html" class="produk"><img src="03_DISCORD_NR_STORE_4x_HD.png"><div style="font-weight:700;margin-top:8px">Discord Boost</div><div style="font-size:11px;color:#888">Server & Nitro</div></a>
+</div>
+</div>
+<!-- FAQ NR STORE -->
+<div class="faq-section">
+  <span class="faq-badge">FREQUENTLY ASK QUESTION</span>
+  <div class="faq-title">Pertanyaan NR FAMS yang sering ditanyakan 👇</div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Berapa Lama Proses Pengiriman Robux? <span>+</span></div>
+    <div class="faq-a">Proses Via Send 1-5 Menit setelah pembayaran dikonfirmasi. Via Gamepass 5-15 Menit.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Bagaimana Cara Beli Robux Via Username? <span>+</span></div>
+    <div class="faq-a">Pilih nominal → Isi Username Roblox → Bayar via QRIS → Robux masuk otomatis ke akun kamu.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Apakah Transaksi di NR STORE Aman? <span>+</span></div>
+    <div class="faq-a">100% Aman & Bergaransi. Sudah 1000+ pelanggan. Ada garansi uang kembali jika gagal.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Apakah Bisa Refund? <span>+</span></div>
+    <div class="faq-a">Bisa, jika Robux tidak masuk dalam 1x24 jam dan bukan kesalahan dari pembeli.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Kenapa Robux Saya Belum Masuk 10 Menit? <span>+</span></div>
+    <div class="faq-a">Coba cek username sudah benar. Jika sudah 30 menit belum masuk langsung chat CS ya.</div>
+  </div>
+
+  <div class="faq-img">
+    <img src="03_FAQ_megaphone_NR_STORE_4x_HD.png" alt="FAQ NR STORE">
+  </div>
+</div>
 
 <div class="footer">
 <h3>NR STORE</h3><p>Platform top up Robux murah, cepat, dan terpercaya.</p>
 <h3>Pembayaran</h3><p>QRIS DANA OVO BCA BRI</p>
-<h3>Tentang Kami</h3><a href="tentang.html">Tentang Kami</a><a href="syarat.html">Syarat & Ketentuan</a><a href="privasi.html">Kebijakan Privasi</a><a href="faq.html">FAQ</a><a href="rating.html">Rating Pelanggan</a>
+<h3>Tentang Kami</h3><a href="tentang.html">Tentang Kami</a><a href="syarat.html">Syarat & Ketentuan</a><a href="privasi.html">Kebijakan Privasi</a><a href="#faq">FAQ</a><a href="rating.html">Rating Pelanggan</a>
 <h3>Bantuan</h3><a href="https://wa.me/6283898005030">WhatsApp</a><a href="https://discord.gg/join-nrstore">Discord</a>
-<p style="text-align:center;margin-top:20px;color:#555">© 2026 NR STORE</p>
+<p>© 2026 NR STORE</p>
 </div>
 
 <div class="bottom-nav">
@@ -69,5 +141,26 @@ body{background:#0a0a0a;color:white;padding-bottom:90px}
 <a href="#" class="nav-item">💬<div>Transaksi</div></a>
 </div>
 
-<div class="popup-cs" id="popup" onclick="this.style.display='none'"><div class="popup-box"><h3>Hubungi CS</h3><br><a href="https://wa.me/6283898005030">WhatsApp</a><br><br><a href="https://discord.gg/join-nrstore">Discord</a></div></div>
-</body></html>
+  <!-- FLOATING CUSTOMER SERVICE -->
+<a href="https://wa.me/6283898005030" class="cs-float" target="_blank">
+  <img src="customer.service.png" alt="CS NR STORE">
+</a>
+
+<script>
+function toggleFaq(el){
+  let a = el.nextElementSibling;
+  let span = el.querySelector('span');
+  if(a.style.display === 'block'){
+    a.style.display = 'none';
+    span.innerText = '+';
+  } else {
+    document.querySelectorAll('.faq-a').forEach(x=>x.style.display='none');
+    document.querySelectorAll('.faq-q span').forEach(x=>x.innerText='+');
+    a.style.display = 'block';
+    span.innerText = '-';
+  }
+}
+</script>
+
+</body>
+</html>
