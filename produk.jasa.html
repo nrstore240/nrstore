@@ -223,15 +223,35 @@ function lanjutkanJasa(){
   
   let form = document.createElement('form');
   form.action = "https://formsubmit.co/order@nrstore.id";
-  form.method = "POST"; form.style.display = "none";
-  form.innerHTML = `<input name="Jasa" value="${jasa}"><input name="Harga" value="Rp ${hargaJasa.toLocaleString('id-ID')}"><input name="Username Roblox" value="${usn}"><input name="No WA" value="${wa}"><input name="Email Pembeli" value="${email}"><input name="_subject" value="ORDER JASA NR STORE - ${jasa}"><input name="_captcha" value="false">`;
-  document.body.appendChild(form); form.submit();
+  form.method = "POST"; 
+  form.style.display = "none";
+  
+  form.innerHTML = `
+    <input type="hidden" name="Jasa" value="${jasa}">
+    <input type="hidden" name="Harga" value="Rp ${hargaJasa.toLocaleString('id-ID')}">
+    <input type="hidden" name="Username_Roblox" value="${usn}">
+    <input type="hidden" name="No_WA" value="${wa}">
+    <input type="hidden" name="email" value="${email}"> <!-- WAJIB INI -->
+
+    <!-- SETTING FORMSUBMIT -->
+    <input type="hidden" name="_subject" value="🔥 ORDER JASA NR STORE - ${jasa}">
+    <input type="hidden" name="_next" value="https://nrstore240.github.io/sukses.html">
+    <input type="hidden" name="_autoresponse" value="Halo Kak! Pesanan Jasa ${jasa} sudah kami terima ✅
+
+Admin NR STORE akan hubungi kamu via WA ${wa} dalam 5 menit untuk konfirmasi.
+
+Terima kasih - Tim NR STORE">
+    <input type="hidden" name="_template" value="box">
+    <input type="hidden" name="_captcha" value="false">
+  `;
+  
+  document.body.appendChild(form); 
+  form.submit();
   
   let pesan = `ORDER JASA NR STORE%0A%0AJasa: ${jasa}%0AHarga: Rp ${hargaJasa.toLocaleString('id-ID')}%0AUSN: ${usn}%0ANO WA: ${wa}%0AEMAIL: ${email}`;
   window.open(`https://wa.me/6283898005030?text=${pesan}`, '_blank');
   alert("✅ Order Jasa berhasil dikirim! Admin akan hubungi 5 Menit");
 }
 </script>
-
 </body>
 </html>
