@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jasa Roblox - NR STORE</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0a0a0a;color:#e5e5e5}
+.header{background:#0f0f0f;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{color:#ff0044;font-size:24px;font-weight:800}
+.login-btn{background:#FFD700;color:#000;padding:8px 20px;border-radius:20px;font-weight:700;text-decoration:none}
+.container{max-width:800px;margin:0 auto;padding:20px}
+
+.banner{background:linear-gradient(135deg,#00ff88,#001a0f);border-radius:20px;padding:25px;display:flex;align-items:center;gap:15px;margin-bottom:15px}
+.banner-logo{background:#000;border-radius:50%;padding:12px}
+.banner-logo img{width:50px;height:50px}
+.banner-text h1{font-size:24px;line-height:1.2}
+.banner-text h1 span{color:#00ff88}
+.badge{display:inline-block;background:#00ff88;color:#000;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;margin-right:6px}
+
+.banner-kategori{margin-bottom:20px}
+.banner-kategori img{width:100%;border-radius:15px;max-height:180px;object-fit:cover}
+
+.alert{background:#1a1a1a;border-radius:15px;padding:18px;margin-bottom:20px;border-left:4px solid #00ff88}
+.alert h2{color:#00ff88;margin-bottom:10px;font-size:16px}
+.alert ul{list-style:none;padding-left:0}
+.alert li{margin:8px 0;color:#aaa;font-size:14px}
+
+.produk-grid{display:grid;grid-template-columns:1fr;gap:15px}
+.card{background:#111;border:1px solid #222;border-radius:15px;padding:18px;position:relative}
+.card-icon img{width:60px;height:60px;margin-bottom:10px}
+.card h3{color:white;font-size:17px;margin-bottom:5px}
+.desc{color:#aaa;font-size:13px;margin-bottom:10px;line-height:1.6}
+.price{color:#00ff88;font-size:18px;font-weight:800;margin-bottom:12px}
+.bestseller{position:absolute;top:12px;right:12px;background:#FFD700;color:#000;padding:4px 8px;border-radius:8px;font-size:10px;font-weight:800}
+.btn-group{display:flex;gap:10px}
+.buy-now{flex:1;background:linear-gradient(90deg,#ff0044,#ff3366);color:white;padding:12px;border:none;border-radius:10px;font-weight:700;cursor:pointer}
+.buy-outline{flex:1;background:transparent;border:2px solid #333;color:#aaa;padding:12px;border-radius:10px;font-weight:700;cursor:pointer}
+
+/* PAKET PILIHAN */
+.paket-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.paket{border:2px solid #333;border-radius:10px;padding:10px;text-align:center;cursor:pointer;font-size:12px}
+.paket.active{border-color:#00ff88;background:#001a0f}
+.paket .harga{color:#00ff88;font-weight:800}
+
+.ringkasan{background:#111;border:1px solid #333;border-radius:15px;padding:18px;margin-top:20px}
+.ring-row{display:flex;justify-content:space-between;margin:10px 0;color:#aaa;font-size:14px}
+.ring-row b{color:white}
+.total{font-size:20px;color:#00ff88;font-weight:800}
+.btn-lanjut{width:100%;background:linear-gradient(90deg,#2563eb,#3b82f6);color:white;padding:14px;border:none;border-radius:12px;font-weight:800;font-size:15px;margin-top:15px;cursor:pointer}
+input{width:100%;padding:12px;background:#1a1a1a;border:1px solid #333;border-radius:10px;color:white;margin:8px 0;font-size:15px}
+label{font-size:13px;color:#aaa}
+
+.footer{padding:25px 20px;background:#0f0f0f;margin-top:40px;text-align:center;color:#555;font-size:12px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">NR STORE</div>
+  <a href="https://wa.me/6283898005030" class="login-btn">CS</a>
+</div>
+
+<div class="container">
+
+  <div class="banner">
+    <div class="banner-logo"><img src="02_jasa_roblox_premium.png"></div>
+    <div class="banner-text">
+      <span class="badge">JASA ROBLOX</span>
+      <h1>Layanan <span>Premium NR STORE</span></h1>
+      <p style="font-size:13px;color:#ccc">Aktivasi, Recovery, JustPlenn Aman & Bergaransi</p>
+    </div>
+  </div>
+
+  <div class="banner-kategori">
+    <img src="02_JASA_NR_STORE_4x_HD.png" alt="Jasa NR STORE">
+  </div>
+
+  <div class="alert">
+    <h2>⚠️ INFORMASI JASA</h2>
+    <ul>
+      <li>• Semua jasa bergaransi & diproses admin</li>
+      <li>• Estimasi 5 Menit - 7 Hari tergantung jasa</li>
+      <li>• Wajib chat CS dulu untuk jasa recovery</li>
+    </ul>
+  </div>
+
+  <div class="produk-grid" id="produkJasa">
+        <!-- PRODUK 1: JASA ROBLOX PLUS -->
+    <div class="card fade-in">
+      <div class="card-icon"><img src="02_jasa_roblox_premium.png"></div>
+      <h3>Jasa Roblox Plus</h3>
+      <div class="desc">Jasa Aktivasi Roblox Plus 1 Bulan. Proses 5-15 Menit. Bergaransi</div>
+      <div class="price">Rp115.000</div>
+      <div class="btn-group">
+        <button class="buy-now" onclick="pilihJasa('Jasa Roblox Plus', 115000)">⚡ BELI SEKARANG</button>
+        <button class="buy-outline" onclick="addToCart('Jasa Roblox Plus', 115000)">🛒</button>
+      </div>
+    </div>
+
+    <!-- PRODUK 2: JASA JUSTPLENN + PILIH COWOK/CEWEK -->
+    <div class="card fade-in">
+      <div class="card-icon"><img src="product.jusplenn.png"></div>
+      <h3>Jasa JustPlenn Roblox</h3>
+      <div class="desc">
+        <b style="color:#00ff88">Butuh temen main di Roblox?</b> <br>
+        Sewa aku jadi JustPlenn kamu! <br><br>
+        ✅ <b>Nemenin Chat</b> di game <br>
+        ✅ <b>Nemenin Call/Discord</b> pas mabar <br>
+        ✅ <b>Nemenin Muncak</b> Tower/Parkour <br>
+        ✅ <b>Nemenin Dugem</b> di Club Roblox <br>
+        ✅ <b>Nemenin RP</b> Brookhaven, RP Lainnya <br>
+        ✅ <b>Main Dari Jam 20.00 - 23.00 <br>
+        <i>Request bebas asal sopan ya 😎</i>
+      </div>
+
+      <label>Pilih Gender JustPlenn *</label>
+      <div class="paket-grid" id="genderJust" style="grid-template-columns:repeat(2,1fr)">
+        <div class="paket" onclick="pilihGenderJust(this, 'Cowok')">
+          <div>👨 Cowok</div>
+        </div>
+        <div class="paket" onclick="pilihGenderJust(this, 'Cewek')">
+          <div>👩 Cewek</div>
+        </div>
+      </div>
+
+      <label>Pilih Paket Durasi *</label>
+      <div class="paket-grid" id="paketJust">
+        <div class="paket" onclick="pilihPaketJust(this, '1 Hari', 15000)">
+          <div>1 Hari</div><div class="harga">Rp15.000</div>
+        </div>
+        <div class="paket" onclick="pilihPaketJust(this, '3 Hari', 25000)">
+          <div>3 Hari</div><div class="harga">Rp25.000</div>
+        </div>
+        <div class="paket" onclick="pilihPaketJust(this, '7 Hari', 50000)">
+          <div>7 Hari</div><div class="harga">Rp50.000</div>
+        </div>
+      </div>
+      <button class="buy-now" onclick="beliJustPlenn()" style="width:100%">⚡ SEWA JUSTPLENN SEKARANG</button>
+    </div>
+
+    <!-- PRODUK 3: JASA PULIHIN AKUN -->
+    <div class="card fade-in">
+      <div class="bestseller">🔓 JASA</div>
+      <div class="card-icon"><img src="05_pulihkan_akun_roblox.png"></div>
+      <h3>Jasa Pulihin Akun Roblox</h3>
+      <div class="desc">Recovery Akun Kena Hack/Lupa Email/Sandi/V2L • Estimasi 1-7 Hari • Garansi</div>
+      <div class="price">Konsultasi Gratis</div>
+      <button class="buy-now" onclick="konsultasiWA()" style="width:100%">💬 KONSULTASI GRATIS</button>
+    </div>
+
+  </div>
+
+  <!-- FORM ORDER -->
+  <div class="ringkasan" id="formOrder" style="display:none">
+    <h2>Data Pemesanan</h2>
+    <label>Username Roblox *</label>
+    <input type="text" id="usnJasa" placeholder="@namarobloxkamu">
+    <label>WhatsApp *</label>
+    <input type="number" id="waJasa" placeholder="0812-xxxx-xxxx">
+    <label>Email *</label>
+    <input type="email" id="emailJasa" placeholder="email@contoh.com">
+    
+    <div style="background:#0a0a0a;border:2px solid #00ff88;border-radius:15px;padding:18px;margin:15px 0;text-align:center">
+      <h3 style="color:#FFD700;margin-bottom:10px;font-size:15px">💳 BAYAR DULU VIA QRIS</h3>
+      <img src="qris.jpg" alt="QRIS NR STORE" style="width:200px;height:200px;background:white;padding:10px;border-radius:12px">
+    </div>
+
+    <div class="ring-row"><span>Jasa</span><b id="ringJasa">-</b></div>
+    <div class="ring-row"><span>Total Bayar</span><b class="total" id="ringTotalJasa">Rp 0</b></div>
+    <button class="btn-lanjut" onclick="lanjutkanJasa()">✅ SUDAH BAYAR, KIRIM ORDER →</button>
+  </div>
+
+</div>
+
+<div class="footer">
+  © 2026 NR STORE. Layanan Jasa Roblox Terpercaya.
+</div>
+
+<script>
+let jasa = ""; let hargaJasa = 0; let paketJust = ""; let genderJust = "";
+
+function pilihJasa(nama, hrg){
+  jasa = nama; hargaJasa = hrg;
+  document.getElementById('formOrder').style.display = 'block';
+  document.getElementById('ringJasa').innerText = nama;
+  document.getElementById('ringTotalJasa').innerText = 'Rp ' + hrg.toLocaleString('id-ID');
+  document.getElementById('formOrder').scrollIntoView({behavior:'smooth'});
+}
+
+function pilihGenderJust(el, gender){
+  document.querySelectorAll('#genderJust .paket').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  genderJust = gender;
+}
+
+function pilihPaketJust(el, durasi, hrg){
+  document.querySelectorAll('#paketJust .paket').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  paketJust = durasi; hargaJasa = hrg;
+}
+
+function beliJustPlenn(){
+  if(!genderJust){
+    alert("⚠️ PILIH GENDER JUSTPLENN DULU BANG!");
+    return;
+  }
+  if(!paketJust){
+    alert("⚠️ PILIH PAKET DURASI DULU BANG!");
+    return;
+  }
+  let namaJasa = `JustPlenn ${genderJust} - ${paketJust}`;
+  pilihJasa(namaJasa, hargaJasa);
+}
+
+function addToCart(nama, hrg){
+  alert("✅ " + nama + " ditambahkan ke keranjang! \nKlik BELI SEKARANG untuk checkout");
+}
+
+function konsultasiWA(){
+  window.open('https://wa.me/6283898005030?text=Halo%20Admin%20NR%20STORE%20saya%20mau%20konsultasi%20Jasa%20Pulihin%20Akun%20Roblox%20Gratis', '_blank');
+}
+
+function lanjutkanJasa(){
+  let usn = document.getElementById('usnJasa').value;
+  let wa = document.getElementById('waJasa').value;
+  let email = document.getElementById('emailJasa').value;
+  if(!usn || !wa || !email || !jasa){
+    alert("⚠️ LENGKAPI SEMUA DATA DULU BANG!");
+    return;
+  }
+  
+  let form = document.createElement('form');
+  form.action = "https://formsubmit.co/order@nrstore.id";
+  form.method = "POST";
+  form.style.display = "none";
+  form.innerHTML = `
+    <input name="Jasa" value="${jasa}">
+    <input name="Harga" value="Rp ${hargaJasa.toLocaleString('id-ID')}">
+    <input name="Username Roblox" value="${usn}">
+    <input name="No WA" value="${wa}">
+    <input name="Email Pembeli" value="${email}">
+    <input name="_subject" value="ORDER JASA NR STORE - ${jasa}">
+    <input name="_captcha" value="false">
+  `;
+  document.body.appendChild(form);
+  form.submit();
+
+  let pesan = `ORDER JASA NR STORE%0A%0AJasa: ${jasa}%0AHarga: Rp ${hargaJasa.toLocaleString('id-ID')}%0AUSN: ${usn}%0ANO WA: ${wa}%0AEMAIL: ${email}`;
+  window.open(`https://wa.me/6283898005030?text=${pesan}`, '_blank');
+  
+  alert("✅ Order Jasa berhasil dikirim! Admin akan hubungi 5 Menit");
+}
+</script>
+
+</body>
+</html>
