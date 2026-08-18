@@ -169,8 +169,9 @@ function addToCart(nama, hrg){
 
 function lanjutkanDiscord(){
   let link = document.getElementById('linkDiscord').value;
-  let wa = document.getElementById('waDiscord').value; // <-- GANTI INI. Jangan 08xxxxxxxxxx
-  let email = document.getElementById('emailDiscord').value; // <-- GANTI INI JUGA. Jangan emailmu
+  let wa = document.getElementById('waDiscord').value; 
+  let email = document.getElementById('emailDiscord').value; 
+  
   if(!link || !wa || !email || !jasa){
     alert("⚠️ LENGKAPI SEMUA DATA DULU BANG!");
     return;
@@ -186,29 +187,19 @@ function lanjutkanDiscord(){
     <input type="hidden" name="Harga" value="Rp ${hargaJasa.toLocaleString('id-ID')}">
     <input type="hidden" name="Link_Server" value="${link}">
     <input type="hidden" name="No_WA" value="${wa}">
-    <input type="hidden" name="email" value="${email}"> <!-- WAJIB INI -->
+    <input type="hidden" name="email" value="${email}"> <!-- KUNCI AUTO-REPLY -->
 
-    <!-- SETTING FORMSUBMIT -->
     <input type="hidden" name="_subject" value="🔥 ORDER DISCORD BOOST - ${jasa}">
     <input type="hidden" name="_next" value="https://nrstore240.github.io/sukses.html">
-    <input type="hidden" name="_autoresponse" value="Halo Kak! Pesanan Discord Boost ${jasa} sudah kami terima ✅
-
-Admin akan proses server kamu dalam 5-15 menit.
-Pastikan bot sudah diinvite ke server ya.
-
-Terima kasih - Tim NR STORE">
+    <input type="hidden" name="_autoresponse" value="Halo Kak! Pesanan Discord Boost ${jasa} sudah kami terima ✅ Admin proses 5-15 menit.">
     <input type="hidden" name="_template" value="box">
     <input type="hidden" name="_captcha" value="false">
   `;
   
   document.body.appendChild(form);
   form.submit();
-
-  let pesan = `ORDER DISCORD BOOST NR STORE%0A%0APaket: ${jasa}%0AHarga: Rp ${hargaJasa.toLocaleString('id-ID')}%0ALink Server: ${link}%0ANO WA: ${wa}%0AEMAIL: ${email}`;
-  window.open(`https://wa.me/6283898005030?text=${pesan}`, '_blank');
-  
-  alert("✅ Order Discord Boost berhasil dikirim! Admin akan proses 5-15 Menit");
-  }
+  // ...sisanya sama
+}
 </script>
 
 </body>
