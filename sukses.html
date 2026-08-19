@@ -4,21 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pesanan Diterima - NR STORE</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-body{background:#0a0a0a;color:white;font-family:'Poppins',sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;text-align:center;padding:20px}
-.box{background:#111;border:2px solid #25D366;border-radius:20px;padding:30px;max-width:400px}
-.box h1{color:#25D366;font-size:24px;margin-bottom:10px}
-.box p{color:#aaa;line-height:1.6}
-.btn{background:#ff0066;color:white;padding:12px 25px;border-radius:25px;text-decoration:none;display:inline-block;margin-top:15px;font-weight:800}
+body{background:#0a0a0a;color:white;font-family:'Poppins',sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;text-align:center;padding:20px}
+.box{background:#111;border:2px solid #25D366;border-radius:20px;padding:30px;max-width:420px;box-shadow:0 0 20px rgba(37,211,102,0.2)}
+.box h1{color:#25D366;font-size:26px;margin-bottom:10px}
+.box p{color:#aaa;line-height:1.7;font-size:14px}
+.qris-box{background:#000;padding:15px;border-radius:15px;margin:20px 0;border:1px dashed #25D366}
+.qris-box img{width:230px;border-radius:10px}
+.step{margin:15px 0;text-align:left}
+.step b{color:#25D366}
+.btn{display:block;background:#25D366;color:white;padding:14px 25px;border-radius:25px;text-decoration:none;margin-top:12px;font-weight:800;transition:0.3s}
+.btn:hover{transform:scale(1.05)}
+.btn2{background:#ff0066}
+.note{font-size:12px;color:#666;margin-top:15px}
 </style>
 </head>
 <body>
 <div class="box">
   <h1>✅ Pesanan Diterima!</h1>
-  <p>Terima kasih sudah order di NR STORE<br>
-  Silakan cek Email & WhatsApp kamu untuk instruksi pembayaran.<br>
-  Robux akan kami proses 1-5 menit setelah pembayaran</p>
-  <a href="index.html" class="btn">Kembali ke Beranda</a>
+  <p>Terima kasih sudah order di <b>NR STORE</b><br>
+  Jasa akan diproses 1-5 menit setelah pembayaran</p>
+
+  <div class="step"><b>STEP 1:</b> Scan QRIS di bawah untuk bayar</div>
+  <div class="qris-box">
+    <img src="qris.jpg" alt="QRIS NR STORE">
+    <p style="font-size:12px;margin-top:8px;">Atas Nama: NR STORE</p>
+  </div>
+
+  <div class="step"><b>STEP 2:</b> Kirim bukti bayar ke WA Admin</div>
+  <a href="https://wa.me/6289514340633?text=Halo%20Admin%20NR%20Store%2C%20saya%20sudah%20bayar%20order%20Discord" 
+     class="btn">📱 Kirim Bukti Bayar</a>
+  
+  <a href="index.html" class="btn btn2">🏠 Kembali ke Beranda</a>
+  
+  <p class="note">* Email order juga sudah kami kirim ke email kamu</p>
 </div>
 </body>
 </html>
