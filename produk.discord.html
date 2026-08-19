@@ -167,12 +167,16 @@ function addToCart(nama, hrg){
   alert("✅ " + nama + " ditambahkan ke keranjang! \nKlik BELI SEKARANG untuk checkout");
 }
 
+<script>
+let jasa = ""; 
+let hargaJasa = 0;
+
 function lanjutkanDiscord(){
     let link = document.getElementById('linkDiscord').value;
     let wa = document.getElementById('waDiscord').value;
     let email = document.getElementById('emailDiscord').value;
 
-    if(!link ||!wa ||!email ||!jasa){
+    if(!link || !wa || !email || !jasa){
         alert("⚠️ LENGKAPI SEMUA DATA DULU BANG!");
         return;
     }
@@ -181,27 +185,38 @@ function lanjutkanDiscord(){
     document.querySelector('.btn-lanjut').disabled = true;
 
     let formData = new FormData();
-    formData.append("Paket", jasa);
+    formData.append("Jasa", jasa);
     formData.append("Harga", "Rp " + hargaJasa.toLocaleString('id-ID'));
-    formData.append("Link_Server", link);
-    formData.append("No_WA", wa);
-    formData.append("email", email); 
-
-    fetch("https://usebasin.com/f/6984881745fd", { // INI ENDPOINT KAMU
+    formData.append("Link_Server_Discord", link);
+    formData.append("No_WA_Customer", wa);
+    formData.append("Email_Customer", email); 
+  
+    formData.append("_subject", "Order Baru Jasa Discord - " + jasa);
+    formData.append("_next", "https://nrstore.id/sukses.html"); // biar langsung ke sukses.html
+    formData.append("_captcha", "false");
+    fetch("https://formsubmit.co/ajax/order@nrstore.id", { 
         method: "POST",
         body: formData
     })
-  .then(res => {
-        if(res.ok){
-            alert("✅ Pesanan Terkirim! Admin NR Store akan hubungi via WA 1x24 jam");
-            location.reload();
+  .then(res => res.json())
+  .then(data => {
+        if(data.success == "true"){
+            alert("✅ PESANAN MASUK! \n\nLangsung scan QRIS di bawah untuk bayar ya. \nSetelah bayar kirim bukti ke WA: 0895-1434-0633");
+            document.querySelector('form').reset();
+            document.querySelector('.btn-lanjut').innerText = "✅ SUDAH BAYAR";
+            document.querySelector('.btn-lanjut').disabled = false;
         } else {
             alert("❌ Gagal Kirim. Coba lagi");
             document.querySelector('.btn-lanjut').innerText = "✅ SUDAH BAYAR";
             document.querySelector('.btn-lanjut').disabled = false;
         }
+    }).catch(err => {
+        alert("❌ Error: " + err);
+        document.querySelector('.btn-lanjut').innerText = "✅ SUDAH BAYAR";
+        document.querySelector('.btn-lanjut').disabled = false;
     });
-        }
+}
+</script>
 </script>
 
 </body>
