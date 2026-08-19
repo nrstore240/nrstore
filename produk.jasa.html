@@ -221,36 +221,39 @@ function lanjutkanJasa(){
   let email = document.getElementById('emailJasa').value;
   if(!usn || !wa || !email || !jasa){ alert("⚠️ LENGKAPI SEMUA DATA DULU BANG!"); return; }
   
-  let form = document.createElement('form');
-  form.action = "https://formsubmit.co/order@nrstore.id";
-  form.method = "POST"; 
-  form.style.display = "none";
-  
-  form.innerHTML = `
-    <input type="hidden" name="Jasa" value="${jasa}">
-    <input type="hidden" name="Harga" value="Rp ${hargaJasa.toLocaleString('id-ID')}">
-    <input type="hidden" name="Username_Roblox" value="${usn}">
-    <input type="hidden" name="No_WA" value="${wa}">
-    <input type="hidden" name="email" value="${email}"> <!-- WAJIB INI -->
+  document.querySelector('.btn-lanjut').innerText = "Mengirim...";
+  document.querySelector('.btn-lanjut').disabled = true;
 
-    <!-- SETTING FORMSUBMIT -->
-    <input type="hidden" name="_subject" value="🔥 ORDER JASA NR STORE - ${jasa}">
-    <input type="hidden" name="_next" value="https://nrstore240.github.io/sukses.html">
-    <input type="hidden" name="_autoresponse" value="Halo Kak! Pesanan Jasa ${jasa} sudah kami terima ✅
+  let formData = new FormData();
+  formData.append("Jasa", jasa);
+  formData.append("Harga", "Rp " + hargaJasa.toLocaleString('id-ID'));
+  formData.append("Username_Roblox", usn);
+  formData.append("No_WA_Customer", wa);
+  formData.append("Email_Customer", email);
 
-Admin NR STORE akan hubungi kamu via WA ${wa} dalam 5 menit untuk konfirmasi.
+  // SETTING FORMSUBMIT
+  formData.append("_subject", "Order Baru Jasa - " + jasa);
+  formData.append("_next", "https://nrstore.id/sukses.html"); // GANTI PAS UDAH DI DOMAIN
+  formData.append("_captcha", "false");
 
-Terima kasih - Tim NR STORE">
-    <input type="hidden" name="_template" value="box">
-    <input type="hidden" name="_captcha" value="false">
-  `;
-  
-  document.body.appendChild(form); 
-  form.submit();
-  
-  let pesan = `ORDER JASA NR STORE%0A%0AJasa: ${jasa}%0AHarga: Rp ${hargaJasa.toLocaleString('id-ID')}%0AUSN: ${usn}%0ANO WA: ${wa}%0AEMAIL: ${email}`;
-  window.open(`https://wa.me/6283898005030?text=${pesan}`, '_blank');
-  alert("✅ Order Jasa berhasil dikirim! Admin akan hubungi 5 Menit");
+  fetch("https://formsubmit.co/ajax/order@nrstore.id", { 
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    if(data.success == "true"){
+      window.location.href = "https://nrstore.id/sukses.html"; // langsung ke sukses
+    } else {
+      alert("❌ Gagal Kirim. Coba lagi");
+      document.querySelector('.btn-lanjut').innerText = "✅ SUDAH BAYAR, KIRIM ORDER →";
+      document.querySelector('.btn-lanjut').disabled = false;
+    }
+  }).catch(err => {
+    alert("❌ Error: " + err);
+    document.querySelector('.btn-lanjut').innerText = "✅ SUDAH BAYAR, KIRIM ORDER →";
+    document.querySelector('.btn-lanjut').disabled = false;
+  });
 }
 </script>
 </body>
