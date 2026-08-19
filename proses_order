@@ -1,0 +1,53 @@
+<?php
+// NR STORE - PROSES ORDER OTOMATIS
+
+// 1. KONEK KE FONNTE
+$token = "exupJbfuNgjNbZ3jMExN"; // Token Fonnte kamu
+$target = "6289514340633"; // Ganti ke WA kamu. Format 62
+
+// 2. AMBIL DATA DARI FORM
+$produk = $_POST['produk'];
+$harga = $_POST['harga'];
+$usn = $_POST['usn'];
+$wa_pembeli = $_POST['wa'];
+$email = $_POST['email'];
+
+// 3. BIKIN ID ORDER OTOMATIS NR + TANGGAL + RANDOM
+$id_order = "NR" . date('dmY') . rand(1000, 9999);
+
+// 4. ISI PESAN WA NYA
+$pesan = "*PESANAN BARU MASUK!* 🔔
+──────────────────
+*ID Order:* $id_order
+*Produk:* $produk
+*Harga:* $harga
+*Username:* $usn
+*WA Pembeli:* $wa_pembeli
+*Email:* $email
+──────────────────
+Silakan proses manual ya bos!";
+
+// 5. KIRIM KE FONNTE API
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://api.fonnte.com/send",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_POST => true,
+  CURLOPT_POSTFIELDS => array(
+    'target' => $target,
+    'message' => $pesan,
+  ),
+  CURLOPT_HTTPHEADER => array(
+    "Authorization: $token"
+  ),
+));
+$response = curl_exec($curl);
+curl_close($curl);
+
+// 6. TAMPILAN SETELAH ORDER SUKSES
+echo "<h2>Order Berhasil! ✅</h2>";
+echo "<p>ID Order kamu: <b>$id_order</b></p>";
+echo "<p>Silakan transfer ke: <b>DANA/QRIS 085602760499</b></p>";
+echo "<p>Admin akan konfirmasi via WA setelah bayar</p>";
+echo "<a href='produk.visend.html'>Kembali ke Produk</a>";
+?>
