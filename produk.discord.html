@@ -181,30 +181,27 @@ function lanjutkanDiscord(){
     document.querySelector('.btn-lanjut').disabled = true;
 
     let formData = new FormData();
-    formData.append("_email", "order@nrstore.id"); // PAKSA KIRIM KE ADMIN
-    formData.append("_subject", "🔥 ORDER BARU DISCORD: " + jasa);
     formData.append("Paket", jasa);
     formData.append("Harga", "Rp " + hargaJasa.toLocaleString('id-ID'));
     formData.append("Link_Server", link);
     formData.append("No_WA", wa);
-    formData.append("Email_Pembeli", email); 
+    formData.append("email", email); 
 
-    fetch("https://formspree.io/f/xaewlklb", {
+    fetch("https://usebasin.com/f/6984881745fd", { // INI ENDPOINT KAMU
         method: "POST",
-        body: formData,
-        headers: {'Accept': 'application/json'}
+        body: formData
     })
   .then(res => {
         if(res.ok){
-            alert("✅ Pesanan Terkirim! Admin akan hubungi via WA");
+            alert("✅ Pesanan Terkirim! Admin NR Store akan hubungi via WA 1x24 jam");
             location.reload();
         } else {
-            res.json().then(data => alert("❌ Gagal: " + JSON.stringify(data)));
+            alert("❌ Gagal Kirim. Coba lagi");
             document.querySelector('.btn-lanjut').innerText = "✅ SUDAH BAYAR";
             document.querySelector('.btn-lanjut').disabled = false;
         }
     });
-}
+        }
 </script>
 
 </body>
