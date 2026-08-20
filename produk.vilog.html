@@ -5,32 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Topup Robux Via Login - NR Store</title>
   <style>
-    body { background:#0a0a0a; color:#fff; font-family: 'Segoe UI', Arial; padding:15px; margin:0; }
-    .container { max-width:700px; margin:auto; background:#121212; padding:20px; border-radius:12px; border:1px solid #2a2a2a; }
-    h2 { text-align:center; color:#00ff88; margin:0; }
-    .sub { text-align:center; color:#aaa; font-size:13px; margin-bottom:15px; }
-    .grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:10px; }
-    .produk { background:#1e1e1e; padding:12px; border-radius:10px; cursor:pointer; border:2px solid #333; transition:0.2s; text-align:center; }
-    .produk:hover { border-color:#00ff88; }
-    .produk.active { border-color:#00ff88; background:#1a2a22; }
-    .produk input { display:none; }
-    .produk label { display:block; cursor:pointer; font-size:14px; }
-    .produk label b { color:#00ff88; font-size:16px; }
-    .form-box { margin-top:20px; }
-    .form-box h3 { color:#00ff88; font-size:16px; margin-bottom:8px; }
-    input { width:100%; padding:11px; margin:6px 0; border-radius:8px; border:1px solid #444; background:#222; color:#fff; box-sizing:border-box; }
-    .qris-box { text-align:center; background:#111; padding:15px; border-radius:10px; margin:15px 0; }
-    .qris-box img { max-width:220px; border-radius:8px; }
-    .wa-btn { display:block; width:100%; text-align:center; background:#25D366; color:#fff; padding:12px; border-radius:8px; text-decoration:none; font-weight:bold; margin:10px 0; }
-    .syarat { background:#111; padding:15px; border-radius:10px; margin-top:20px; font-size:13px; border-left:3px solid #ffaa00; }
-    .syarat h3 { color:#ffaa00; margin-top:0; }
-    .syarat li { margin:6px 0; }
-    .btn-lanjut { width:100%; background:#00ff88; color:#000; font-weight:bold; font-size:16px; padding:14px; border:none; border-radius:8px; cursor:pointer; margin-top:10px; }
-    .btn-lanjut:disabled { background:#555; cursor:not-allowed; }
-    #ringkasan { text-align:center; font-size:17px; color:#00ff88; font-weight:bold; min-height:25px; margin:10px 0; }
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+  body{background:#0a0a0a;color:#e5e5e5;padding-bottom:90px}
+  
+  /* HEADER TANPA LOGO GAMBAR */
+  .header{background:#0f0f0f;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #ff0066;position:sticky;top:0;z-index:100;height:60px}
+  .logo{font-size:20px;font-weight:800;background:linear-gradient(90deg,#ff0066,#ff3388);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .btn-cs{background:#ff0066;color:white;border:none;padding:8px 18px;border-radius:25px;font-weight:700;text-decoration:none;font-size:13px}
+  
+  .container { max-width:700px; margin:20px auto; background:#121212; padding:20px; border-radius:12px; border:1px solid #2a2a2a; }
+  h2 { text-align:center; color:#00ff88; margin:0; }
+  .sub { text-align:center; color:#aaa; font-size:13px; margin-bottom:15px; }
+  .grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:10px; }
+  .produk { background:#1e1e1e; padding:12px; border-radius:10px; cursor:pointer; border:2px solid #333; transition:0.2s; text-align:center; }
+  .produk:hover { border-color:#00ff88; }
+  .produk.active { border-color:#00ff88; background:#1a2a22; }
+  .produk input { display:none; }
+  .produk label { display:block; cursor:pointer; font-size:14px; }
+  .produk label b { color:#00ff88; font-size:16px; }
+  .form-box { margin-top:20px; }
+  .form-box h3 { color:#00ff88; font-size:16px; margin-bottom:8px; }
+  input { width:100%; padding:11px; margin:6px 0; border-radius:8px; border:1px solid #444; background:#222; color:#fff; box-sizing:border-box; }
+  .qris-box { text-align:center; background:#111; padding:15px; border-radius:10px; margin:15px 0; }
+  .qris-box img { max-width:220px; border-radius:8px; }
+  .wa-btn { display:block; width:100%; text-align:center; background:#25D366; color:#fff; padding:12px; border-radius:8px; text-decoration:none; font-weight:bold; margin:10px 0; }
+  .syarat { background:#111; padding:15px; border-radius:10px; margin-top:20px; font-size:13px; border-left:3px solid #ffaa00; }
+  .syarat h3 { color:#ffaa00; margin-top:0; }
+  .syarat li { margin:6px 0; }
+  .btn-lanjut { width:100%; background:#00ff88; color:#000; font-weight:bold; font-size:16px; padding:14px; border:none; border-radius:8px; cursor:pointer; margin-top:10px; }
+  .btn-lanjut:disabled { background:#555; cursor:not-allowed; }
+  #ringkasan { text-align:center; font-size:17px; color:#00ff88; font-weight:bold; min-height:25px; margin:10px 0; }
+  
+  /* NAVBAR BAWAH */
+  .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#0f0f0f;display:flex;justify-content:space-around;padding:10px 0;border-top:2px solid #ff0066;z-index:99;height:60px}
+  .nav-item{text-align:center;color:#666;font-size:11px;text-decoration:none;flex:1}
+  .nav-item.active{color:#ff0066;font-weight:800}
+  .nav-item div{margin-top:3px}
   </style>
 </head>
 <body>
+
+<div class="header">
+  <div class="logo">NR STORE</div>
+  <a href="https://wa.me/6283898005030" class="btn-cs">CS</a>
+</div>
+
 <div class="container">
   <h2>TOPUP ROBUX VIA LOGIN</h2>
   <p class="sub">Proses Cepat 10-20 Menit Setelah Bukti Bayar Masuk</p>
@@ -38,7 +57,7 @@
   <h3>1. Pilih Nominal</h3>
   <div class="grid" id="listProduk"></div>
 
-  <div id="ringkasan">Pilih paket dulu kakak</div>
+  <div id="ringkasan">Pilih paket dulu bang</div>
 
   <div class="form-box">
     <h3>2. Data Akun & Kontak</h3>
@@ -70,8 +89,7 @@
 
   <button class="btn-lanjut" onclick="lanjutkanJasa()">✅ SUDAH BAYAR, KIRIM ORDER →</button>
 </div>
-
-  <script>
+<script>
 let jasa = "";
 let hargaJasa = 0;
 
@@ -159,5 +177,14 @@ function lanjutkanJasa(){
   });
 }
 </script>
+
+<!-- NAVBAR BAWAH -->
+<div class="bottom-nav">
+<a href="index.html" class="nav-item">🏠<div>Beranda</div></a>
+<a href="produk.visend.html" class="nav-item">⚡<div>Beli Robux</div></a>
+<a href="rating.html" class="nav-item">⭐<div>Rating</div></a>
+<a href="produk.vilog.html" class="nav-item active">🔐<div>Via Login</div></a>
+</div>
+
 </body>
 </html>
