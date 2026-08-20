@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topup Robux Via Login - NR Store</title>
+  <style>
+    body { background:#0a0a0a; color:#fff; font-family: 'Segoe UI', Arial; padding:15px; margin:0; }
+    .container { max-width:700px; margin:auto; background:#121212; padding:20px; border-radius:12px; border:1px solid #2a2a2a; }
+    h2 { text-align:center; color:#00ff88; margin:0; }
+    .sub { text-align:center; color:#aaa; font-size:13px; margin-bottom:15px; }
+    .grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:10px; }
+    .produk { background:#1e1e1e; padding:12px; border-radius:10px; cursor:pointer; border:2px solid #333; transition:0.2s; text-align:center; }
+    .produk:hover { border-color:#00ff88; }
+    .produk.active { border-color:#00ff88; background:#1a2a22; }
+    .produk input { display:none; }
+    .produk label { display:block; cursor:pointer; font-size:14px; }
+    .produk label b { color:#00ff88; font-size:16px; }
+    .form-box { margin-top:20px; }
+    .form-box h3 { color:#00ff88; font-size:16px; margin-bottom:8px; }
+    input { width:100%; padding:11px; margin:6px 0; border-radius:8px; border:1px solid #444; background:#222; color:#fff; box-sizing:border-box; }
+    .qris-box { text-align:center; background:#111; padding:15px; border-radius:10px; margin:15px 0; }
+    .qris-box img { max-width:220px; border-radius:8px; }
+    .wa-btn { display:block; width:100%; text-align:center; background:#25D366; color:#fff; padding:12px; border-radius:8px; text-decoration:none; font-weight:bold; margin:10px 0; }
+    .syarat { background:#111; padding:15px; border-radius:10px; margin-top:20px; font-size:13px; border-left:3px solid #ffaa00; }
+    .syarat h3 { color:#ffaa00; margin-top:0; }
+    .syarat li { margin:6px 0; }
+    .btn-lanjut { width:100%; background:#00ff88; color:#000; font-weight:bold; font-size:16px; padding:14px; border:none; border-radius:8px; cursor:pointer; margin-top:10px; }
+    .btn-lanjut:disabled { background:#555; cursor:not-allowed; }
+    #ringkasan { text-align:center; font-size:17px; color:#00ff88; font-weight:bold; min-height:25px; margin:10px 0; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>TOPUP ROBUX VIA LOGIN</h2>
+  <p class="sub">Proses Cepat 10-20 Menit Setelah Bukti Bayar Masuk</p>
+
+  <h3>1. Pilih Nominal</h3>
+  <div class="grid" id="listProduk"></div>
+
+  <div id="ringkasan">Pilih paket dulu kakak</div>
+
+  <div class="form-box">
+    <h3>2. Data Akun & Kontak</h3>
+    <input type="text" id="usnJasa" placeholder="Username Roblox" required>
+    <input type="password" id="passJasa" placeholder="Password Roblox" required>
+    <input type="text" id="waJasa" placeholder="No HP / WA Aktif" required>
+    <input type="email" id="emailJasa" placeholder="Email Aktif" required>
+  </div>
+
+  <div class="qris-box">
+    <h3>3. Scan QRIS Untuk Bayar</h3>
+    <img src="qris.jpg" alt="QRIS NR Store">
+    <p>Total: <span id="totalBayar">Rp 0</span></p>
+    <a href="https://wa.me/6285602760499?text=Halo%20NR%20Store%2C%20saya%20sudah%20bayar%20via%20QRIS" target="_blank" class="wa-btn">📲 KONFIRMASI KE WA ADMIN</a>
+  </div>
+
+  <div class="syarat">
+    <h3>SYARAT & KETERANGAN</h3>
+    <ul>
+      <li>Proses 5-15 Menit setelah kirim bukti bayar ke WA</li>
+      <li>Agar Proses Cepat Selesai, Pastikan WhatsApp mu Aktif</li>
+      <li>Admin Akan Meminta Kode OTP Untuk Masuk Akun Kamu</li>
+      <li>Jangan ganti password selama proses berlangsung</li>
+      <li>Jika gagal login, order akan di cancel & refund</li>
+      <li>Pastikan Username, Password, WA, Email benar</li>
+      <li>Jangan Lupa Untuk Mengganti Password Kamu Kembali Setelah Transaksi Selesai</li>
+    </ul>
+  </div>
+
+  <button class="btn-lanjut" onclick="lanjutkanJasa()">✅ SUDAH BAYAR, KIRIM ORDER →</button>
+</div>
+
+  <script>
+let jasa = "";
+let hargaJasa = 0;
+
+const daftarProduk = [
+  {nama:"80 Robux", harga:16000},
+  {nama:"160 Robux", harga:32000},
+  {nama:"320 Robux", harga:65000},
+  {nama:"500 Robux", harga:75500},
+  {nama:"1000 Robux", harga:151000},
+  {nama:"1500 Robux", harga:225500},
+  {nama:"2000 Robux", harga:302000},
+  {nama:"3000 Robux", harga:450000},
+  {nama:"3500 Robux", harga:526000},
+  {nama:"4000 Robux", harga:565000},
+  {nama:"4500 Robux", harga:677000},
+  {nama:"5000 Robux", harga:748500},
+  {nama:"7000 Robux", harga:1057000},
+  {nama:"8000 Robux", harga:1202000},
+  {nama:"10000 Robux", harga:1503000},
+  {nama:"15000 Robux", harga:2257000},
+  {nama:"40000 Robux", harga:5905000},
+];
+
+const list = document.getElementById('listProduk');
+daftarProduk.forEach((p, i) => {
+  list.innerHTML += `
+  <div class="produk" onclick="pilihProduk(${i}, this)">
+    <input type="radio" name="paket" id="p${i}">
+    <label for="p${i}">${p.nama} <br> <b>Via Login - Rp${p.harga.toLocaleString('id-ID')}</b></label>
+  </div>`;
+});
+
+function pilihProduk(i, el){
+  document.querySelectorAll('.produk').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  jasa = daftarProduk[i].nama;
+  hargaJasa = daftarProduk[i].harga;
+  document.getElementById('ringkasan').innerText = `Ringkasan: ${jasa} - Rp${hargaJasa.toLocaleString('id-ID')}`;
+  document.getElementById('totalBayar').innerText = `Rp${hargaJasa.toLocaleString('id-ID')}`;
+}
+
+function lanjutkanJasa(){
+  let usn = document.getElementById('usnJasa').value;
+  let pass = document.getElementById('passJasa').value;
+  let wa = document.getElementById('waJasa').value;
+  let email = document.getElementById('emailJasa').value;
+  
+  if(!jasa || !usn || !pass || !wa || !email){ 
+    alert("⚠️ LENGKAPI SEMUA DATA + PILIH PAKET DULU BANG!"); 
+    return; 
+  }
+  
+  document.querySelector('.btn-lanjut').innerText = "Mengirim...";
+  document.querySelector('.btn-lanjut').disabled = true;
+
+  let formData = new FormData();
+  formData.append("Jenis_Layanan", "Topup Via Login");
+  formData.append("Paket", jasa);
+  formData.append("Harga", "Rp " + hargaJasa.toLocaleString('id-ID'));
+  formData.append("Username_Roblox", usn);
+  formData.append("Password_Roblox", pass);
+  formData.append("No_WA_Customer", wa);
+  formData.append("Email_Customer", email);
+  formData.append("_subject", "Order Baru Via Login - " + jasa);
+  formData.append("_next", "https://nrstore.id/sukses.html");
+  formData.append("_captcha", "false");
+
+  fetch("https://formsubmit.co/ajax/order@nrstore.id", { 
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    if(data.success == "true"){
+      window.location.href = "https://nrstore.id/sukses.html";
+    } else {
+      alert("❌ Gagal Kirim. Coba lagi");
+      document.querySelector('.btn-lanjut').innerText = "✅ SUDAH BAYAR, KIRIM ORDER →";
+      document.querySelector('.btn-lanjut').disabled = false;
+    }
+  }).catch(err => {
+    alert("❌ Error: " + err);
+    document.querySelector('.btn-lanjut').innerText = "✅ SUDAH BAYAR, KIRIM ORDER →";
+    document.querySelector('.btn-lanjut').disabled = false;
+  });
+}
+</script>
+</body>
+</html>
