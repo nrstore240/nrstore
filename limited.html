@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Limited Item - NR Store</title>
+  <style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+  body{background:#0a0a0a;color:#e5e5e5;padding-bottom:90px}
+  .header{background:#0f0f0f;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #ffaa00;position:sticky;top:0;z-index:100;height:60px}
+  .logo{font-size:20px;font-weight:800;background:linear-gradient(90deg,#ffaa00,#ffcc33);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .btn-cs{background:#ffaa00;color:#000;border:none;padding:8px 18px;border-radius:25px;font-weight:700;text-decoration:none;font-size:13px}
+  .container { max-width:700px; margin:20px auto; background:#121212; padding:20px; border-radius:12px; border:1px solid #2a2a2a; }
+  h2 { text-align:center; color:#ffaa00; margin:0; }
+  .sub { text-align:center; color:#aaa; font-size:13px; margin-bottom:15px; }
+  .produk { background:#1e1e1e; padding:10px; border-radius:10px; cursor:pointer; border:2px solid #333; transition:0.2s; text-align:center; }
+  .produk:hover { border-color:#ffaa00; }
+  .produk.active { border-color:#ffaa00; background:#2a241a; }
+  .produk input { display:none; }
+  .produk img { width:100%; height:120px; object-fit:cover; border-radius:8px; margin-bottom:8px; background:#000; }
+  .produk label { display:block; cursor:pointer; font-size:14px; font-weight:600; }
+  .produk label b { color:#ffaa00; font-size:16px; display:block; margin-top:4px; }
+  .form-box { margin-top:20px; }
+  .form-box h3 { color:#ffaa00; font-size:16px; margin-bottom:8px; }
+  input { width:100%; padding:11px; margin:6px 0; border-radius:8px; border:1px solid #444; background:#222; color:#fff; box-sizing:border-box; }
+  .syarat { background:#111; padding:15px; border-radius:10px; margin-top:20px; font-size:13px; border-left:3px solid #ffaa00; }
+  .syarat h3 { color:#ffaa00; margin-top:0; }
+  .syarat li { margin:6px 0; }
+  .btn-lanjut { width:100%; background:#ffaa00; color:#000; font-weight:bold; font-size:16px; padding:14px; border:none; border-radius:8px; cursor:pointer; margin-top:10px; }
+  .btn-lanjut:disabled { background:#555; cursor:not-allowed; }
+  #ringkasan { text-align:center; font-size:17px; color:#ffaa00; font-weight:bold; min-height:25px; margin:10px 0; }
+  .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#0f0f0f;display:flex;justify-content:space-around;padding:10px 0;border-top:2px solid #ffaa00;z-index:99;height:60px}
+  .nav-item{text-align:center;color:#666;font-size:11px;text-decoration:none;flex:1}
+  .nav-item.active{color:#ffaa00;font-weight:800}
+  .nav-item div{margin-top:3px}
+  .bahan-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+  .bahan-item { background:#222;padding:10px;border-radius:8px;text-decoration:none;color:#fff;display:flex;align-items:center;gap:8px;border:1px solid #333;transition:0.2s; font-size:12px; }
+  .bahan-item:hover { border-color:#ffaa00; background:#2a2a2a; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">NR STORE</div>
+  <a href="https://wa.me/6283898005030" class="btn-cs">CS</a>
+</div>
+
+<div class="container">
+  <h2>LIMITED ITEM</h2>
+  <p class="sub">Proses Manual 1-24 Jam Via Trade Roblox</p>
+
+  <div style="background:#1a1a00;border:2px solid #ffaa00;padding:15px;border-radius:12px;margin-bottom:15px;">
+    <h3 style="color:#ffaa00;margin-top:0;text-align:center;">⚠️ WAJIB BELI ITEM TUMBAL SEBELUM TRADE</h3>
+    <p style="color:#ddd;font-size:13px;text-align:center;margin-bottom:12px;">
+      <b>Pilih SALAH SATU item di bawah ini sebagai "bahan trade"</b><br>
+      Klik link untuk langsung beli di catalog:
+    </p>
+    <div class="bahan-grid">
+      <a href="https://www.roblox.com/catalog/3016210752/Rocket-Eggscape" target="_blank" class="bahan-item">🚀 Rocket Eggscape</a>
+      <a href="https://www.roblox.com/catalog/4786869155/Eggraging-Shark-of-the-Sea" target="_blank" class="bahan-item">🦈 Eggraging Shark</a>
+      <a href="https://www.roblox.com/catalog/1556235379/Teapot-Egg" target="_blank" class="bahan-item">🫖 Teapot Egg</a>
+      <a href="https://www.roblox.com/catalog/2528067691/Catrina-Dia-de-Muertos-Mask" target="_blank" class="bahan-item">💀 Catrina Mask</a>
+      <a href="https://www.roblox.com/catalog/2528066922/Catrin-Dia-de-Muertos-Mask" target="_blank" class="bahan-item">💀 Catrin Mask</a>
+      <a href="https://www.roblox.com/catalog/152980428/Egg-of-Life" target="_blank" class="bahan-item">🌱 Egg of Life</a>
+      <a href="https://www.roblox.com/catalog/4786883113/Fried-Chicken-Egg" target="_blank" class="bahan-item">🍗 Fried Chicken Egg</a>
+      <a href="https://www.roblox.com/catalog/4771629993/Deteggctive-Wolf" target="_blank" class="bahan-item">🐺 Deteggctive W-Wolf</a>
+      <a href="https://www.roblox.com/catalog/1556204905/Inkwell-Egg" target="_blank" class="bahan-item">🥚 Inkwell Egg</a>
+    </div>
+  </div>
+
+  <div style="background:#1a0f00;border:1px solid #ffaa00;padding:15px;border-radius:12px;margin-bottom:20px;font-size:13px;">
+    <h3 style="color:#ffaa00;margin-top:0;">📋 SYARAT AKUN WAJIB</h3>
+    <ul style="margin:8px 0 0 20px; color:#ddd;">
+      <li><b>Roblox Premium:</b> Wajib aktif biar bisa trade limited</li>
+      <li><b>Trade On:</b> Setting > Privacy > Who can trade with me > `Everyone`</li>
+      <li><b>Inventory Public:</b> Jangan di Private</li>
+      <li><b>Umur Akun 30 Hari</b> & <b>Email Verified</b> & <b>2FA Aktif</b></li>
+    </ul>
+    <p style="color:#ffaa00;margin-top:10px;font-size:12px;">*Jika tidak memenuhi, trade GAGAL & tidak refund</p>
+  </div>
+
+<h3>1. Pilih Limited yang Mau Dibeli</h3>
+
+<div id="listProduk" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:15px 0;"></div>
+  <div class="form-box">
+    <h3>2. Data Akun</h3>
+    
+    <label style="font-weight:600;">Username Roblox Penerima <span style="color:red">*</span></label>
+    <input type="text" id="usnJasa" placeholder="Ketik username Roblox tujuan" required>
+
+    <label style="font-weight:600;">Link Profil Roblox <span style="color:red">*</span></label>
+    <input type="text" id="linkProfil" placeholder="https://www.roblox.com/users/xxxx/profile" required>
+
+    <label style="font-weight:600;">WhatsApp <span style="color:red">*</span></label>
+    <input type="tel" id="waJasa" placeholder="0812-xxxx-xxxx" required>
+
+    <label style="font-weight:600;">Email <span style="color:red">*</span></label>
+    <input type="email" id="emailJasa" placeholder="email@contoh.com" required>
+  </div>
+
+<div id="ringkasan" style="text-align:center;font-size:17px;color:#ffaa00;font-weight:bold;min-height:25px;margin:10px 0;"></div>
+
+<h3>3. Pembayaran</h3>
+<div style="background:#111;padding:15px;border-radius:10px;text-align:center;border:1px solid #ffaa00;">
+  <p style="margin:0 0 10px 0;">Scan QRIS di bawah ini</p>
+  <img src="qris.jpg" style="width:100%;max-width:320px;border-radius:10px;background:#fff;padding:12px;box-sizing:border-box;">
+  <p style="font-size:12px;color:#aaa;margin-top:10px;">*Setelah bayar langsung klik tombol di bawah</p>
+</div>
+
+<button class="btn-lanjut" onclick="lanjutkanJasa()">✅ SUDAH BAYAR, KIRIM ORDER →</button>
+
+<div class="syarat">
+  <h3>SYARAT & KETERANGAN</h3>
+  <ul>
+    <li>Proses 1-24 Jam setelah bukti bayar dikirim ke WA Admin</li>
+    <li>Kami akan kirim trade request ke akun kamu</li>
+    <li>Harga sudah termasuk Fee 30% Roblox</li>
+    <li>Stok terbatas, bisa habis sewaktu-waktu</li>
+  </ul>
+</div>
+
+</div> 
+<script>
+let jasa = "";
+let hargaJasa = 0;
+
+const daftarProduk = [
+  {nama:"8-Bit Royal Crown", harga:2500000, img:"8bit.royal.crown.png"},
+  {nama:"8-Bit HP bar", harga:900000, img:"8bit.hp.bar.png"},
+  {nama:"8-Bit Tabby Cat", harga:750000, img:"8bit.tabby.cat.png"},
+  {nama:"8-Bit Roblox Coin", harga:750000, img:"8bit.roblox.coin.png"},
+  {nama:"8-Bit Extra Life", harga:750000, img:"8bit.extra.life.png"},
+  {nama:"Fall Fairy", harga:750000, img:"8bit.fall.fairy.png"}
+];
+
+const list = document.getElementById('listProduk');
+const ringkasan = document.getElementById('ringkasan');
+
+daftarProduk.forEach((p, i) => {
+  const div = document.createElement('div');
+  div.className = 'produk';
+  div.innerHTML = `
+    <img src="${p.img}" alt="${p.nama}">
+    <input type="radio" id="p${i}" name="produk" value="${p.nama}" data-harga="${p.harga}">
+    <label for="p${i}">${p.nama}<b>Rp${p.harga.toLocaleString('id-ID')}</b></label>
+  `;
+  div.onclick = () => {
+    document.querySelectorAll('.produk').forEach(x=>x.classList.remove('active'));
+    div.classList.add('active');
+    document.getElementById(`p${i}`).checked = true;
+    jasa = p.nama;
+    hargaJasa = p.harga;
+    ringkasan.innerText = `Ringkasan: ${jasa} - Rp${hargaJasa.toLocaleString('id-ID')}`;
+  };
+  list.appendChild(div);
+});
+
+function lanjutkanJasa() {
+  const usn = document.getElementById('usnJasa').value;
+  const linkProfil = document.getElementById('linkProfil').value;
+  const wa = document.getElementById('waJasa').value;
+  const email = document.getElementById('emailJasa').value;
+  
+  if(!jasa || !usn || !linkProfil || !wa || !email){
+    alert('⚠️ Lengkapi semua data dan pilih item dulu');
+    return;
+  }
+  
+  const formData = new FormData();
+  formData.append('_subject', 'ORDER BARU - LIMITED ITEM');
+  formData.append('Item', jasa);
+  formData.append('Harga', 'Rp' + hargaJasa.toLocaleString('id-ID'));
+  formData.append('Username', usn);
+  formData.append('Link Profil', linkProfil);
+  formData.append('WA', wa);
+  formData.append('Email', email);
+  
+  document.querySelector('.btn-lanjut').innerText = "Mengirim...";
+  document.querySelector('.btn-lanjut').disabled = true;
+  
+  fetch("https://formsubmit.co/ajax/order@nrstore.id", { 
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    if(data.success == "true"){
+      let pesan = `Halo NR Store, saya sudah order LIMITED ITEM%0A%0AItem: ${jasa}%0AHarga: Rp${hargaJasa.toLocaleString('id-ID')}%0AUsername: ${usn}%0ALink: ${linkProfil}%0AEmail: ${email}%0ANo WA: ${wa}`;
+      window.location.href = `https://wa.me/6285602760499?text=${pesan}`;
+    } else {
+      alert("❌ Gagal Kirim. Coba lagi");
+      document.querySelector('.btn-lanjut').innerText = "✅ SUDAH BAYAR, KIRIM ORDER";
+      document.querySelector('.btn-lanjut').disabled = false;
+    }
+  }).catch(err => {
+    alert("❌ Error: " + err);
+    document.querySelector('.btn-lanjut').innerText = "✅ SUDAH BAYAR, KIRIM ORDER";
+    document.querySelector('.btn-lanjut').disabled = false;
+  });
+}
+</script>
+
+<div class="bottom-nav">
+<a href="index.html" class="nav-item">🏠<div>Beranda</div></a>
+<a href="produk.visend.html" class="nav-item">⚡<div>Beli Robux</div></a>
+<a href="produk.limited.html" class="nav-item active">👑<div>Limited</div></a>
+<a href="produk.vilog.html" class="nav-item">🔐<div>Via Login</div></a>
+</div>
+
+</body>
+</html>
